@@ -263,7 +263,7 @@ export default function Teachers() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { num: "400+", label: "Teachers Worldwide" },
-              { num: "1,000", label: "Goal by End of 2025" },
+              { num: "1,000", label: "Goal by End of 2026" },
               { num: "6", label: "Continents" },
               { num: "100%", label: "Free Access" },
             ].map((s) => (

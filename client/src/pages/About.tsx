@@ -78,7 +78,7 @@ const timeline = [
   { year: "Growth", event: "400+ teachers from 6 continents joined the platform" },
   { year: "Recognition", event: "'Gan Jing World Day' declared in Batam City, Indonesia" },
   { year: "Impact", event: "Argentina recognized GJW for educational significance" },
-  { year: "2025 Goal", event: "Reaching 1,000 teachers and expanding Summer Camp globally" },
+  { year: "2026 Goal", event: "Reaching 1,000 teachers and expanding Summer Camp globally" },
 ];
 
 export default function About() {
