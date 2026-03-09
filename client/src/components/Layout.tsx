@@ -171,7 +171,7 @@ const footerLinks = [
 
 function SiteFooter() {
   return (
-    <footer className="bg-[oklch(0.2_0.02_250)] text-white/70">
+    <footer className="bg-[#133960] text-white/70">
       <div className="container py-16">
         <div className="grid md:grid-cols-4 gap-10">
           {/* Brand */}
