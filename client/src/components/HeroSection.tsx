@@ -44,7 +44,7 @@ export default function HeroSection() {
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6">
               <Sun className="w-4 h-4 text-sunshine" />
-              <span className="text-white/90 text-sm font-medium">Summer 2025 &middot; 8-Week Program</span>
+              <span className="text-white/90 text-sm font-medium">Summer 2026 &middot; 8-Week Program</span>
             </div>
 
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">

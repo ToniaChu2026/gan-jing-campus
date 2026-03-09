@@ -63,7 +63,7 @@ const programs = [
     desc: "An 8-week adventure of kindness, creativity, and discovery for children ages 4-16.",
     img: SUMMER_CAMP_IMG,
     href: "/summer-camp",
-    badge: "Summer 2025",
+    badge: "Summer 2026",
     badgeColor: "bg-sunshine text-white",
   },
   {

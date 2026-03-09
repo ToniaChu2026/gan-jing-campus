@@ -64,7 +64,7 @@ export default function CTASection() {
             className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6"
           >
             <Sun className="w-4 h-4 text-sunshine" />
-            <span className="text-white/90 text-sm font-medium">Summer 2025 Registration Open</span>
+            <span className="text-white/90 text-sm font-medium">Summer 2026 Registration Open</span>
           </motion.div>
 
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
