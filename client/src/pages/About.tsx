@@ -3,7 +3,8 @@
  * Design: Clean, informative page about the platform
  * Covers mission, safety model, Ethical AI, and global recognition
  */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
+import SEOHead from "@/components/SEOHead";
 import { motion, useInView } from "framer-motion";
 import { Link } from "wouter";
 import {
@@ -86,8 +87,34 @@ export default function About() {
     window.scrollTo(0, 0);
   }, []);
 
+  const jsonLd = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: "About Gan Jing Campus",
+      description: "Learn about Gan Jing Campus's mission, triple-layered safety model, Ethical AI technology, and global recognition.",
+      url: "https://ganjingsummercamp-fejrdh2z.manus.space/about",
+      mainEntity: {
+        "@type": "EducationalOrganization",
+        name: "Gan Jing Campus",
+        foundingDate: "2023",
+        areaServed: "Worldwide",
+        numberOfEmployees: { "@type": "QuantitativeValue", value: 400, unitText: "teachers" },
+      },
+    }),
+    []
+  );
+
   return (
     <>
+      <SEOHead
+        title="About Gan Jing Campus — Mission, Safety & Global Impact"
+        description="Learn about Gan Jing Campus's mission to provide safe, ad-free education for children worldwide. Discover our triple-layered safety model, Ethical AI technology, and recognition across 6 continents."
+        canonicalPath="/about"
+        keywords="about Gan Jing Campus, education mission, ethical AI safety, triple-layered safety model, children digital safety, global education platform, ad-free education"
+        ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/campus-hero-gdhxb86x5iLK854PVxdpfu.webp"
+        jsonLd={jsonLd}
+      />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-[oklch(0.35_0.08_250)] via-[oklch(0.42_0.12_240)] to-[oklch(0.52_0.14_230)]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

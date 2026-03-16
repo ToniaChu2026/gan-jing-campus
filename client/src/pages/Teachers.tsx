@@ -3,7 +3,8 @@
  * Design: Warm, professional page for educators
  * Covers Teacher Premium Channel, Handbook, CDE certification, and testimonials
  */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
+import SEOHead from "@/components/SEOHead";
 import { motion, useInView } from "framer-motion";
 import {
   GraduationCap,
@@ -97,8 +98,34 @@ export default function Teachers() {
     window.scrollTo(0, 0);
   }, []);
 
+  const jsonLd = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "For Teachers — Gan Jing Campus",
+      description: "Get your free Teacher Premium Channel with tools to create content, curate resources, and earn CDE certification.",
+      url: "https://ganjingsummercamp-fejrdh2z.manus.space/teachers",
+      mainEntity: {
+        "@type": "Course",
+        name: "Certified Digital Educator (CDE) Program",
+        description: "Free certification program for educators on Gan Jing Campus.",
+        provider: { "@type": "Organization", name: "Gan Jing Campus" },
+        isAccessibleForFree: true,
+      },
+    }),
+    []
+  );
+
   return (
     <>
+      <SEOHead
+        title="For Teachers — Free Premium Channel & CDE Certification"
+        description="Join 400+ teachers worldwide on Gan Jing Campus. Get a free Premium Channel, access teaching tools, curate resources, and earn your Certified Digital Educator (CDE) certification."
+        canonicalPath="/teachers"
+        keywords="Gan Jing Campus teachers, free teacher channel, CDE certification, digital educator, teacher resources, education platform, kindness education"
+        ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/teachers-hero-NfGYecHrTG2AyDfm2uGxh3.webp"
+        jsonLd={jsonLd}
+      />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-[oklch(0.45_0.12_30)] via-[oklch(0.55_0.14_40)] to-[oklch(0.65_0.12_50)]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

@@ -1,10 +1,11 @@
 /*
  * Home Page — Gan Jing Campus
  * Design: Warm, inviting campus overview with hero, mission pillars,
- * featured programs, safety highlights, and global recognition
+ * featured programs, embedded video, safety highlights, and global recognition
+ * SEO: Per-page meta tags, JSON-LD structured data
  */
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { Link } from "wouter";
 import {
   Shield,
@@ -19,7 +20,9 @@ import {
   GraduationCap,
   Palette,
   Music,
+  Play,
 } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const CAMPUS_HERO =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/campus-hero-gdhxb86x5iLK854PVxdpfu.webp";
@@ -29,6 +32,9 @@ const TEACHERS_IMG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/teachers-hero-NfGYecHrTG2AyDfm2uGxh3.webp";
 const KINDNESS_IMG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/kindness-hero-NNsaYWbcqqnPPW3ascmMvs.webp";
+
+const VIDEO_EMBED_URL =
+  "https://www.ganjingworld.com/embed/1gee46s65uhXU4bl7LFxW8qzR16v1c";
 
 const pillars = [
   {
@@ -113,8 +119,34 @@ export default function Home() {
   const statsRef = useRef(null);
   const statsInView = useInView(statsRef, { once: true, margin: "-60px" });
 
+  const jsonLd = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Gan Jing Campus — Where Learning Meets Kindness",
+      description:
+        "An ad-free, educator-friendly platform promoting kindness, creativity, and safe digital learning for children worldwide.",
+      url: "https://ganjingsummercamp-fejrdh2z.manus.space/",
+      mainEntity: {
+        "@type": "EducationalOrganization",
+        name: "Gan Jing Campus",
+        description:
+          "Ad-free educational platform for children ages 4-16 with 400+ teachers across 6 continents.",
+      },
+    }),
+    []
+  );
+
   return (
     <>
+      <SEOHead
+        title="Where Learning Meets Kindness"
+        description="Gan Jing Campus is an ad-free, educator-friendly platform promoting kindness, creativity, and safe digital learning for children ages 4-16. Powered by Ethical AI. Join 400+ teachers across 6 continents."
+        canonicalPath="/"
+        keywords="Gan Jing Campus, safe education, ad-free learning, children education, kindness, summer camp 2026, ethical AI education, digital learning platform"
+        jsonLd={jsonLd}
+      />
+
       {/* ===== HERO SECTION ===== */}
       <section
         ref={heroRef}
@@ -261,7 +293,7 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {pillars.map((p, i) => (
               <AnimatedCard key={p.title} delay={i * 0.1}>
-                <div className="bg-white rounded-2xl p-6 border border-border/60 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
+                <div className="bg-white rounded-3xl p-7 border border-border/60 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
                   <div
                     className={`w-14 h-14 rounded-2xl ${p.color} flex items-center justify-center mb-5`}
                   >
@@ -277,6 +309,55 @@ export default function Home() {
               </AnimatedCard>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== FEATURED VIDEO ===== */}
+      <section className="py-20 md:py-28 bg-gradient-to-b from-white to-cream">
+        <div className="container">
+          <AnimatedCard>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="inline-block bg-coral/15 text-coral font-semibold text-sm px-4 py-1.5 rounded-full mb-4">
+                <Play className="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" />
+                Featured Video
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-5">
+                See Gan Jing Campus in <span className="text-sky">Action</span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Discover how Gan Jing Campus is transforming children's digital
+                education with safe, curated, and kindness-centered content.
+              </p>
+            </div>
+          </AnimatedCard>
+
+          <AnimatedCard delay={0.15}>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-foreground/5">
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    src={VIDEO_EMBED_URL}
+                    title="Gan Jing Campus — Introduction Video"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p className="text-center text-muted-foreground text-sm mt-4">
+                Watch on{" "}
+                <a
+                  href="https://www.ganjingworld.com/video/1gee46s65uhXU4bl7LFxW8qzR16v1c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sky hover:text-sky/80 font-medium"
+                >
+                  Gan Jing World
+                </a>
+              </p>
+            </div>
+          </AnimatedCard>
         </div>
       </section>
 
@@ -308,6 +389,7 @@ export default function Home() {
                         src={prog.img}
                         alt={prog.title}
                         className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
                       />
                       <span
                         className={`absolute top-4 left-4 ${prog.badgeColor} text-xs font-bold px-3 py-1 rounded-full`}
