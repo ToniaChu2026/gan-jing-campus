@@ -1,2 +1,2 @@
 Gan Jing Campus website
-last updated on 2026-4-20
+last updated on 4/20/2026
