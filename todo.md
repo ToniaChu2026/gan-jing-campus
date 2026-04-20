@@ -24,6 +24,10 @@
 - [x] Brevo API key validated and stored as secret
 - [x] Fix TypeScript version mismatch errors (13 TS errors resolved)
 - [x] Write vitest tests for lead.submit endpoint (6 tests passing)
-- [ ] Save checkpoint after Brevo integration
-- [ ] Push changes to GitHub (ToniaChu2026/gan-jing-campus)
-- [ ] Verify form end-to-end in browser
+- [x] Save checkpoint after Brevo integration
+- [x] Push changes to GitHub (ToniaChu2026/gan-jing-campus)
+- [x] Verify form end-to-end in browser
+- [x] Update Campus Guide footer to match main site footer (Blue Zodiac #133960)
+- [x] Update Campus Guide Thank You page footer to match main site footer
+- [x] Change URL from /campus-guide to /free-guide (both pages)
+- [x] Homepage video kept as-is (ads controlled by GJW platform, not iframe params)

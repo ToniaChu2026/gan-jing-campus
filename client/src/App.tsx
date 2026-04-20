@@ -17,8 +17,8 @@ function Router() {
   return (
     <Switch>
       {/* Campus Guide pages — standalone layout, NOT in main nav */}
-      <Route path={"/campus-guide"} component={CampusGuide} />
-      <Route path={"/campus-guide/thank-you"} component={CampusGuideThankYou} />
+      <Route path={"/free-guide"} component={CampusGuide} />
+      <Route path={"/free-guide/thank-you"} component={CampusGuideThankYou} />
 
       {/* Main site pages — wrapped in shared Layout with nav & footer */}
       <Route>

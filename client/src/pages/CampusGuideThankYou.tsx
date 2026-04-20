@@ -44,7 +44,7 @@ export default function CampusGuideThankYou() {
       "@type": "WebPage",
       name: "Thank You — Your Screen Reset Guide is on the Way",
       description: "Your 30-Minute Family Screen Reset Guide is being sent to your inbox.",
-      url: "https://ganjingcampus.manus.space/campus-guide/thank-you",
+      url: "https://ganjingcampus.manus.space/free-guide/thank-you",
       publisher: {
         "@type": "Organization",
         name: "Gan Jing Campus",
@@ -58,7 +58,7 @@ export default function CampusGuideThankYou() {
       <SEOHead
         title="Thank You — Your Screen Reset Guide is on the Way"
         description="Your 30-Minute Family Screen Reset Guide is being sent to your inbox. Explore the complete Gan Jing Campus solution."
-        canonicalPath="/campus-guide/thank-you"
+        canonicalPath="/free-guide/thank-you"
         keywords="thank you, screen reset guide, Gan Jing Campus"
         jsonLd={jsonLd}
       />
@@ -332,27 +332,106 @@ export default function CampusGuideThankYou() {
         </section>
 
         {/* ─── Footer ─── */}
-        <footer className="py-10 text-center" style={{ background: "#00AAFF" }}>
-          <div className="container space-y-4">
-            <h3
-              className="text-2xl sm:text-3xl font-extrabold tracking-wider text-white uppercase"
-              style={{ letterSpacing: "0.08em" }}
-            >
-              GAN JING WORLD
-            </h3>
-            <p
-              className="text-base font-light italic text-white"
-              style={{ opacity: 0.9 }}
-            >
-              Technology for Humanity
-            </p>
-            <p
-              className="text-sm text-white pt-2"
-              style={{ opacity: 0.75 }}
-            >
-              &copy; {new Date().getFullYear()} Ganjingworld Corporation. All
-              rights reserved.
-            </p>
+        <footer className="bg-[#133960] text-white/70">
+          <div className="container py-16">
+            <div className="grid md:grid-cols-4 gap-10">
+              {/* Brand */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <img
+                    src={LOGO}
+                    alt="Gan Jing Campus"
+                    className="h-8 w-auto brightness-0 invert"
+                  />
+                </div>
+                <p className="text-sm leading-relaxed mb-4">
+                  An ad-free, educator-friendly platform powered by Ethical AI.
+                  Promoting kindness, creativity, and safe digital learning for
+                  children worldwide.
+                </p>
+                <p className="text-xs text-white/40">Powered by Gan Jing World</p>
+              </div>
+
+              {/* Explore */}
+              <div>
+                <h4 className="font-bold text-white text-sm mb-4">Explore</h4>
+                <ul className="space-y-2.5">
+                  {[
+                    { label: "Home", href: "/" },
+                    { label: "Summer Camp", href: "/summer-camp" },
+                    { label: "For Teachers", href: "/teachers" },
+                    { label: "Kindness Stories", href: "/kindness" },
+                    { label: "About", href: "/about" },
+                  ].map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        className="text-sm text-white/60 hover:text-white/90 transition-colors no-underline"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Gan Jing World */}
+              <div>
+                <h4 className="font-bold text-white text-sm mb-4">Gan Jing World</h4>
+                <ul className="space-y-2.5">
+                  {[
+                    { label: "Gan Jing Campus", href: "https://www.ganjingworld.com/ganjingcampus" },
+                    { label: "Gan Jing Kids", href: "https://www.ganjingworld.com/gjwplus/kids/ganjingkids" },
+                    { label: "Gan Jing World", href: "https://www.ganjingworld.com" },
+                  ].map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-white/60 hover:text-white/90 transition-colors no-underline"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Resources */}
+              <div>
+                <h4 className="font-bold text-white text-sm mb-4">Resources</h4>
+                <ul className="space-y-2.5">
+                  {[
+                    { label: "Teacher Handbook", href: "https://www.ganjingworld.com/news/1i13tdngs6fsEZDUDBoyG2Fto16n1c" },
+                    { label: "Apply for Premium", href: "https://www.ganjingworld.com/news/1i3csp1t9651d6ebrqpymLf3u1j11c" },
+                    { label: "Kindness Awards", href: "https://www.ganjingworld.com/news/1htqniht6hp3u3PVR5BpnRHqB1ic1c" },
+                    { label: "Success Stories", href: "https://www.ganjingworld.com/news/1htqng1kqt45DWMGkHwsYvRcf1gk1c" },
+                  ].map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-white/60 hover:text-white/90 transition-colors no-underline"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Bottom bar */}
+            <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+              <p className="text-xs text-white/40">
+                &copy; {new Date().getFullYear()} Gan Jing World. All rights reserved.
+              </p>
+              <p className="text-xs text-white/40 flex items-center gap-1">
+                Made with <Heart className="w-3 h-3 text-coral fill-coral" /> for a kinder world
+              </p>
+            </div>
           </div>
         </footer>
       </div>
