@@ -41,3 +41,4 @@
 - [x] Create Chinese About page (/zh/about)
 - [x] Add hreflang SEO meta tags for all pages
 - [x] Create Chinese Layout with translated footer and nav
+- [x] Update Chinese "訪問校園" link to https://www.ganjingworld.com/zh-TW/@乾淨校園

@@ -33,12 +33,12 @@ export default function SummerCampZh() {
       eventStatus: "https://schema.org/EventScheduled",
       location: {
         "@type": "VirtualLocation",
-        url: "https://www.ganjingworld.com/zh-TW/ganjingcampus",
+        url: "https://www.ganjingworld.com/zh-TW/@乾淨校園",
       },
       organizer: {
         "@type": "Organization",
         name: "乾淨校園",
-        url: "https://www.ganjingworld.com/zh-TW/ganjingcampus",
+        url: "https://www.ganjingworld.com/zh-TW/@乾淨校園",
       },
       offers: {
         "@type": "Offer",
@@ -216,7 +216,7 @@ export default function SummerCampZh() {
           <h2 className="text-4xl font-bold text-gray-800 mb-4 font-['Noto_Sans_SC']">準備好開始了嗎？</h2>
           <p className="text-xl text-gray-600 mb-8 font-['Noto_Sans_SC']">立即訪問乾淨校園，開啟您孩子的夏日冒險之旅！</p>
           <motion.a
-            href="https://www.ganjingworld.com/zh-TW/ganjingcampus"
+            href="https://www.ganjingworld.com/zh-TW/@乾淨校園"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

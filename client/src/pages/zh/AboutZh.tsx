@@ -148,7 +148,7 @@ export default function AboutZh() {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="https://www.ganjingworld.com/zh-TW/ganjingcampus"
+                  href="https://www.ganjingworld.com/zh-TW/@乾淨校園"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 no-underline font-['Noto_Sans_SC']"
@@ -419,7 +419,7 @@ export default function AboutZh() {
                 教師專區
               </Link>
               <a
-                href="https://www.ganjingworld.com/zh-TW/ganjingcampus"
+                href="https://www.ganjingworld.com/zh-TW/@乾淨校園"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 justify-center rounded-full bg-white/20 border-2 border-white/50 px-8 py-4 text-lg font-bold text-white hover:bg-white/30 transition-all no-underline font-['Noto_Sans_SC']"

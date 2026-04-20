@@ -101,7 +101,7 @@ function SiteNavbarZh() {
           </Link>
 
           <a
-            href="https://www.ganjingworld.com/zh-TW/channel/ganjingcampus"
+            href="https://www.ganjingworld.com/zh-TW/@乾淨校園"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 inline-flex items-center justify-center rounded-full bg-sunshine px-5 py-2.5 text-sm font-bold text-white shadow-lg hover:bg-sunshine-dark transition-all hover:scale-105 no-underline font-['Noto_Sans_SC']"
@@ -158,7 +158,7 @@ function SiteNavbarZh() {
                 Switch to English
               </Link>
               <a
-                href="https://www.ganjingworld.com/zh-TW/channel/ganjingcampus"
+                href="https://www.ganjingworld.com/zh-TW/@乾淨校園"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center justify-center rounded-full bg-sunshine px-5 py-3 text-sm font-bold text-white shadow-lg no-underline"
@@ -187,7 +187,7 @@ const footerLinks = [
   {
     title: "乾淨世界",
     links: [
-      { label: "乾淨校園", href: "https://www.ganjingworld.com/zh-TW/channel/ganjingcampus", external: true },
+      { label: "乾淨校園", href: "https://www.ganjingworld.com/zh-TW/@乾淨校園", external: true },
       { label: "乾淨樂學", href: "https://www.ganjingworld.com/zh-TW/gjwplus/kids/ganjingkids", external: true },
       { label: "乾淨世界", href: "https://www.ganjingworld.com/zh-TW", external: true },
     ],
