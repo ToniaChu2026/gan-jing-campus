@@ -465,8 +465,8 @@ export default function HomeZh() {
               </div>
               {/* Testimonial 3 */}
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-sky/20 flex items-center justify-center">
-                  <span className="font-display font-bold text-sky text-lg">B</span>
+                <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-sunshine/20 flex items-center justify-center">
+                  <span className="font-display font-bold text-sunshine text-lg">B</span>
                 </div>
                 <div>
                   <p className="text-white/90 mb-3 leading-relaxed font-['Noto_Sans_SC']">

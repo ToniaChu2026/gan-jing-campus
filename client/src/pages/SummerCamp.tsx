@@ -70,6 +70,49 @@ export default function SummerCamp() {
       <AboutSection />
       <AgeGroups />
       <WeeklyThemes />
+
+      {/* Featured Video Section */}
+      <section className="py-20 md:py-28 bg-gradient-to-b from-cream to-white">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="inline-block bg-coral/15 text-coral font-semibold text-sm px-4 py-1.5 rounded-full mb-4">
+              Featured Video
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-5">
+              See Summer Camp in <span className="text-sky">Action</span>
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Watch how Gan Jing Summer Camp brings kindness, creativity, and safe learning to children around the world.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-foreground/5">
+              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  src="https://www.ganjingworld.com/embed/1hk87qq3c2o3nJATTgkFUkgDq14h1c"
+                  title="Gan Jing Summer Camp — Featured Video"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <p className="text-center text-muted-foreground text-sm mt-4">
+              Watch on{" "}
+              <a
+                href="https://www.ganjingworld.com/video/1hk87qq3c2o3nJATTgkFUkgDq14h1c"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky hover:text-sky/80 font-medium"
+              >
+                Gan Jing World
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
       <WhyGanJing />
       <TestimonialsSection />
       <CTASection />
