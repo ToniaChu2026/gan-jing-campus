@@ -17,7 +17,6 @@ import {
   BookOpen,
   MapPin,
 } from "lucide-react";
-import { Link } from "wouter";
 
 const KINDNESS_HERO =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/kindness-hero-NNsaYWbcqqnPPW3ascmMvs.webp";
@@ -319,8 +318,10 @@ export default function KindnessZh() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <Link
-                href="/summer-camp"
+              <a
+                href="https://www.ganjingworld.com/zh-TW/ganjingcampus"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-white rounded-2xl p-8 md:p-12 shadow-2xl hover:shadow-3xl transition-shadow no-underline"
               >
                 <div className="inline-flex items-center gap-2 bg-sunshine/20 text-sunshine-dark font-semibold text-sm px-4 py-1.5 rounded-full mb-6 font-['Noto_Sans_SC']">
@@ -333,11 +334,11 @@ export default function KindnessZh() {
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8 font-['Noto_Sans_SC']">
                   在充滿樂趣和創意的活動中，繼續您的善良之旅。我們的夏令營提供安全、引人入勝的內容，培養品格與創造力。
                 </p>
-                <div className="inline-flex items-center gap-2 justify-center rounded-full bg-teal px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-teal/90 transition-all no-underline font-['Noto_Sans_SC']">
+                <span className="inline-flex items-center gap-2 justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all font-['Noto_Sans_SC']">
                   探索夏令營
                   <ArrowRight className="w-5 h-5" />
-                </div>
-              </Link>
+                </span>
+              </a>
             </motion.div>
           </AnimatedSection>
         </div>

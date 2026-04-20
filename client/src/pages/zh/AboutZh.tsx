@@ -305,7 +305,7 @@ export default function AboutZh() {
             <div className="grid md:grid-cols-2 gap-8">
               <AnimatedSection delay={0.1}>
                 <div className="bg-red-50/50 rounded-2xl p-6 border border-red-100">
-                  <h3 className="font-display text-lg font-bold text-red-800 mb-4 font-['Noto_Sans_SC']">
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-red-800 mb-4 font-['Noto_Sans_SC']">
                     其他平台
                   </h3>
                   <ul className="space-y-3">
@@ -316,7 +316,7 @@ export default function AboutZh() {
                       "無教師專用工具",
                       "成癮性設計模式",
                     ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-red-700/80 font-['Noto_Sans_SC']">
+                      <li key={item} className="flex items-start gap-2 text-base md:text-lg text-red-700/80 font-['Noto_Sans_SC']">
                         <span className="text-red-400 mt-0.5">✕</span>
                         {item}
                       </li>
@@ -327,7 +327,7 @@ export default function AboutZh() {
 
               <AnimatedSection delay={0.2}>
                 <div className="bg-meadow/5 rounded-2xl p-6 border border-meadow/20">
-                  <h3 className="font-display text-lg font-bold text-meadow mb-4 font-['Noto_Sans_SC']">
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-meadow mb-4 font-['Noto_Sans_SC']">
                     乾淨校園
                   </h3>
                   <ul className="space-y-3">
@@ -338,7 +338,7 @@ export default function AboutZh() {
                       "免費教師高級頻道",
                       "為全人發展而設計",
                     ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-meadow/90 font-['Noto_Sans_SC']">
+                      <li key={item} className="flex items-start gap-2 text-base md:text-lg text-meadow/90 font-['Noto_Sans_SC']">
                         <CheckCircle className="w-4 h-4 text-meadow shrink-0 mt-0.5" />
                         {item}
                       </li>
@@ -371,7 +371,7 @@ export default function AboutZh() {
                 <div className="flex gap-5 mb-8 last:mb-0">
                   <div className="flex flex-col items-center">
                     <div className="w-12 h-12 rounded-full bg-sky/15 flex items-center justify-center shrink-0">
-                      <span className="font-display text-xs font-bold text-sky font-['Noto_Sans_SC']">
+                      <span className="font-display text-xs md:text-sm font-bold text-sky font-['Noto_Sans_SC']">
                         {t.year}
                       </span>
                     </div>
@@ -380,7 +380,7 @@ export default function AboutZh() {
                     )}
                   </div>
                   <div className="pt-2.5 pb-4">
-                    <p className="text-foreground font-medium leading-relaxed font-['Noto_Sans_SC']">
+                    <p className="text-foreground text-base md:text-lg font-medium leading-relaxed font-['Noto_Sans_SC']">
                       {t.event}
                     </p>
                   </div>

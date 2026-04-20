@@ -51,7 +51,7 @@ const VIDEO_EMBED_URL =
   "https://www.ganjingworld.com/embed/1hkfg1b8ls819ca1gaHm04ldx1kf1c";
 const VIDEO_WATCH_URL =
   "https://www.ganjingworld.com/zh-TW/video/1hkfg1b8ls819ca1gaHm04ldx1kf1c";
-const CAMPUS_URL = "https://www.ganjingworld.com/zh-TW/@乾淨校園";
+const CAMPUS_URL = "https://www.ganjingworld.com/zh-TW/ganjingcampus";
 
 /* ─── Shared AnimatedCard ─── */
 function AnimatedCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -357,7 +357,7 @@ function WeekCard({ week, index }: { week: (typeof weeks)[0]; index: number }) {
             {week.title}
           </h3>
         </div>
-        <p className="text-muted-foreground leading-relaxed mb-3 font-['Noto_Sans_SC']">{week.desc}</p>
+        <p className="text-muted-foreground text-base leading-relaxed mb-3 font-['Noto_Sans_SC']">{week.desc}</p>
         <div className="flex flex-wrap gap-2">
           {week.tags.map((tag) => (
             <span
@@ -618,7 +618,7 @@ export default function SummerCampZh() {
                     <f.icon className="w-7 h-7" />
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground mb-3 font-['Noto_Sans_SC']">{f.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed font-['Noto_Sans_SC']">{f.desc}</p>
+                  <p className="text-muted-foreground text-base leading-relaxed font-['Noto_Sans_SC']">{f.desc}</p>
                 </div>
               </AnimatedCard>
             ))}
@@ -646,8 +646,8 @@ export default function SummerCampZh() {
                         <item.icon className="w-5 h-5 text-sky" />
                       </div>
                       <div>
-                        <h4 className="font-display font-bold text-foreground mb-1 font-['Noto_Sans_SC']">{item.title}</h4>
-                        <p className="text-muted-foreground text-sm leading-relaxed font-['Noto_Sans_SC']">{item.desc}</p>
+                        <h4 className="font-display font-bold text-lg text-foreground mb-1 font-['Noto_Sans_SC']">{item.title}</h4>
+                        <p className="text-muted-foreground text-base leading-relaxed font-['Noto_Sans_SC']">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -714,7 +714,7 @@ export default function SummerCampZh() {
                   <span className="text-muted-foreground font-normal text-lg">({group.age})</span>
                 </h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-8 font-['Noto_Sans_SC']">{group.description}</p>
+              <p className="text-muted-foreground text-base leading-relaxed mb-8 font-['Noto_Sans_SC']">{group.description}</p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {group.shows.map((show) => (
                   <div key={show.name} className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
@@ -724,7 +724,7 @@ export default function SummerCampZh() {
                       </div>
                       <div>
                         <h4 className="font-display font-bold text-foreground mb-1">{show.name}</h4>
-                        <p className="text-muted-foreground text-sm font-['Noto_Sans_SC']">{show.desc}</p>
+                        <p className="text-muted-foreground text-base font-['Noto_Sans_SC']">{show.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -854,7 +854,7 @@ export default function SummerCampZh() {
                     <span className="font-display text-2xl font-extrabold text-sky">{f.num}</span>
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground mb-2 font-['Noto_Sans_SC']">{f.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed font-['Noto_Sans_SC']">{f.desc}</p>
+                  <p className="text-muted-foreground text-base leading-relaxed font-['Noto_Sans_SC']">{f.desc}</p>
                 </div>
               </AnimatedCard>
             ))}
@@ -882,7 +882,7 @@ export default function SummerCampZh() {
                     <b.icon className="w-6 h-6 text-sunshine-dark" />
                   </div>
                   <h3 className="font-display text-lg font-bold text-foreground mb-2 font-['Noto_Sans_SC']">{b.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed font-['Noto_Sans_SC']">{b.desc}</p>
+                  <p className="text-muted-foreground text-base leading-relaxed font-['Noto_Sans_SC']">{b.desc}</p>
                 </div>
               </AnimatedCard>
             ))}
@@ -945,7 +945,7 @@ export default function SummerCampZh() {
                 className="bg-white rounded-2xl p-6 md:p-8 shadow-md"
               >
                 <StarRating count={t.stars} />
-                <p className="text-foreground/80 leading-relaxed mt-4 mb-6 text-sm md:text-base font-['Noto_Sans_SC']">
+                <p className="text-foreground/80 leading-relaxed mt-4 mb-6 text-base md:text-lg font-['Noto_Sans_SC']">
                   「{t.text}」
                 </p>
                 <div className="flex items-center gap-3">
@@ -953,8 +953,8 @@ export default function SummerCampZh() {
                     <span className="font-display font-bold text-sunshine-dark text-sm">{t.author[0]}</span>
                   </div>
                   <div>
-                    <div className="font-display font-bold text-foreground text-sm">{t.author}</div>
-                    <div className="text-xs text-muted-foreground font-['Noto_Sans_SC']">{t.location}</div>
+                    <div className="font-display font-bold text-foreground text-base">{t.author}</div>
+                    <div className="text-sm text-muted-foreground font-['Noto_Sans_SC']">{t.location}</div>
                   </div>
                 </div>
               </motion.div>
@@ -1044,7 +1044,7 @@ export default function SummerCampZh() {
                   className="flex items-center gap-2.5"
                 >
                   <CheckCircle className="w-5 h-5 text-sunshine shrink-0" />
-                  <span className="text-white/90 text-sm font-['Noto_Sans_SC']">{b}</span>
+                  <span className="text-white/90 text-base font-['Noto_Sans_SC']">{b}</span>
                 </motion.div>
               ))}
             </div>

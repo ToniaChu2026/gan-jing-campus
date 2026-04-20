@@ -52,3 +52,12 @@
 - [x] Update Chinese footer 善良很酷獎項 link to: https://www.ganjingworld.com/zh-TW/article/1htqmv7hg1f1t5M4U36HHcFRz1nu1c
 - [x] Update Chinese footer 成功案例 link to: https://www.ganjingworld.com/zh-TW/article/1htqmsvbhbp1k8sFHxDWXZRZ61jv1c
 - [x] Research Chinese blog articles and incorporate content into Chinese pages
+- [x] Fix KindnessZh: white button with no text in 加入夏令營 section
+- [x] Fix KindnessZh: 閱讀報導 links already point to Chinese GJW articles
+- [x] Fix AboutZh: increase font size in 我們的不同之處 comparison section
+- [x] Fix AboutZh: increase font size in 共同成長 section
+- [x] Fix TeachersZh: change all buttons to Chinese blog links
+- [x] Fix TeachersZh: increase font size in 聽聽教師怎麼說 section
+- [x] Fix all pages: 加入夏令營 link to https://www.ganjingworld.com/zh-TW/ganjingcampus
+- [x] Fix SummerCampZh: increase main content font sizes
+- [x] Fix HomeZh: change 精選學習 to 精選學習內容

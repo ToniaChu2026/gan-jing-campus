@@ -166,7 +166,7 @@ export default function TeachersZh() {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="https://www.ganjingworld.com/zh-TW/news/1i3csp1t9651d6ebrqpymLf3u1j11c"
+                  href="https://www.ganjingworld.com/zh-TW/article/1i314rcntbn2YrFKWDHav9ujW1in1c"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 no-underline font-['Noto_Sans_SC']"
@@ -175,7 +175,7 @@ export default function TeachersZh() {
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://www.ganjingworld.com/zh-TW/news/1i13tdngs6fsEZDUDBoyG2Fto16n1c"
+                  href="https://www.ganjingworld.com/zh-TW/article/1i3fdp55sv85HOqeJT2LgXl4y1uh1c"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border-2 border-white/30 px-8 py-4 text-lg font-bold text-white hover:bg-white/25 transition-all no-underline font-['Noto_Sans_SC']"
@@ -455,8 +455,8 @@ export default function TeachersZh() {
                       <span className="font-display font-bold text-sm">{t.initials}</span>
                     </div>
                     <div>
-                      <div className="font-display font-bold text-foreground text-sm font-['Noto_Sans_SC']">{t.name}</div>
-                      <div className="text-xs text-muted-foreground flex items-center gap-1 font-['Noto_Sans_SC']">
+                      <div className="font-display font-bold text-foreground text-base font-['Noto_Sans_SC']">{t.name}</div>
+                      <div className="text-sm text-muted-foreground flex items-center gap-1 font-['Noto_Sans_SC']">
                         <Globe className="w-3 h-3" /> {t.location}
                       </div>
                     </div>
@@ -466,8 +466,8 @@ export default function TeachersZh() {
                       <Star key={j} className="w-4 h-4 text-sunshine fill-sunshine" />
                     ))}
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed italic flex-1 font-['Noto_Sans_SC']">
-                    “{t.quote}”
+                  <p className="text-muted-foreground text-base leading-relaxed italic flex-1 font-['Noto_Sans_SC']">
+                    "{t.quote}"
                   </p>
                 </div>
               </AnimatedSection>
@@ -492,7 +492,7 @@ export default function TeachersZh() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://www.ganjingworld.com/zh-TW/news/1i3csp1t9651d6ebrqpymLf3u1j11c"
+                href="https://www.ganjingworld.com/zh-TW/article/1i314rcntbn2YrFKWDHav9ujW1in1c"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 justify-center rounded-full bg-white px-8 py-4 text-lg font-bold text-sunshine-dark shadow-xl hover:shadow-2xl transition-all hover:scale-105 no-underline font-['Noto_Sans_SC']"
@@ -501,7 +501,7 @@ export default function TeachersZh() {
                 申請免費頻道
               </a>
               <a
-                href="https://www.ganjingworld.com/zh-TW/news/1i13tdngs6fsEZDUDBoyG2Fto16n1c"
+                href="https://www.ganjingworld.com/zh-TW/article/1i3fdp55sv85HOqeJT2LgXl4y1uh1c"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 justify-center rounded-full bg-white/20 border-2 border-white/50 px-8 py-4 text-lg font-bold text-white hover:bg-white/30 transition-all no-underline font-['Noto_Sans_SC']"

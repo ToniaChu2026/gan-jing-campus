@@ -51,7 +51,7 @@ const pillars = [
   },
   {
     icon: BookOpen,
-    title: "精選學習",
+    title: "精選學習內容",
     desc: "由教育工作者精心挑選的100多部教育影視作品。為4-16歲兒童組織的適齡內容。",
     color: "bg-sunshine/15 text-sunshine-dark",
   },
