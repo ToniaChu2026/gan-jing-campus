@@ -61,3 +61,4 @@
 - [x] Fix all pages: 加入夏令營 link to https://www.ganjingworld.com/zh-TW/ganjingcampus
 - [x] Fix SummerCampZh: increase main content font sizes
 - [x] Fix HomeZh: change 精選學習 to 精選學習內容
+- [x] Fix HomeZh: 受到全球信賴 section - 2 icons showing as question marks (replaced broken CDN images with text initials)

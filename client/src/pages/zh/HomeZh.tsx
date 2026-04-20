@@ -437,12 +437,8 @@ export default function HomeZh() {
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 space-y-8">
               {/* Testimonial 1 */}
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
-                  <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/adel-mansilla-avatar-o3hY99q33b66472pY8855u.webp"
-                    alt="Adel Mansilla 博士"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-coral/20 flex items-center justify-center">
+                  <span className="font-display font-bold text-coral text-lg">A</span>
                 </div>
                 <div>
                   <p className="text-white/90 mb-3 leading-relaxed font-['Noto_Sans_SC']">
@@ -469,12 +465,8 @@ export default function HomeZh() {
               </div>
               {/* Testimonial 3 */}
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
-                  <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/boris-wittgen-avatar-X8qY67oY4o4411qY89895Y.webp"
-                    alt="Boris Wittgen"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-sky/20 flex items-center justify-center">
+                  <span className="font-display font-bold text-sky text-lg">B</span>
                 </div>
                 <div>
                   <p className="text-white/90 mb-3 leading-relaxed font-['Noto_Sans_SC']">
