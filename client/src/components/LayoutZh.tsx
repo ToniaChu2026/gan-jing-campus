@@ -195,10 +195,10 @@ const footerLinks = [
   {
     title: "資源",
     links: [
-      { label: "教師手冊", href: "https://www.ganjingworld.com/news/1i13tdngs6fsEZDUDBoyG2Fto16n1c", external: true },
-      { label: "申請高級頻道", href: "https://www.ganjingworld.com/news/1i3csp1t9651d6ebrqpymLf3u1j11c", external: true },
-      { label: "善良很酷獎項", href: "https://www.ganjingworld.com/news/1htqniht6hp3u3PVR5BpnRHqB1ic1c", external: true },
-      { label: "成功案例", href: "https://www.ganjingworld.com/news/1htqng1kqt45DWMGkHwsYvRcf1gk1c", external: true },
+      { label: "教師手冊", href: "https://www.ganjingworld.com/zh-TW/article/1i3fdp55sv85HOqeJT2LgXl4y1uh1c", external: true },
+      { label: "申請高級頻道", href: "https://www.ganjingworld.com/zh-TW/article/1i314rcntbn2YrFKWDHav9ujW1in1c", external: true },
+      { label: "善良很酷獎項", href: "https://www.ganjingworld.com/zh-TW/article/1htqmv7hg1f1t5M4U36HHcFRz1nu1c", external: true },
+      { label: "成功案例", href: "https://www.ganjingworld.com/zh-TW/article/1htqmsvbhbp1k8sFHxDWXZRZ61jv1c", external: true },
     ],
   },
 ];

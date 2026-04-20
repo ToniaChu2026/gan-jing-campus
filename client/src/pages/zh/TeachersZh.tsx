@@ -25,6 +25,9 @@ import {
 const TEACHERS_VIDEO_EMBED_URL =
   "https://www.ganjingworld.com/embed/1iafn44i1v312BPq0nEUkwTUU1g51c";
 
+const TEACHERS_VIDEO_2_EMBED_URL =
+  "https://www.ganjingworld.com/embed/1ielb916s392SZoegKoN89LsN1oh1c";
+
 const TEACHERS_HERO =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/teachers-hero-NfGYecHrTG2AyDfm2uGxh3.webp";
 
@@ -289,6 +292,36 @@ export default function TeachersZh() {
               </p>
             </div>
           </AnimatedSection>
+
+          {/* Second video */}
+          <AnimatedSection delay={0.2}>
+            <div className="max-w-4xl mx-auto mt-12">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-foreground/5">
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    src={TEACHERS_VIDEO_2_EMBED_URL}
+                    title="乾淨校園教師計劃 — 教育工作者的故事"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p className="text-center text-muted-foreground text-sm mt-4 font-['Noto_Sans_SC']">
+                在{" "}
+                <a
+                  href="https://www.ganjingworld.com/zh-TW/video/1ielb916s392SZoegKoN89LsN1oh1c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sky hover:underline font-medium"
+                >
+                  乾淨世界
+                </a>
+                上觀看
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -330,6 +363,51 @@ export default function TeachersZh() {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== FEATURED STORY: 陳靜容 ===== */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="container">
+          <AnimatedSection>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="inline-block bg-meadow/15 text-meadow font-semibold text-sm px-4 py-1.5 rounded-full mb-4 font-['Noto_Sans_SC']">
+                <Star className="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" />
+                師鐸獎教師故事
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-5 font-['Noto_Sans_SC']">
+                用乾淨校園<span className="text-meadow">改變課堂</span>
+              </h2>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-meadow/5 to-sky/5 rounded-3xl p-8 md:p-12 border border-border/60">
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-20 h-20 shrink-0 rounded-2xl bg-meadow/15 flex items-center justify-center">
+                  <span className="font-display text-2xl font-extrabold text-meadow">陳</span>
+                </div>
+                <div>
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <h3 className="font-display text-xl font-bold text-foreground font-['Noto_Sans_SC']">陳靜容老師</h3>
+                    <span className="bg-sunshine/15 text-sunshine-dark text-xs font-bold px-3 py-1 rounded-full font-['Noto_Sans_SC']">2025 師鐸獎得主</span>
+                    <span className="text-muted-foreground text-sm font-['Noto_Sans_SC']">台灣屏東 · 潮昇國小</span>
+                  </div>
+                  <p className="text-foreground leading-relaxed mb-4 font-['Noto_Sans_SC']">
+                    從事教學27年的陳靜容老師，使用乾淨校園平台帶領學生參與「善良很酷」等活動，全班善行影片登上紐約時代廣場。她的學生不僅在品德教育上表現卓越，學力檢測也達到全學年最高。2025年，她獲得台灣教育界最高榮譽「師鐸獎」，由總統賴清德親自頒獎。
+                  </p>
+                  <blockquote className="border-l-4 border-meadow pl-4 mb-4">
+                    <p className="text-muted-foreground italic leading-relaxed font-['Noto_Sans_SC']">
+                      「透過一個數位平台，是把孩子的視野是打開的。我在屏東做，我是沒有侷限性，我還是一樣跟美國波士頓的資優班的小朋友，一起在做這件事情。善良很酷，善念點亮台灣，小孩子非常得喜歡。」
+                    </p>
+                  </blockquote>
+                  <p className="text-muted-foreground text-sm leading-relaxed font-['Noto_Sans_SC']">
+                    她的故事證明：乾淨校園不僅是一個安全的數位平台，更是連結全球教育工作者、激發學生善良本性的橋樑。來自美國、加拿大、日本、韓國的家長和教師紛紛留言，讚嘆台灣孩子的善良與勇氣。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

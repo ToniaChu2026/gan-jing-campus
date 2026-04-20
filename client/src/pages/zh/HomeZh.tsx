@@ -411,8 +411,8 @@ export default function HomeZh() {
                   label: "全球教師",
                 },
                 {
-                  value: "1000+",
-                  label: "學校",
+                  value: "50+",
+                  label: "國家參與善良很酷",
                 },
                 {
                   value: "6",
@@ -452,7 +452,22 @@ export default function HomeZh() {
                   <div className="text-xs text-white/70 font-['Noto_Sans_SC']">波士頓</div>
                 </div>
               </div>
-              {/* Testimonial 2 */}
+              {/* Testimonial 2 - 陳靜容 */}
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-meadow/20 flex items-center justify-center">
+                  <span className="font-display font-bold text-meadow text-lg">陳</span>
+                </div>
+                <div>
+                  <p className="text-white/90 mb-3 leading-relaxed font-['Noto_Sans_SC']">
+                    「善良很酷，善念點亮台灣，小孩子非常得喜歡。他覺得我小小的年紀，我願意去幫助別人，這也是一個善舉。」
+                  </p>
+                  <div className="font-bold text-sm font-['Noto_Sans_SC']">陳靜容老師</div>
+                  <div className="text-xs text-white/70 font-['Noto_Sans_SC']">
+                    2025師鐸獎得主 · 台灣屏東
+                  </div>
+                </div>
+              </div>
+              {/* Testimonial 3 */}
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
                   <img

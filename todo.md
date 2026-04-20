@@ -46,3 +46,9 @@
 - [x] Update Chinese homepage video to https://www.ganjingworld.com/zh-TW/video/1gdir87tbl5mrCAq7hrglVjAd1v21c
 - [x] Redesign Chinese Summer Camp page to match English version layout
 - [x] Add video to Chinese Summer Camp page: https://www.ganjingworld.com/zh-TW/video/1hkfg1b8ls819ca1gaHm04ldx1kf1c
+- [x] Add second video to Chinese Teachers page: https://www.ganjingworld.com/zh-TW/video/1ielb916s392SZoegKoN89LsN1oh1c
+- [x] Update Chinese footer 教師手冊 link to: https://www.ganjingworld.com/zh-TW/article/1i3fdp55sv85HOqeJT2LgXl4y1uh1c
+- [x] Update Chinese footer 申請高級頻道 link to: https://www.ganjingworld.com/zh-TW/article/1i314rcntbn2YrFKWDHav9ujW1in1c
+- [x] Update Chinese footer 善良很酷獎項 link to: https://www.ganjingworld.com/zh-TW/article/1htqmv7hg1f1t5M4U36HHcFRz1nu1c
+- [x] Update Chinese footer 成功案例 link to: https://www.ganjingworld.com/zh-TW/article/1htqmsvbhbp1k8sFHxDWXZRZ61jv1c
+- [x] Research Chinese blog articles and incorporate content into Chinese pages
