@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 
 const TEACHERS_VIDEO_EMBED_URL =
-  "https://www.ganjingworld.com/embed/1iel47htmij21Oq3GTTzi6VqO1hv1c";
+  "https://www.ganjingworld.com/embed/1iafn44i1v312BPq0nEUkwTUU1g51c";
 
 const TEACHERS_HERO =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/teachers-hero-NfGYecHrTG2AyDfm2uGxh3.webp";
@@ -278,7 +278,7 @@ export default function TeachersZh() {
               <p className="text-center text-muted-foreground text-sm mt-4 font-['Noto_Sans_SC']">
                 在{" "}
                 <a
-                  href="https://www.ganjingworld.com/zh-TW/video/1iel47htmij21Oq3GTTzi6VqO1hv1c"
+                  href="https://www.ganjingworld.com/zh-TW/video/1iafn44i1v312BPq0nEUkwTUU1g51c"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sky hover:underline font-medium"
