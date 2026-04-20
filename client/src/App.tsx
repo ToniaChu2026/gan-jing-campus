@@ -10,20 +10,31 @@ import SummerCamp from "./pages/SummerCamp";
 import Teachers from "./pages/Teachers";
 import Kindness from "./pages/Kindness";
 import About from "./pages/About";
+import CampusGuide from "./pages/CampusGuide";
+import CampusGuideThankYou from "./pages/CampusGuideThankYou";
 
 function Router() {
   return (
-    <Layout>
-      <Switch>
-        <Route path={"/"} component={Home} />
-        <Route path={"/summer-camp"} component={SummerCamp} />
-        <Route path={"/teachers"} component={Teachers} />
-        <Route path={"/kindness"} component={Kindness} />
-        <Route path={"/about"} component={About} />
-        <Route path={"/404"} component={NotFound} />
-        <Route component={NotFound} />
-      </Switch>
-    </Layout>
+    <Switch>
+      {/* Campus Guide pages — standalone layout, NOT in main nav */}
+      <Route path={"/campus-guide"} component={CampusGuide} />
+      <Route path={"/campus-guide/thank-you"} component={CampusGuideThankYou} />
+
+      {/* Main site pages — wrapped in shared Layout with nav & footer */}
+      <Route>
+        <Layout>
+          <Switch>
+            <Route path={"/"} component={Home} />
+            <Route path={"/summer-camp"} component={SummerCamp} />
+            <Route path={"/teachers"} component={Teachers} />
+            <Route path={"/kindness"} component={Kindness} />
+            <Route path={"/about"} component={About} />
+            <Route path={"/404"} component={NotFound} />
+            <Route component={NotFound} />
+          </Switch>
+        </Layout>
+      </Route>
+    </Switch>
   );
 }
 
