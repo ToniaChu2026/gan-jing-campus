@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, ArrowRight, Shield, BookOpen, Users, Clock, Sparkles } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import { trpc } from "@/lib/trpc";
 
 const LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/GJW-Campus_7c6022c9.png";
 const HERO_FAMILY = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/hero-family-ibVVtpyZu474fPsuBdUFZz.webp";
@@ -83,15 +84,23 @@ export default function CampusGuide() {
     []
   );
 
+  const leadMutation = trpc.lead.submit.useMutation({
+    onSuccess: () => {
+      navigate("/campus-guide/thank-you");
+    },
+    onError: (error) => {
+      console.error("[Lead] Submission error:", error);
+      setIsSubmitting(false);
+      // Still navigate to thank-you on error — the guide URL is on that page
+      navigate("/campus-guide/thank-you");
+    },
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     setIsSubmitting(true);
-    // Since this is a static site, navigate to thank-you page
-    // In production, integrate with a form service (e.g., Formspree, Mailchimp)
-    setTimeout(() => {
-      navigate("/campus-guide/thank-you");
-    }, 800);
+    leadMutation.mutate({ email, firstName: name || undefined });
   };
 
   return (

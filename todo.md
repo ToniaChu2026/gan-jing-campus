@@ -1,0 +1,29 @@
+# Project TODO
+
+- [x] Basic multi-page site with React + TypeScript + Tailwind + Vite
+- [x] Homepage with hero, mission pillars, featured video, programs grid, stats, testimonial, CTA
+- [x] Summer Camp page — 8-week program, age groups, weekly themes, safety model, testimonials
+- [x] For Teachers page — premium channel, embedded video, CDE certification, testimonials
+- [x] Kindness Stories page — real classroom stories, global recognition, parent voices
+- [x] About page — values, triple-layered safety, comparison chart, journey timeline
+- [x] Shared Layout with navbar (5 nav links) and footer (Blue Zodiac #133960)
+- [x] Official GJW-Campus logo integrated throughout
+- [x] Footer background: Blue Zodiac #133960
+- [x] All year references: Summer 2026
+- [x] Video embedded on Homepage
+- [x] Video embedded on Teachers page
+- [x] Comprehensive SEO/GEO: meta tags, Open Graph, Twitter Cards, JSON-LD, robots.txt, sitemap.xml
+- [x] GTM tag (GTM-K4G9HWZP) installed in index.html
+- [x] Coworker's GitHub changes merged
+- [x] Full-stack upgrade (tRPC + Express + MySQL/Drizzle)
+- [x] Campus Guide hidden landing page (/campus-guide) — lead capture form
+- [x] Campus Guide Thank You page (/campus-guide/thank-you)
+- [x] Brevo API integration (server/brevo.ts) — add contacts + send transactional email
+- [x] lead.submit tRPC endpoint in server/routers.ts
+- [x] CampusGuide.tsx wired to trpc.lead.submit.useMutation
+- [x] Brevo API key validated and stored as secret
+- [x] Fix TypeScript version mismatch errors (13 TS errors resolved)
+- [x] Write vitest tests for lead.submit endpoint (6 tests passing)
+- [ ] Save checkpoint after Brevo integration
+- [ ] Push changes to GitHub (ToniaChu2026/gan-jing-campus)
+- [ ] Verify form end-to-end in browser

@@ -12,8 +12,8 @@ import Kindness from "./pages/Kindness";
 import About from "./pages/About";
 import CampusGuide from "./pages/CampusGuide";
 import CampusGuideThankYou from "./pages/CampusGuideThankYou";
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       {/* Campus Guide pages — standalone layout, NOT in main nav */}
