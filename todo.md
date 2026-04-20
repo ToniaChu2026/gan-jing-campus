@@ -43,3 +43,6 @@
 - [x] Create Chinese Layout with translated footer and nav
 - [x] Update Chinese "訪問校園" link to https://www.ganjingworld.com/zh-TW/@乾淨校園
 - [x] Update Chinese Teachers page video to https://www.ganjingworld.com/zh-TW/video/1iafn44i1v312BPq0nEUkwTUU1g51c
+- [x] Update Chinese homepage video to https://www.ganjingworld.com/zh-TW/video/1gdir87tbl5mrCAq7hrglVjAd1v21c
+- [x] Redesign Chinese Summer Camp page to match English version layout
+- [x] Add video to Chinese Summer Camp page: https://www.ganjingworld.com/zh-TW/video/1hkfg1b8ls819ca1gaHm04ldx1kf1c

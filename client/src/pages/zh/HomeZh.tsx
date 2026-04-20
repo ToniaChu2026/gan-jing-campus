@@ -34,7 +34,7 @@ const KINDNESS_IMG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/kindness-hero-NNsaYWbcqqnPPW3ascmMvs.webp";
 
 const VIDEO_EMBED_URL =
-  "https://www.ganjingworld.com/zh-TW/embed/1gee46s65uhXU4bl7LFxW8qzR16v1c";
+  "https://www.ganjingworld.com/embed/1gdir87tbl5mrCAq7hrglVjAd1v21c";
 
 const pillars = [
   {
