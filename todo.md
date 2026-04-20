@@ -31,3 +31,13 @@
 - [x] Update Campus Guide Thank You page footer to match main site footer
 - [x] Change URL from /campus-guide to /free-guide (both pages)
 - [x] Homepage video kept as-is (ads controlled by GJW platform, not iframe params)
+- [x] Research original Chinese content from Gan Jing World platform
+- [x] Set up Chinese typography (Noto Sans SC) and /zh/ routing structure
+- [x] Add language switcher (EN/中文) to navbar
+- [x] Create Chinese Home page (/zh/)
+- [x] Create Chinese Summer Camp page (/zh/summer-camp)
+- [x] Create Chinese Teachers page (/zh/teachers)
+- [x] Create Chinese Kindness Stories page (/zh/kindness)
+- [x] Create Chinese About page (/zh/about)
+- [x] Add hreflang SEO meta tags for all pages
+- [x] Create Chinese Layout with translated footer and nav
