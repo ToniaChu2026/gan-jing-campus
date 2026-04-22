@@ -64,3 +64,10 @@
 - [x] Fix HomeZh: 受到全球信賴 section - 2 icons showing as question marks (replaced broken CDN images with text initials)
 - [x] Fix HomeZh: B icon for Boris Wittgen not visible (changed from sky/blue to sunshine/yellow for contrast)
 - [x] Add video to English Summer Camp page: https://www.ganjingworld.com/video/1hk87qq3c2o3nJATTgkFUkgDq14h1c
+- [x] Create lightweight /api/submit endpoint for Cloudflare Pages Functions
+- [x] Update CampusGuide.tsx form to use fetch('/api/submit') instead of tRPC
+- [x] Create wrangler.toml configuration for Cloudflare Pages
+- [x] Write vitest tests for fetch-based form submission
+- [ ] Test form submission on Cloudflare dev environment
+- [ ] Deploy and verify lead capture form on production domain ganjingcampus.org
+- [ ] Create Chinese version of Free Guide page (/zh/free-guide) - optional

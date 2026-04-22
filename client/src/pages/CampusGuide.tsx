@@ -14,7 +14,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, ArrowRight, Shield, BookOpen, Users, Clock, Sparkles, Heart } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
-import { trpc } from "@/lib/trpc";
 
 const LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/GJW-Campus_7c6022c9.png";
 const HERO_FAMILY = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/hero-family-ibVVtpyZu474fPsuBdUFZz.webp";
@@ -84,23 +83,38 @@ export default function CampusGuide() {
     []
   );
 
-  const leadMutation = trpc.lead.submit.useMutation({
-    onSuccess: () => {
-      navigate("/free-guide/thank-you");
-    },
-    onError: (error) => {
-      console.error("[Lead] Submission error:", error);
-      setIsSubmitting(false);
-      // Still navigate to thank-you on error — the guide URL is on that page
-      navigate("/free-guide/thank-you");
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     setIsSubmitting(true);
-    leadMutation.mutate({ email, firstName: name || undefined });
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          firstName: name || undefined,
+        }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        console.error("[Lead] Submission error:", error);
+      }
+
+      // Navigate to thank-you page regardless of success/failure
+      // The guide URL is displayed on the thank-you page
+      navigate("/free-guide/thank-you");
+    } catch (error) {
+      console.error("[Lead] Network error:", error);
+      // Still navigate to thank-you on error
+      navigate("/free-guide/thank-you");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

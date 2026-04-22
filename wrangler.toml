@@ -1,0 +1,37 @@
+name = "gan-jing-summer-camp"
+type = "javascript"
+main = "dist/index.js"
+compatibility_date = "2024-12-16"
+
+# Cloudflare Pages Functions configuration
+[env.production]
+name = "gan-jing-summer-camp-prod"
+
+# Environment variables for production
+[env.production.vars]
+NODE_ENV = "production"
+
+# Secrets (sensitive data) - these should be set via Cloudflare dashboard
+# BREVO_API_KEY = "set via Cloudflare dashboard"
+# BREVO_LIST_ID = "set via Cloudflare dashboard"
+# DATABASE_URL = "set via Cloudflare dashboard"
+# JWT_SECRET = "set via Cloudflare dashboard"
+# etc.
+
+# Development environment
+[env.development]
+name = "gan-jing-summer-camp-dev"
+
+[env.development.vars]
+NODE_ENV = "development"
+
+# Build configuration
+[build]
+command = "pnpm build"
+cwd = "./"
+root = "."
+
+# Routes configuration for Pages Functions
+[[routes]]
+pattern = "example.com/api/*"
+zone_name = "example.com"
