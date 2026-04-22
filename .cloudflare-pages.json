@@ -1,0 +1,11 @@
+{
+  "build": {
+    "command": "pnpm build && cp -r functions dist/",
+    "cwd": "/",
+    "root_dir": "dist"
+  },
+  "env": {
+    "BREVO_API_KEY": "",
+    "BREVO_LIST_ID": ""
+  }
+}
