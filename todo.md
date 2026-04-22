@@ -68,6 +68,7 @@
 - [x] Update CampusGuide.tsx form to use fetch('/api/submit') instead of tRPC
 - [x] Create wrangler.toml configuration for Cloudflare Pages
 - [x] Write vitest tests for fetch-based form submission
-- [ ] Test form submission on Cloudflare dev environment
-- [ ] Deploy and verify lead capture form on production domain ganjingcampus.org
+- [x] Migrate /api/submit to Express server endpoint (removed Cloudflare Pages Functions)
+- [x] Test form submission on dev environment - working correctly
+- [ ] Deploy to production domain ganjingcampus.org and verify
 - [ ] Create Chinese version of Free Guide page (/zh/free-guide) - optional
