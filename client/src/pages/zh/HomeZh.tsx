@@ -305,8 +305,83 @@ export default function HomeZh() {
         </div>
       </section>
 
-      {/* ===== FEATURED PROGRAMS ===== */}
+      {/* ===== VIDEO & CATEGORIES ===== */}
       <section className="py-20 md:py-28 bg-muted/40">
+        <div className="container grid lg:grid-cols-2 gap-12 items-center">
+          <AnimatedCard>
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                src={VIDEO_EMBED_URL}
+                title="Gan Jing Campus Introduction"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/10 rounded-2xl"></div>
+            </div>
+          </AnimatedCard>
+
+          <AnimatedCard delay={0.2}>
+            <h2 className="font-display text-2xl md:text-3xl font-extrabold text-foreground mb-4 font-['Noto_Sans_SC']">
+              探索無盡的學習機會
+            </h2>
+            <p className="text-muted-foreground mb-6 font-['Noto_Sans_SC']">
+              從語言學習到藝術，我們的平台提供由教育工作者策劃的各種主題，以激發年輕人的思想。
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              {categories.map((cat) => (
+                <div key={cat.label} className="flex items-center gap-3">
+                  <div
+                    className={`w-8 h-8 rounded-full flex items-center justify-center ${cat.color} bg-current/10`}
+                  >
+                    <cat.icon className="w-5 h-5" />
+                  </div>
+                  <span className="font-bold text-foreground font-['Noto_Sans_SC']">{cat.label}</span>
+                </div>
+              ))}
+            </div>
+          </AnimatedCard>
+        </div>
+      </section>
+
+      {/* ===== 另外加上的影片 ===== */}
+      <section className="pb-20 md:pb-28 bg-muted/40">
+        <div className="container">
+          <AnimatedCard>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-display text-2xl md:text-3xl font-extrabold text-foreground text-center mb-6 font-['Noto_Sans_SC']">
+                支持乾淨校園老師，為孩子撐起安全網絡天空
+              </h2>
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
+                <iframe
+                  src={VIDEO_2_EMBED_URL}
+                  title="支持乾淨校園老師 為孩子撐起安全網絡天空"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+                <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/10 rounded-2xl"></div>
+              </div>
+              <p className="text-center text-muted-foreground text-sm mt-4 font-['Noto_Sans_SC']">
+                在{" "}
+                <a
+                  href="https://www.ganjingworld.com/zh-TW/video/1i819ipoeer7GPhQ5KSH6E2Ai1ju1c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sky hover:text-sky/80 font-medium"
+                >
+                  乾淨世界
+                </a>{" "}
+                觀看
+              </p>
+            </div>
+          </AnimatedCard>
+        </div>
+      </section>
+
+      {/* ===== FEATURED PROGRAMS ===== */}
+      <section className="py-20 md:py-28 bg-background">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-4 font-['Noto_Sans_SC']">
@@ -351,81 +426,6 @@ export default function HomeZh() {
               </AnimatedCard>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ===== VIDEO & CATEGORIES ===== */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="container grid lg:grid-cols-2 gap-12 items-center">
-          <AnimatedCard>
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <iframe
-                src={VIDEO_EMBED_URL}
-                title="Gan Jing Campus Introduction"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-              <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/10 rounded-2xl"></div>
-            </div>
-          </AnimatedCard>
-
-          <AnimatedCard delay={0.2}>
-            <h2 className="font-display text-2xl md:text-3xl font-extrabold text-foreground mb-4 font-['Noto_Sans_SC']">
-              探索無盡的學習機會
-            </h2>
-            <p className="text-muted-foreground mb-6 font-['Noto_Sans_SC']">
-              從語言學習到藝術，我們的平台提供由教育工作者策劃的各種主題，以激發年輕人的思想。
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              {categories.map((cat) => (
-                <div key={cat.label} className="flex items-center gap-3">
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center ${cat.color} bg-current/10`}
-                  >
-                    <cat.icon className="w-5 h-5" />
-                  </div>
-                  <span className="font-bold text-foreground font-['Noto_Sans_SC']">{cat.label}</span>
-                </div>
-              ))}
-            </div>
-          </AnimatedCard>
-        </div>
-      </section>
-
-      {/* ===== 另外加上的影片 ===== */}
-      <section className="pb-20 md:pb-28 bg-background">
-        <div className="container">
-          <AnimatedCard>
-            <div className="max-w-4xl mx-auto">
-              <h2 className="font-display text-2xl md:text-3xl font-extrabold text-foreground text-center mb-6 font-['Noto_Sans_SC']">
-                支持乾淨校園老師，為孩子撐起安全網絡天空
-              </h2>
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
-                <iframe
-                  src={VIDEO_2_EMBED_URL}
-                  title="支持乾淨校園老師 為孩子撐起安全網絡天空"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                ></iframe>
-                <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/10 rounded-2xl"></div>
-              </div>
-              <p className="text-center text-muted-foreground text-sm mt-4 font-['Noto_Sans_SC']">
-                在{" "}
-                <a
-                  href="https://www.ganjingworld.com/zh-TW/video/1i819ipoeer7GPhQ5KSH6E2Ai1ju1c"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sky hover:text-sky/80 font-medium"
-                >
-                  乾淨世界
-                </a>{" "}
-                觀看
-              </p>
-            </div>
-          </AnimatedCard>
         </div>
       </section>
 
