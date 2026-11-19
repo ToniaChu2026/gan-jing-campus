@@ -11,7 +11,8 @@ import { Check, ArrowRight, Sparkles, Shield, Users, Heart } from "lucide-react"
 import SEOHead from "@/components/SEOHead";
 
 const LOGO = "/images/gjw-campus-logo.png";
-const THANKYOU_IMG = "/images/campus-hero.webp";
+const THANKYOU_IMG = "/images/guide-planting.jpg";
+const BOTANICAL_BG = "/images/botanical-pattern.svg";
 
 const bundleBenefits = [
   {
@@ -80,6 +81,15 @@ export default function CampusGuideThankYou() {
 
         {/* ─── Confirmation Hero ─── */}
         <section className="relative pt-12 pb-16 lg:pt-20 lg:pb-24 overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.03] pointer-events-none"
+            style={{
+              backgroundImage: `url(${BOTANICAL_BG})`,
+              backgroundSize: "360px",
+              backgroundRepeat: "repeat",
+            }}
+            aria-hidden="true"
+          />
 
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
@@ -160,8 +170,12 @@ export default function CampusGuideThankYou() {
               >
                 <img
                   src={THANKYOU_IMG}
-                  alt="Illustration of children painting, reading and making music together outdoors"
-                  className="w-72 sm:w-80 h-auto mx-auto"
+                  alt="Watercolor illustration of a parent and child planting a seedling together"
+                  className="w-72 sm:w-80 h-auto mx-auto mix-blend-multiply"
+                  style={{
+                    maskImage: "radial-gradient(ellipse at center, black 55%, transparent 72%)",
+                    WebkitMaskImage: "radial-gradient(ellipse at center, black 55%, transparent 72%)",
+                  }}
                 />
               </motion.div>
             </div>
