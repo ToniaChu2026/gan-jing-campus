@@ -370,7 +370,7 @@ export default function Kindness() {
                 className="inline-flex items-center gap-2 justify-center rounded-full bg-white px-8 py-4 text-lg font-bold text-coral shadow-xl hover:shadow-2xl transition-all hover:scale-105 no-underline"
               >
                 <Heart className="w-5 h-5" fill="currentColor" />
-                Join Summer Camp
+                Explore Summer Camp
               </Link>
               <Link
                 href="/teachers"

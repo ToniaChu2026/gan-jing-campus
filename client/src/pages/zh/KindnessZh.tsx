@@ -324,10 +324,10 @@ export default function KindnessZh() {
               >
                 <div className="inline-flex items-center gap-2 bg-sunshine/20 text-sunshine-dark font-semibold text-sm px-4 py-1.5 rounded-full mb-6 font-['Noto_Sans_SC']">
                   <Sparkles className="w-4 h-4" />
-                  夏令營現已開放
+                  夏令營回顧
                 </div>
                 <h2 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mb-4 max-w-3xl mx-auto font-['Noto_Sans_SC']">
-                  加入我們的夏令營，探索更多精彩活動！
+                  重溫我們的夏令營，探索更多精彩活動！
                 </h2>
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8 font-['Noto_Sans_SC']">
                   在充滿樂趣和創意的活動中，繼續您的善良之旅。我們的夏令營提供安全、引人入勝的內容，培養品格與創造力。

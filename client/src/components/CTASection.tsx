@@ -64,18 +64,18 @@ export default function CTASection() {
             className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6"
           >
             <Sun className="w-4 h-4 text-sunshine" />
-            <span className="text-white/90 text-sm font-medium">Summer 2026 Registration Open</span>
+            <span className="text-white/90 text-sm font-medium">Summer Camp Recap</span>
           </motion.div>
 
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
-            Ready for the Best
+            Relive the
             <br />
-            <span className="text-sunshine">Summer Ever?</span>
+            <span className="text-sunshine">Summer of Kindness</span>
           </h2>
 
           <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-            Join thousands of families and educators in an 8-week adventure of kindness, creativity,
-            and discovery. Completely free for all participants.
+            The 8-week adventure of kindness, creativity, and discovery has wrapped up, but the films,
+            themes and activities are still on the camp channel for families and teachers to enjoy.
           </p>
 
           {/* Benefits checklist */}
@@ -102,7 +102,7 @@ export default function CTASection() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-sunshine px-10 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 hover:shadow-2xl no-underline"
             >
-              Join Summer Camp
+              Visit the Camp Channel
               <ArrowRight className="w-5 h-5" />
             </a>
             <a

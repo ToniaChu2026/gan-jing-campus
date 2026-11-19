@@ -45,15 +45,15 @@ export const SEO_ROUTES = {
       "Gan Jing Campus is an ad-free, educator-friendly platform promoting kindness, creativity, and safe digital learning for children ages 4-16. Powered by Ethical AI. Join 400+ teachers across 6 continents.",
     canonicalPath: "/",
     keywords:
-      "Gan Jing Campus, safe education, ad-free learning, children education, kindness, summer camp 2026, ethical AI education, digital learning platform",
+      "Gan Jing Campus, safe education, ad-free learning, children education, kindness, summer camp, ethical AI education, digital learning platform",
   },
   "/summer-camp": {
-    title: "Summer Camp 2026 — 8-Week Adventure of Kindness & Creativity",
+    title: "Summer Camp Recap — 8 Weeks of Kindness & Creativity",
     description:
-      "Join Gan Jing Summer Camp 2026: a free, 8-week online program for children ages 4-16. Explore kindness, creativity, Chinese culture, STEM, and more in a 100% safe, ad-free environment.",
+      "Look back at Gan Jing Summer Camp: a free, 8-week online program for children ages 4-16. Revisit every weekly theme — kindness, creativity, Chinese culture, STEM, and more — in a 100% safe, ad-free environment.",
     canonicalPath: "/summer-camp",
     keywords:
-      "Gan Jing Summer Camp 2026, free summer camp online, kids summer program, kindness camp, creative learning, children ages 4-16, ad-free summer camp, ethical AI education",
+      "Gan Jing Summer Camp, summer camp recap, free summer camp online, kids summer program, kindness camp, creative learning, children ages 4-16, ad-free summer camp, ethical AI education",
     ogImage: "/images/summer-camp-hero.jpg",
   },
   "/teachers": {
@@ -106,15 +106,15 @@ export const SEO_ROUTES = {
       "乾淨校園是一個無廣告、對教育工作者友好的平台，為4-16歲的兒童推廣善良、創意和安全的數位學習。由道德AI驅動。加入遍布6大洲的400多名教師的行列。",
     canonicalPath: "/zh/",
     keywords:
-      "乾淨校園, 安全教育, 無廣告學習, 兒童教育, 善良, 2026夏令營, 道德AI教育, 數位學習平台",
+      "乾淨校園, 安全教育, 無廣告學習, 兒童教育, 善良, 夏令營, 道德AI教育, 數位學習平台",
   },
   "/zh/summer-camp": {
-    title: "乾淨校園夏令營 2026 — 為期8週的善良與創意冒險",
+    title: "乾淨校園夏令營回顧 — 為期8週的善良與創意冒險",
     description:
-      "參加乾淨校園2026夏令營：一個為4-16歲兒童設計的免費、為期8週的線上活動。在100%安全、無廣告的環境中探索善良、創意、中華文化、STEM等。",
+      "回顧乾淨校園夏令營：一個為4-16歲兒童設計的免費、為期8週的線上活動。重溫每週主題，在100%安全、無廣告的環境中探索善良、創意、中華文化、STEM等。",
     canonicalPath: "/zh/summer-camp",
     keywords:
-      "乾淨校園夏令營 2026, 免費線上夏令營, 兒童暑期活動, 善良品格營, 創意學習, 4-16歲兒童, 無廣告夏令營, 道德AI教育",
+      "乾淨校園夏令營, 夏令營回顧, 免費線上夏令營, 兒童暑期活動, 善良品格營, 創意學習, 4-16歲兒童, 無廣告夏令營, 道德AI教育",
     ogImage: "/images/summer-camp-hero.jpg",
   },
   "/zh/teachers": {

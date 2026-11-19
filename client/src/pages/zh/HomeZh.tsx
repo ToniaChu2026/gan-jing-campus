@@ -75,7 +75,7 @@ const programs = [
     desc: "為期8週的探險之旅，為4-16歲的兒童帶來善良、創意和發現。",
     img: SUMMER_CAMP_IMG,
     href: "/summer-camp",
-    badge: "2026 夏令營",
+    badge: "活動回顧",
     badgeColor: "bg-sunshine text-white",
   },
   {

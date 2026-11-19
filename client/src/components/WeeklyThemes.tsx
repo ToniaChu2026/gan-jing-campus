@@ -215,8 +215,9 @@ export default function WeeklyThemes() {
             <span className="text-sky">Adventures</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Each week brings a new theme with a curated watchlist of films and shows, plus hands-on
-            activities. Campers share their work on Gan Jing World with #GanJingSummerCamp.
+            Each week brought a new theme with a curated watchlist of films and shows, plus hands-on
+            activities. Campers shared their work on Gan Jing World with #GanJingSummerCamp — open any
+            week to revisit it.
           </p>
         </motion.div>
 

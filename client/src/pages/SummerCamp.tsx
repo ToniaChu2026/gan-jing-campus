@@ -39,13 +39,6 @@ export default function SummerCamp() {
         name: "Gan Jing Campus",
         url: "https://www.ganjingworld.com/@GanJingCampus",
       },
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-        availability: "https://schema.org/InStock",
-        url: "https://ganjingcampus.org/summer-camp",
-      },
       audience: {
         "@type": "EducationalAudience",
         educationalRole: "student",

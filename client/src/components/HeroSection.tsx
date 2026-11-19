@@ -44,7 +44,7 @@ export default function HeroSection() {
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6">
               <Sun className="w-4 h-4 text-sunshine" />
-              <span className="text-white/90 text-sm font-medium">Summer 2026 &middot; 8-Week Program</span>
+              <span className="text-white/90 text-sm font-medium">Summer Camp Recap &middot; 8 Themed Weeks</span>
             </div>
 
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
@@ -54,8 +54,8 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-xl mb-8 font-body">
-              An 8-week adventure of kindness, creativity, and discovery for children ages 4-16. 
-              Powered by 100+ curated educational films and shows on the safest platform for kids.
+              Look back at an 8-week adventure of kindness, creativity, and discovery for children ages 4-16.
+              Every weekly theme and its 100+ curated educational films and shows are still here to revisit.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -65,7 +65,7 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 hover:shadow-2xl no-underline"
               >
-                Join Summer Camp
+                Visit the Camp Channel
               </a>
               <a
                 href="#weekly-themes"

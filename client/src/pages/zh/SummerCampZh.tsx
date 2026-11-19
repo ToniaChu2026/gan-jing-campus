@@ -500,13 +500,6 @@ export default function SummerCampZh() {
         name: "乾淨校園",
         url: CAMPUS_URL,
       },
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-        availability: "https://schema.org/InStock",
-        url: "https://ganjingcampus.org/zh/summer-camp",
-      },
       audience: {
         "@type": "EducationalAudience",
         educationalRole: "student",
@@ -584,7 +577,7 @@ export default function SummerCampZh() {
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6">
                 <Sun className="w-4 h-4 text-sunshine" />
                 <span className="text-white/90 text-sm font-medium font-['Noto_Sans_SC']">
-                  2026年夏季 · 為期8週
+                  夏令營回顧 · 8週主題
                 </span>
               </div>
 
@@ -595,8 +588,8 @@ export default function SummerCampZh() {
               </h1>
 
               <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-xl mb-8 font-['Noto_Sans_SC']">
-                為期8週的善良、創意和探索冒險，適合4-16歲兒童。
-                超過100部精選教育影片與節目，在最安全的兒童平台上學習成長。
+                回顧為期8週的善良、創意和探索冒險，適合4-16歲兒童。
+                每週主題與超過100部精選教育影片與節目，仍可在最安全的兒童平台上隨時重溫。
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -606,7 +599,7 @@ export default function SummerCampZh() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 hover:shadow-2xl no-underline font-['Noto_Sans_SC']"
                 >
-                  加入夏令營
+                  前往夏令營頻道
                 </a>
                 <a
                   href="#weekly-themes"
@@ -849,7 +842,7 @@ export default function SummerCampZh() {
               <span className="text-sky">探索</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed font-['Noto_Sans_SC']">
-              每週帶來全新主題，包含精選影片、創意活動和善良挑戰，啟發和教育孩子。
+              每週都有全新主題，包含精選影片、創意活動和善良挑戰，啟發和教育孩子。點選任一週即可重溫。
             </p>
           </motion.div>
 
@@ -976,11 +969,11 @@ export default function SummerCampZh() {
             <div className="max-w-4xl mx-auto mt-10 rounded-2xl bg-white border border-sunshine/40 p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
               <Hash className="w-10 h-10 text-sunshine-dark shrink-0" />
               <p className="flex-1 text-foreground leading-relaxed font-['Noto_Sans_SC']">
-                完成任務後，用{" "}
+                小營員們用{" "}
                 <a href={CAMP_HASHTAG_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-sky hover:underline">
                   #乾淨校園夏令營
                 </a>{" "}
-                標籤發布照片、影片、短影片或貼文，跟大家分享你的夏日成果！第一次參加？先看看家長/教師參加指南。
+                標籤發布照片、影片、短影片或貼文，分享他們的夏日成果。想了解活動怎麼進行？可以看看家長/教師參加指南。
               </p>
               <div className="flex flex-wrap gap-3 shrink-0">
                 <a
@@ -1202,17 +1195,17 @@ export default function SummerCampZh() {
               className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6"
             >
               <Sun className="w-4 h-4 text-sunshine" />
-              <span className="text-white/90 text-sm font-medium font-['Noto_Sans_SC']">2026年夏令營報名開放</span>
+              <span className="text-white/90 text-sm font-medium font-['Noto_Sans_SC']">夏令營回顧</span>
             </motion.div>
 
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 font-['Noto_Sans_SC']">
-              準備好迎接
+              一起重溫
               <br />
-              <span className="text-sunshine">最精彩的夏天</span>了嗎？
+              <span className="text-sunshine">充滿善良的夏天</span>
             </h2>
 
             <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10 font-['Noto_Sans_SC']">
-              加入數千個家庭和教育工作者，一起展開為期8週的善良、創意和探索之旅。免費參加・$1 解鎖全部影視。
+              為期8週的善良、創意和探索之旅已圓滿結束，所有主題影片與活動仍保留在夏令營頻道，歡迎家庭和教育工作者隨時重溫。
             </p>
 
             <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto mb-10 text-left">
@@ -1237,7 +1230,7 @@ export default function SummerCampZh() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-sunshine px-10 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 hover:shadow-2xl no-underline font-['Noto_Sans_SC']"
               >
-                加入夏令營
+                前往夏令營頻道
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
