@@ -5,6 +5,7 @@
  */
 import { useEffect, useRef, useMemo } from "react";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 import { motion, useInView } from "framer-motion";
 import {
   Heart,
@@ -50,7 +51,7 @@ const stories = [
     impact: ["全校性的善良運動", "時代廣場頒獎典禮", "學生行為轉變"],
     color: "border-l-coral",
     iconColor: "bg-coral/15 text-coral",
-    href: "https://www.ganjingworld.com/zh-TW/news/1htqniht6hp3u3PVR5BpnRHqB1ic1c",
+    href: "https://www.ganjingworld.com/zh-TW/article/1htqmv7hg1f1t5M4U36HHcFRz1nu1c",
   },
   {
     title: "善念點亮台灣 — 師鐸獎教師的故事",
@@ -64,7 +65,7 @@ const stories = [
     impact: ["2025師鐸獎", "善行影片登上時代廣場", "學力檢測全學年最高", "善念點亮台灣"],
     color: "border-l-sky",
     iconColor: "bg-sky/15 text-sky",
-    href: "https://www.ganjingworld.com/zh-TW/news/1htqng1kqt45DWMGkHwsYvRcf1gk1c",
+    href: "https://www.ganjingworld.com/zh-TW/article/1htqmsvbhbp1k8sFHxDWXZRZ61jv1c",
   },
   {
     title: "善良很酷影片競賽",
@@ -78,7 +79,7 @@ const stories = [
     impact: ["學生創作的善良內容", "數位素養+品格教育", "成為其他學校的典範"],
     color: "border-l-sunshine-dark",
     iconColor: "bg-sunshine/15 text-sunshine-dark",
-    href: "https://www.ganjingworld.com/zh-TW/news/1htqniht6hp3u3PVR5BpnRHqB1ic1c",
+    href: "https://www.ganjingworld.com/zh-TW/article/1htqmv7hg1f1t5M4U36HHcFRz1nu1c",
   },
 ];
 
@@ -118,14 +119,7 @@ export default function KindnessZh() {
 
   return (
     <>
-      <SEOHead
-        title="善良故事 — 來自全球教室的真實感動"
-        description="探索『#善良很酷』運動如何改變從波士頓到台灣的教室。了解乾淨校園如何在全球推廣同情心與品格教育。"
-        canonicalPath="/zh/kindness"
-        keywords="善良故事, KindnessIsCool, 品格教育, 教室中的善良, 乾淨校園故事, 全球教育, 善良獎, 正面價值觀"
-        ogImage="/images/kindness-hero.jpg"
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/zh/kindness")} jsonLd={jsonLd} />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-[oklch(0.65_0.12_15)] via-[oklch(0.72_0.14_20)] to-[oklch(0.78_0.12_30)]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -170,7 +164,7 @@ export default function KindnessZh() {
               </p>
 
               <a
-                href="https://www.ganjingworld.com/zh-TW/news/1htqniht6hp3u3PVR5BpnRHqB1ic1c"
+                href="https://www.ganjingworld.com/zh-TW/article/1htqmv7hg1f1t5M4U36HHcFRz1nu1c"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 no-underline font-['Noto_Sans_SC']"

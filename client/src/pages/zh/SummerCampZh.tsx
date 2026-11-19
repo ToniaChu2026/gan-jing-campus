@@ -44,6 +44,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 
 const HERO_IMG =
   "/images/summer-camp-hero.jpg";
@@ -57,7 +58,7 @@ const VIDEO_EMBED_URL =
   "https://www.ganjingworld.com/embed/1hkfg1b8ls819ca1gaHm04ldx1kf1c";
 const VIDEO_WATCH_URL =
   "https://www.ganjingworld.com/zh-TW/video/1hkfg1b8ls819ca1gaHm04ldx1kf1c";
-const CAMPUS_URL = "https://www.ganjingworld.com/zh-TW/ganjingcampus";
+const CAMPUS_URL = "https://www.ganjingworld.com/zh-TW/@乾淨校園";
 // 「乾淨校園夏令營」頻道與相關內容
 const GJW = "https://www.ganjingworld.com";
 const SUMMER_CAMP_CHANNEL = `${GJW}/zh-TW/channel/1gq2kab5rpd52FQlEiPNT6vPE14b0c`;
@@ -550,14 +551,7 @@ export default function SummerCampZh() {
 
   return (
     <>
-      <SEOHead
-        title="乾淨校園夏令營 2026 — 為期8週的善良與創意冒險"
-        description="參加乾淨校園2026夏令營：一個為4-16歲兒童設計的免費、為期8週的線上活動。在100%安全、無廣告的環境中探索善良、創意、中華文化、STEM等。"
-        canonicalPath="/zh/summer-camp"
-        keywords="乾淨校園夏令營 2026, 免費線上夏令營, 兒童暑期活動, 善良品格營, 創意學習, 4-16歲兒童, 無廣告夏令營, 道德AI教育"
-        ogImage={HERO_IMG}
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/zh/summer-camp")} jsonLd={jsonLd} />
 
       {/* ===== HERO SECTION ===== */}
       <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-gradient-to-b from-sky via-sky to-[oklch(0.65_0.16_230)]">

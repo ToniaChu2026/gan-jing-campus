@@ -56,14 +56,14 @@ function SiteNavbar() {
         </Link>
 
         {/* Desktop links */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden xl:flex items-center gap-1">
           {navLinks.map((l) => {
             const isActive = location === l.href;
             return (
               <Link
                 key={l.href}
                 href={l.href}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all no-underline ${
+                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all no-underline ${
                   isActive
                     ? "bg-sunshine/15 text-sunshine-dark font-bold"
                     : scrolled || !isHome
@@ -77,8 +77,8 @@ function SiteNavbar() {
           })}
           {/* Language switcher */}
           <Link
-            href={`/zh${location === "/" ? "" : location}`}
-            className={`ml-1 inline-flex items-center gap-1 px-3 py-2 rounded-full text-xs font-medium transition-all no-underline ${
+            href={`/zh${location}`}
+            className={`ml-1 inline-flex items-center gap-1 px-3 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all no-underline ${
               scrolled || !isHome
                 ? "text-foreground/60 hover:text-foreground hover:bg-gray-100"
                 : "text-white/70 hover:text-white hover:bg-white/15"
@@ -92,7 +92,7 @@ function SiteNavbar() {
             href="https://www.ganjingworld.com/@GanJingCampus"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 inline-flex items-center justify-center rounded-full bg-sunshine px-5 py-2.5 text-sm font-bold text-white shadow-lg hover:bg-sunshine-dark transition-all hover:scale-105 no-underline"
+            className="ml-2 inline-flex items-center justify-center rounded-full bg-sunshine px-5 py-2.5 text-sm font-bold text-white whitespace-nowrap shadow-lg hover:bg-sunshine-dark transition-all hover:scale-105 no-underline"
           >
             Visit Campus
           </a>
@@ -101,10 +101,11 @@ function SiteNavbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-2 rounded-lg transition-colors ${
+          className={`xl:hidden p-2 rounded-lg transition-colors ${
             scrolled || !isHome ? "text-foreground" : "text-white"
           }`}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -117,7 +118,7 @@ function SiteNavbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white shadow-xl overflow-hidden"
+            className="xl:hidden bg-white shadow-xl overflow-hidden"
           >
             <nav className="flex flex-col p-4 gap-1">
               {navLinks.map((l) => {
@@ -137,7 +138,7 @@ function SiteNavbar() {
                 );
               })}
               <Link
-                href={`/zh${location === "/" ? "" : location}`}
+                href={`/zh${location}`}
                 className="px-4 py-3 rounded-lg font-medium transition-colors no-underline text-foreground/60 hover:bg-gray-100 flex items-center gap-2"
               >
                 <Globe className="w-4 h-4" />
@@ -250,6 +251,24 @@ function SiteFooter() {
           <p className="text-xs text-white/40">
             &copy; {new Date().getFullYear()} Gan Jing World. All rights
             reserved.
+            <span className="mx-2">·</span>
+            <a
+              href="https://www.ganjingworld.com/policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white/90 transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <span className="mx-2">·</span>
+            <a
+              href="https://www.ganjingworld.com/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white/90 transition-colors"
+            >
+              Terms of Use
+            </a>
           </p>
           <p className="text-xs text-white/40 flex items-center gap-1">
             Made with{" "}

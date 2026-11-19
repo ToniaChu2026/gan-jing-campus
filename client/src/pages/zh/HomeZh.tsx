@@ -23,6 +23,7 @@ import {
   Play,
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 import KindnessTaiwanCampaign from "@/components/KindnessTaiwanCampaign";
 
 const CAMPUS_HERO =
@@ -144,13 +145,7 @@ export default function HomeZh() {
 
   return (
     <>
-      <SEOHead
-        title="讓學習與善良相遇"
-        description="乾淨校園是一個無廣告、對教育工作者友好的平台，為4-16歲的兒童推廣善良、創意和安全的數位學習。由道德AI驅動。加入遍布6大洲的400多名教師的行列。"
-        canonicalPath="/zh/"
-        keywords="乾淨校園, 安全教育, 無廣告學習, 兒童教育, 善良, 2026夏令營, 道德AI教育, 數位學習平台"
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/zh/")} jsonLd={jsonLd} />
 
       {/* ===== HERO SECTION ===== */}
       <section

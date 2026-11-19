@@ -5,6 +5,7 @@
  */
 import { useEffect, useRef, useMemo } from "react";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 import { motion, useInView } from "framer-motion";
 import {
   GraduationCap,
@@ -88,7 +89,6 @@ const resourceSubjects: ResourceSubject[] = [
     title: "Science",
     icon: FlaskConical,
     links: [
-      { label: "Khan Academy India - English", href: `${GJW}/channel/1f93tbv2q4gL0Rr8bfIWhBpSB17j0c` },
       { label: "The ScienceVerse", href: `${GJW}/channel/1f95993n0bo1tel8RvdGnvM0t1q10c` },
       { label: "Kids Fun Science", href: `${GJW}/channel/1f96deduhvg7fAeJo5s71ZiUz1v00c` },
       { label: "Pre-K – 2nd grade", href: `${GJW}/tag/Science/1709134792579?stag=tag_1709234971229` },
@@ -215,14 +215,7 @@ export default function Teachers() {
 
   return (
     <>
-      <SEOHead
-        title="For Teachers — Free Premium Channel & CDE Certification"
-        description="Join 400+ teachers worldwide on Gan Jing Campus. Get a free Premium Channel, access teaching tools, curate resources, and earn your Certified Digital Educator (CDE) certification."
-        canonicalPath="/teachers"
-        keywords="Gan Jing Campus teachers, free teacher channel, CDE certification, digital educator, teacher resources, education platform, kindness education"
-        ogImage="/images/teachers-hero.jpg"
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/teachers")} jsonLd={jsonLd} />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-[oklch(0.45_0.12_30)] via-[oklch(0.55_0.14_40)] to-[oklch(0.65_0.12_50)]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

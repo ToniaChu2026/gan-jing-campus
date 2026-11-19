@@ -1,52 +1,85 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle, Home } from "lucide-react";
-import { useLocation } from "wouter";
+/*
+ * NotFound — 404 page in the site's own look, in English or Chinese.
+ * Rendered inside Layout (English) or LayoutZh (under /zh), so it only supplies
+ * the page body. Marks itself noindex so stray URLs never reach search results.
+ */
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { Home, SearchX } from "lucide-react";
+
+const COPY = {
+  en: {
+    docTitle: "Page Not Found | Gan Jing Campus",
+    heading: "Page Not Found",
+    body: "Sorry, the page you are looking for doesn't exist. It may have been moved or deleted.",
+    home: "Back to Home",
+    lang: "en",
+  },
+  zh: {
+    docTitle: "找不到頁面 | 乾淨校園",
+    heading: "找不到頁面",
+    body: "抱歉，您要找的頁面不存在，可能已被移動或刪除。",
+    home: "回到首頁",
+    lang: "zh-Hant",
+  },
+} as const;
 
 export default function NotFound() {
-  const [, setLocation] = useLocation();
+  // LayoutZh nests the router under /zh, so read the real URL to pick a language.
+  const isZh = /^\/zh(\/|$)/.test(window.location.pathname);
+  const copy = isZh ? COPY.zh : COPY.en;
 
-  const handleGoHome = () => {
-    setLocation("/");
-  };
+  useEffect(() => {
+    document.title = copy.docTitle;
+    document.documentElement.lang = copy.lang;
+
+    let robots = document.querySelector('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement("meta");
+      robots.setAttribute("name", "robots");
+      document.head.appendChild(robots);
+    }
+    robots.setAttribute("content", "noindex, follow");
+
+    // The previous page's canonical / hreflang no longer describe this URL.
+    document
+      .querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang]')
+      .forEach((el) => el.remove());
+  }, [copy]);
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-        <CardContent className="pt-8 pb-8 text-center">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse" />
-              <AlertCircle className="relative h-16 w-16 text-red-500" />
-            </div>
-          </div>
+    <section
+      className={`min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-sky-light to-white px-4 pt-28 pb-20 ${
+        isZh ? "font-['Noto_Sans_SC']" : ""
+      }`}
+    >
+      <div className="w-full max-w-lg text-center">
+        <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-sunshine/15">
+          <SearchX className="h-10 w-10 text-sunshine-dark" aria-hidden="true" />
+        </div>
 
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
+        <p className="font-display text-6xl font-extrabold text-sky mb-2">404</p>
 
-          <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
-          </h2>
+        {/* Baloo 2 has no CJK glyphs; let Chinese fall through to Noto Sans SC. */}
+        <h1
+          className={`text-2xl md:text-3xl font-bold text-foreground mb-4 ${
+            isZh ? "" : "font-display"
+          }`}
+        >
+          {copy.heading}
+        </h1>
 
-          <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
-            <br />
-            It may have been moved or deleted.
-          </p>
+        <p className="text-foreground/70 leading-relaxed mb-8">{copy.body}</p>
 
-          <div
-            id="not-found-button-group"
-            className="flex flex-col sm:flex-row gap-3 justify-center"
-          >
-            <Button
-              onClick={handleGoHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
-            >
-              <Home className="w-4 h-4 mr-2" />
-              Go Home
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+        {/* Inside LayoutZh "/" is relative to /zh, so this goes to the right home page. */}
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 justify-center rounded-full bg-sunshine px-8 py-3.5 text-base font-bold text-white shadow-lg hover:bg-sunshine-dark transition-all hover:scale-105 no-underline"
+        >
+          <Home className="w-5 h-5" aria-hidden="true" />
+          {copy.home}
+        </Link>
+      </div>
+    </section>
   );
 }

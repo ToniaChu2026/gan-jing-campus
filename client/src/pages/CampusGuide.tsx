@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Check, ArrowRight, Shield, BookOpen, Users, Clock, Sparkles, Heart } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 
 const LOGO = "/images/gjw-campus-logo.png";
 const HERO_FAMILY = "/images/guide-family-reading.jpg";
@@ -119,14 +120,7 @@ export default function CampusGuide() {
 
   return (
     <>
-      <SEOHead
-        title="The 30-Minute Family Screen Reset — Free Guide"
-        description="A simple, practical setup guide for values-driven parents who want to shape their kids' digital future without banning technology. Free from Gan Jing Campus."
-        canonicalPath="/free-guide"
-        keywords="family screen reset, digital parenting guide, screen time, children digital safety, values-driven parenting, Gan Jing Campus guide"
-        ogImage={HERO_FAMILY}
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/free-guide")} jsonLd={jsonLd} />
 
       <div className="min-h-screen" style={{ background: "#f5f8fc" }}>
         {/* ─── Minimal Nav ─── */}
@@ -465,6 +459,8 @@ export default function CampusGuide() {
                     <Input
                       id="name"
                       type="text"
+                      name="firstName"
+                      autoComplete="given-name"
                       placeholder="e.g. Sarah"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
@@ -489,6 +485,8 @@ export default function CampusGuide() {
                     <Input
                       id="email"
                       type="email"
+                      name="email"
+                      autoComplete="email"
                       placeholder="you@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -551,7 +549,15 @@ export default function CampusGuide() {
                     className="text-center text-sm pt-1"
                     style={{ color: "#5a7a9a" }}
                   >
-                    We respect your privacy. Unsubscribe at any time.
+                    We respect your privacy. Unsubscribe at any time.{" "}
+                    <a
+                      href="https://www.ganjingworld.com/policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      Privacy Policy
+                    </a>
                   </p>
                 </form>
               </motion.div>
@@ -719,6 +725,24 @@ export default function CampusGuide() {
             <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-xs text-white/40">
                 &copy; {new Date().getFullYear()} Gan Jing World. All rights reserved.
+                <span className="mx-2">·</span>
+                <a
+                  href="https://www.ganjingworld.com/policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/50 hover:text-white/90 transition-colors"
+                >
+                  Privacy Policy
+                </a>
+                <span className="mx-2">·</span>
+                <a
+                  href="https://www.ganjingworld.com/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/50 hover:text-white/90 transition-colors"
+                >
+                  Terms of Use
+                </a>
               </p>
               <p className="text-xs text-white/40 flex items-center gap-1">
                 Made with <Heart className="w-3 h-3 text-coral fill-coral" /> for a kinder world

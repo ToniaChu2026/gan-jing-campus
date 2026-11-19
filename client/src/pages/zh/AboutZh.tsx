@@ -5,6 +5,7 @@
  */
 import { useEffect, useRef, useMemo } from "react";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 import { motion, useInView } from "framer-motion";
 import { Link } from "wouter";
 import {
@@ -109,14 +110,7 @@ export default function AboutZh() {
 
   return (
     <>
-      <SEOHead
-        title="關於乾淨校園 — 使命、安全與全球影響力"
-        description="了解乾淨校園為全球兒童提供安全、無廣告教育的使命。探索我們的三層安全模型、道德AI技術以及在6大洲獲得的認可。"
-        canonicalPath="/zh/about"
-        keywords="關於乾淨校園, 教育使命, 道德AI安全, 三層安全模型, 兒童數位安全, 全球教育平台, 無廣告教育"
-        ogImage="/images/about-hero.jpg"
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/zh/about")} jsonLd={jsonLd} />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-[oklch(0.35_0.08_250)] via-[oklch(0.42_0.12_240)] to-[oklch(0.52_0.14_230)]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

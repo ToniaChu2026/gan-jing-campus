@@ -3,8 +3,20 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import fs from "node:fs";
 import path from "node:path";
-import { defineConfig, type Plugin, type ViteDevServer } from "vite";
+import { defineConfig, loadEnv, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
+import {
+  BASE_URL,
+  DEFAULT_OG_IMAGE,
+  OG_LOCALES,
+  SEO_ROUTES,
+  SITE_NAMES,
+  absoluteUrl,
+  alternatesFor,
+  fullTitle,
+  langForPath,
+  type PageSeo,
+} from "./client/src/lib/seoRoutes";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
@@ -150,9 +162,234 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+/**
+ * Umami analytics is optional: inject the script only when both env vars are set,
+ * so an unconfigured build never ships a broken "%VITE_ANALYTICS_ENDPOINT%" request.
+ */
+function vitePluginOptionalUmami(env: Record<string, string>): Plugin {
+  return {
+    name: "optional-umami",
+    transformIndexHtml(html) {
+      const endpoint = env.VITE_ANALYTICS_ENDPOINT;
+      const websiteId = env.VITE_ANALYTICS_WEBSITE_ID;
+      if (!endpoint || !websiteId) return html;
+      return {
+        html,
+        tags: [
+          {
+            tag: "script",
+            attrs: {
+              defer: true,
+              src: `${endpoint.replace(/\/$/, "")}/umami`,
+              "data-website-id": websiteId,
+            },
+            injectTo: "body",
+          },
+        ],
+      };
+    },
+  };
+}
 
-export default defineConfig({
+/**
+ * The Manus dev tooling under client/public/__manus__ is only useful on the dev
+ * server; drop it from the production output.
+ */
+function vitePluginStripManusAssets(): Plugin {
+  let outDir = "";
+  return {
+    name: "strip-manus-assets",
+    apply: "build",
+    configResolved(config) {
+      outDir = path.resolve(config.root, config.build.outDir);
+    },
+    closeBundle() {
+      fs.rmSync(path.join(outDir, "__manus__"), { recursive: true, force: true });
+    },
+  };
+}
+
+// =============================================================================
+// Per-route HTML, 404.html and sitemap.xml
+// The app is a client-rendered SPA, so without this every URL would serve the
+// same HTML (English home title/image) to crawlers and link-preview bots that
+// don't run JavaScript. After the bundle is written we stamp each route's meta
+// from lib/seoRoutes.ts into its own HTML file.
+// =============================================================================
+
+const escapeAttr = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+function replaceOnce(html: string, pattern: RegExp, replacement: string, label: string) {
+  if (!pattern.test(html)) {
+    throw new Error(`[route-html] could not find ${label} in index.html`);
+  }
+  return html.replace(pattern, () => replacement);
+}
+
+function renderRouteHtml(template: string, seo: PageSeo): string {
+  const lang = langForPath(seo.canonicalPath);
+  const title = escapeAttr(fullTitle(seo));
+  const description = escapeAttr(seo.description);
+  const url = absoluteUrl(seo.canonicalPath);
+  const image = absoluteUrl(seo.ogImage || DEFAULT_OG_IMAGE);
+  const siteName = escapeAttr(SITE_NAMES[lang]);
+  const robots = seo.noindex
+    ? "noindex, follow"
+    : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+
+  const meta = (attr: "name" | "property", key: string, content: string) =>
+    [
+      new RegExp(`<meta\\s+${attr}="${key}"\\s+content="[^"]*"\\s*/>`),
+      `<meta ${attr}="${key}" content="${content}" />`,
+      `meta ${key}`,
+    ] as const;
+
+  let html = template;
+  html = replaceOnce(html, /<html lang="[^"]*">/, `<html lang="${lang}">`, "<html lang>");
+  html = replaceOnce(html, /<title>[^<]*<\/title>/, `<title>${title}</title>`, "<title>");
+
+  const metas = [
+    meta("name", "description", description),
+    meta("name", "robots", robots),
+    meta("name", "author", siteName),
+    meta("name", "language", lang),
+    meta("property", "og:url", url),
+    meta("property", "og:title", title),
+    meta("property", "og:description", description),
+    meta("property", "og:image", image),
+    meta("property", "og:site_name", siteName),
+    meta("property", "og:locale", OG_LOCALES[lang]),
+    meta("name", "twitter:title", title),
+    meta("name", "twitter:description", description),
+    meta("name", "twitter:image", image),
+  ];
+  if (seo.keywords) metas.push(meta("name", "keywords", escapeAttr(seo.keywords)));
+  for (const [pattern, replacement, label] of metas) {
+    html = replaceOnce(html, pattern, replacement, label);
+  }
+
+  // The default hero's pixel size doesn't apply to other share images.
+  if (seo.ogImage && seo.ogImage !== DEFAULT_OG_IMAGE) {
+    html = html.replace(/\s*<meta property="og:image:(width|height)"[^>]*\/>/g, "");
+  }
+
+  html = replaceOnce(
+    html,
+    /<link rel="canonical" href="[^"]*"\s*\/>/,
+    `<link rel="canonical" href="${url}" />`,
+    "canonical link"
+  );
+
+  const alternates = alternatesFor(seo.canonicalPath)
+    .map((alt) => `<link rel="alternate" hreflang="${alt.hreflang}" href="${alt.href}" />`)
+    .join("\n    ");
+  let firstAlternate = true;
+  html = html.replace(/[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*"\s*\/>\n?/g, () => {
+    if (!firstAlternate) return "";
+    firstAlternate = false;
+    return `    ${alternates}\n`;
+  });
+  if (firstAlternate) throw new Error("[route-html] could not find hreflang links in index.html");
+
+  return html;
+}
+
+/** "/about" → "about.html", "/zh/" → "zh/index.html" (Cloudflare Pages serves both without the extension). */
+function routeFile(canonicalPath: string): string {
+  if (canonicalPath === "/") return "index.html";
+  if (canonicalPath.endsWith("/")) return `${canonicalPath.slice(1)}index.html`;
+  return `${canonicalPath.slice(1)}.html`;
+}
+
+function renderNotFoundHtml(template: string): string {
+  let html = replaceOnce(
+    template,
+    /<title>[^<]*<\/title>/,
+    "<title>Page Not Found | Gan Jing Campus</title>",
+    "<title>"
+  );
+  html = replaceOnce(
+    html,
+    /<meta\s+name="robots"\s+content="[^"]*"\s*\/>/,
+    '<meta name="robots" content="noindex, follow" />',
+    "meta robots"
+  );
+  // A 404 has no canonical URL or language alternates.
+  html = html.replace(/[ \t]*<link rel="canonical" href="[^"]*"\s*\/>\n?/, "");
+  html = html.replace(/[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*"\s*\/>\n?/g, "");
+  return html;
+}
+
+function renderSitemap(routes: PageSeo[], lastmod: string): string {
+  const urls = routes
+    .filter((seo) => !seo.noindex)
+    .map((seo) => {
+      const alternates = alternatesFor(seo.canonicalPath)
+        .map(
+          (alt) =>
+            `    <xhtml:link rel="alternate" hreflang="${alt.hreflang}" href="${alt.href}" />`
+        )
+        .join("\n");
+      return `  <url>\n    <loc>${absoluteUrl(seo.canonicalPath)}</loc>\n    <lastmod>${lastmod}</lastmod>\n${alternates}\n  </url>`;
+    })
+    .join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`;
+}
+
+function vitePluginRouteHtml(): Plugin {
+  let outDir = "";
+  return {
+    name: "route-html",
+    apply: "build",
+    configResolved(config) {
+      outDir = path.resolve(config.root, config.build.outDir);
+    },
+    closeBundle() {
+      const templatePath = path.join(outDir, "index.html");
+      if (!fs.existsSync(templatePath)) return;
+      const template = fs.readFileSync(templatePath, "utf-8");
+      const routes: PageSeo[] = Object.values(SEO_ROUTES);
+
+      for (const seo of routes) {
+        const file = path.join(outDir, routeFile(seo.canonicalPath));
+        fs.mkdirSync(path.dirname(file), { recursive: true });
+        fs.writeFileSync(file, renderRouteHtml(template, seo), "utf-8");
+      }
+
+      // With a top-level 404.html Cloudflare Pages answers unknown URLs with a
+      // real 404 status instead of falling back to index.html with a 200.
+      fs.writeFileSync(path.join(outDir, "404.html"), renderNotFoundHtml(template), "utf-8");
+
+      const lastmod = new Date().toISOString().slice(0, 10);
+      fs.writeFileSync(path.join(outDir, "sitemap.xml"), renderSitemap(routes, lastmod), "utf-8");
+
+      console.log(
+        `[route-html] wrote ${routes.length} route pages, 404.html and sitemap.xml (${BASE_URL})`
+      );
+    },
+  };
+}
+
+export default defineConfig(({ command, mode }) => {
+  const env = loadEnv(mode, import.meta.dirname, "VITE_");
+  const isBuild = command === "build";
+  // Manus runtime / JSX locator / debug collector are dev-only: the runtime alone
+  // inlines ~370KB into index.html, so keep all three out of production builds.
+  const plugins = [
+    react(),
+    tailwindcss(),
+    ...(isBuild
+      ? [vitePluginStripManusAssets(), vitePluginRouteHtml()]
+      : [jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()]),
+    vitePluginOptionalUmami(env),
+  ];
+
+  return {
   plugins,
   resolve: {
     alias: {
@@ -184,4 +421,5 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+};
 });

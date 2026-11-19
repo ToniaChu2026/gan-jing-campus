@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight, Sparkles, Shield, Users, Heart } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 
 const LOGO = "/images/gjw-campus-logo.png";
 const THANKYOU_IMG = "/images/guide-planting.jpg";
@@ -55,13 +56,7 @@ export default function CampusGuideThankYou() {
 
   return (
     <>
-      <SEOHead
-        title="Thank You — Your Screen Reset Guide is on the Way"
-        description="Your 30-Minute Family Screen Reset Guide is being sent to your inbox. Explore the complete Gan Jing Campus solution."
-        canonicalPath="/free-guide/thank-you"
-        keywords="thank you, screen reset guide, Gan Jing Campus"
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/free-guide/thank-you")} jsonLd={jsonLd} />
 
       <div className="min-h-screen" style={{ background: "#f5f8fc" }}>
         {/* ─── Nav ─── */}
@@ -432,6 +427,24 @@ export default function CampusGuideThankYou() {
             <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-xs text-white/40">
                 &copy; {new Date().getFullYear()} Gan Jing World. All rights reserved.
+                <span className="mx-2">·</span>
+                <a
+                  href="https://www.ganjingworld.com/policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/50 hover:text-white/90 transition-colors"
+                >
+                  Privacy Policy
+                </a>
+                <span className="mx-2">·</span>
+                <a
+                  href="https://www.ganjingworld.com/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/50 hover:text-white/90 transition-colors"
+                >
+                  Terms of Use
+                </a>
               </p>
               <p className="text-xs text-white/40 flex items-center gap-1">
                 Made with <Heart className="w-3 h-3 text-coral fill-coral" /> for a kinder world

@@ -12,6 +12,7 @@ import WhyGanJing from "@/components/WhyGanJing";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 
 export default function SummerCamp() {
   useEffect(() => {
@@ -58,14 +59,7 @@ export default function SummerCamp() {
 
   return (
     <>
-      <SEOHead
-        title="Summer Camp 2026 — 8-Week Adventure of Kindness & Creativity"
-        description="Join Gan Jing Summer Camp 2026: a free, 8-week online program for children ages 4-16. Explore kindness, creativity, Chinese culture, STEM, and more in a 100% safe, ad-free environment."
-        canonicalPath="/summer-camp"
-        keywords="Gan Jing Summer Camp 2026, free summer camp online, kids summer program, kindness camp, creative learning, children ages 4-16, ad-free summer camp, ethical AI education"
-        ogImage="/images/summer-camp-hero.jpg"
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/summer-camp")} jsonLd={jsonLd} />
       <HeroSection />
       <AboutSection />
       <AgeGroups />

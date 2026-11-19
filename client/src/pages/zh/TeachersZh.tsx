@@ -5,6 +5,7 @@
  */
 import { useEffect, useRef, useMemo } from "react";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 import { motion, useInView } from "framer-motion";
 import {
   GraduationCap,
@@ -61,7 +62,7 @@ const resourceSubjects: ResourceSubject[] = [
     title: "英語文",
     icon: Languages,
     links: [
-      { label: "學齡前英語", href: `${ZH}/gjwplus/kids/themes/tag_1757947635109_video` },
+      { label: "國小英語字彙", href: `${ZH}/channel/1gbom2fu3gd4Q8gmQESvYjYGB1050c/collection/1gc7gm1stjg3IwosAmIShBL1a70p` },
       { label: "國小英語", href: `${ZH}/collection/1gesog4r9b84KzRJAsJC5rf11m0p` },
       { label: "國中英語", href: `${ZH}/collection/1gdfru7oamn4s2uyFa6lvKK1c30p` },
       { label: "高中英語", href: `${ZH}/collection/1gdf1c79a1m6YwXPq2IoMit1hh0p` },
@@ -110,7 +111,6 @@ const resourceSubjects: ResourceSubject[] = [
     links: [
       { label: "學齡前童謠", href: `${ZH}/collection/1gcfcrq95th1hB0JjzXIeEr1h70p` },
       { label: "國小音樂", href: `${ZH}/collection/1geo80i6l4g4VXYbIkFkKOp1tu0p` },
-      { label: "鋼琴", href: `${ZH}/collection/1ggqvrlg7cv3ToZhiGxH7WU1s50p` },
     ],
   },
 ];
@@ -218,14 +218,7 @@ export default function TeachersZh() {
 
   return (
     <>
-      <SEOHead
-        title="教師專區 — 免費高級頻道與 CDE 認證"
-        description="加入全球 400 多名教師的行列，在乾淨校園獲取免費高級頻道、教學工具，並成為認證數位教育家 (CDE)。"
-        canonicalPath="/zh/teachers"
-        keywords="乾淨校園教師, 免費教師頻道, CDE認證, 數位教育家, 教學資源, 教育平台, 善良教育"
-        ogImage="/images/teachers-hero.jpg"
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/zh/teachers")} jsonLd={jsonLd} />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-[oklch(0.45_0.12_30)] via-[oklch(0.55_0.14_40)] to-[oklch(0.65_0.12_50)]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

@@ -89,6 +89,24 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/40">
             &copy; {new Date().getFullYear()} Gan Jing World. All rights reserved.
+            <span className="mx-2">·</span>
+            <a
+              href="https://www.ganjingworld.com/policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white/90 transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <span className="mx-2">·</span>
+            <a
+              href="https://www.ganjingworld.com/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white/90 transition-colors"
+            >
+              Terms of Use
+            </a>
           </p>
           <p className="text-xs text-white/40 flex items-center gap-1">
             Made with <Heart className="w-3 h-3 text-coral fill-coral" /> for a kinder world

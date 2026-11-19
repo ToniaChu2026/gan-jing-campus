@@ -5,6 +5,7 @@
  */
 import { useEffect, useRef, useMemo } from "react";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 import { motion, useInView } from "framer-motion";
 import {
   Heart,
@@ -118,14 +119,7 @@ export default function Kindness() {
 
   return (
     <>
-      <SEOHead
-        title="Kindness Stories — Real Stories from Classrooms Worldwide"
-        description="Discover inspiring stories of how the #KindnessIsCool movement is transforming classrooms from Boston to Taiwan. See how Gan Jing Campus promotes compassion and character education globally."
-        canonicalPath="/kindness"
-        keywords="kindness stories, KindnessIsCool, character education, classroom kindness, Gan Jing Campus stories, global education, kindness awards, positive values"
-        ogImage="/images/kindness-hero.jpg"
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/kindness")} jsonLd={jsonLd} />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-[oklch(0.65_0.12_15)] via-[oklch(0.72_0.14_20)] to-[oklch(0.78_0.12_30)]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

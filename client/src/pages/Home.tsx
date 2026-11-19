@@ -23,6 +23,7 @@ import {
   Play,
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 
 const CAMPUS_HERO =
   "/images/campus-hero.webp";
@@ -143,13 +144,7 @@ export default function Home() {
 
   return (
     <>
-      <SEOHead
-        title="Where Learning Meets Kindness"
-        description="Gan Jing Campus is an ad-free, educator-friendly platform promoting kindness, creativity, and safe digital learning for children ages 4-16. Powered by Ethical AI. Join 400+ teachers across 6 continents."
-        canonicalPath="/"
-        keywords="Gan Jing Campus, safe education, ad-free learning, children education, kindness, summer camp 2026, ethical AI education, digital learning platform"
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/")} jsonLd={jsonLd} />
 
       {/* ===== HERO SECTION ===== */}
       <section

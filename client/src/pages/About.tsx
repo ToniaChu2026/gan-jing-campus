@@ -5,6 +5,7 @@
  */
 import { useEffect, useRef, useMemo } from "react";
 import SEOHead from "@/components/SEOHead";
+import { pageSeo } from "@/lib/seoRoutes";
 import { motion, useInView } from "framer-motion";
 import { Link } from "wouter";
 import {
@@ -107,14 +108,7 @@ export default function About() {
 
   return (
     <>
-      <SEOHead
-        title="About Gan Jing Campus — Mission, Safety & Global Impact"
-        description="Learn about Gan Jing Campus's mission to provide safe, ad-free education for children worldwide. Discover our triple-layered safety model, Ethical AI technology, and recognition across 6 continents."
-        canonicalPath="/about"
-        keywords="about Gan Jing Campus, education mission, ethical AI safety, triple-layered safety model, children digital safety, global education platform, ad-free education"
-        ogImage="/images/about-hero.jpg"
-        jsonLd={jsonLd}
-      />
+      <SEOHead {...pageSeo("/about")} jsonLd={jsonLd} />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-[oklch(0.35_0.08_250)] via-[oklch(0.42_0.12_240)] to-[oklch(0.52_0.14_230)]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

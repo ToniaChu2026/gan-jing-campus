@@ -74,7 +74,7 @@ function SiteNavbarZh() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all no-underline font-['Noto_Sans_SC'] ${
+                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all no-underline font-['Noto_Sans_SC'] ${
                   isActive
                     ? "bg-sunshine/15 text-sunshine-dark font-bold"
                     : scrolled || !isHome
@@ -117,6 +117,7 @@ function SiteNavbarZh() {
             scrolled || !isHome ? "text-foreground" : "text-white"
           }`}
           aria-label="切換選單"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -261,6 +262,24 @@ function SiteFooterZh() {
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/40">
             &copy; {new Date().getFullYear()} 乾淨世界。保留所有權利。
+            <span className="mx-2">·</span>
+            <a
+              href="https://www.ganjingworld.com/policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white/90 transition-colors"
+            >
+              隱私權政策
+            </a>
+            <span className="mx-2">·</span>
+            <a
+              href="https://www.ganjingworld.com/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white/90 transition-colors"
+            >
+              使用條款
+            </a>
           </p>
           <p className="text-xs text-white/40 flex items-center gap-1">
             用 <Heart className="w-3 h-3 text-coral fill-coral" /> 打造更善良的世界
