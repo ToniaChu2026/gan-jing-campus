@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 const CAMPUS_HERO =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/campus-hero-gdhxb86x5iLK854PVxdpfu.webp";
+  "/images/campus-hero.webp";
 
 function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
@@ -114,7 +114,7 @@ export default function AboutZh() {
         description="了解乾淨校園為全球兒童提供安全、無廣告教育的使命。探索我們的三層安全模型、道德AI技術以及在6大洲獲得的認可。"
         canonicalPath="/zh/about"
         keywords="關於乾淨校園, 教育使命, 道德AI安全, 三層安全模型, 兒童數位安全, 全球教育平台, 無廣告教育"
-        ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/campus-hero-gdhxb86x5iLK854PVxdpfu.webp"
+        ogImage="https://ganjingcampus.org/images/campus-hero.webp"
         jsonLd={jsonLd}
       />
       {/* ===== HERO ===== */}

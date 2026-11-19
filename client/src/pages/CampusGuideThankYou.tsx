@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Check, ArrowRight, Sparkles, Shield, Users, Heart } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 
-const LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/GJW-Campus_7c6022c9.png";
+const LOGO = "/images/gjw-campus-logo.png";
 const THANKYOU_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/thankyou-illustration-DC8TBVR3VWyN3JfLsZnowd.webp";
 const BOTANICAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/hero-botanical-bg-7FCBiShvJCXUsCnMz4uUep.webp";
 

@@ -15,7 +15,7 @@ import { Label } from "@/components/ui/label";
 import { Check, ArrowRight, Shield, BookOpen, Users, Clock, Sparkles, Heart } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 
-const LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/GJW-Campus_7c6022c9.png";
+const LOGO = "/images/gjw-campus-logo.png";
 const HERO_FAMILY = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/hero-family-ibVVtpyZu474fPsuBdUFZz.webp";
 const BOTANICAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/hero-botanical-bg-7FCBiShvJCXUsCnMz4uUep.webp";
 const SHIELD_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/benefits-shield-hHpaUadnLnh8NdNdCo4H3A.webp";

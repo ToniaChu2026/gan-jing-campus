@@ -9,7 +9,7 @@ import { Menu, X, Heart, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LOGO_URL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/GJW-Campus-logo_479f2b4f.png";
+  "/images/gjw-campus-logo.png";
 
 const navLinks = [
   { label: "Home", href: "/" },

@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 const CAMPUS_HERO =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/campus-hero-gdhxb86x5iLK854PVxdpfu.webp";
+  "/images/campus-hero.webp";
 
 function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
@@ -112,7 +112,7 @@ export default function About() {
         description="Learn about Gan Jing Campus's mission to provide safe, ad-free education for children worldwide. Discover our triple-layered safety model, Ethical AI technology, and recognition across 6 continents."
         canonicalPath="/about"
         keywords="about Gan Jing Campus, education mission, ethical AI safety, triple-layered safety model, children digital safety, global education platform, ad-free education"
-        ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/campus-hero-gdhxb86x5iLK854PVxdpfu.webp"
+        ogImage="https://ganjingcampus.org/images/campus-hero.webp"
         jsonLd={jsonLd}
       />
       {/* ===== HERO ===== */}
