@@ -122,7 +122,7 @@ const TEACHERS_VIDEO_2_EMBED_URL =
   "https://www.ganjingworld.com/embed/1ielb916s392SZoegKoN89LsN1oh1c";
 
 const TEACHERS_HERO =
-  "/images/teachers-premium-channel.webp";
+  "/images/teachers-hero.jpg";
 
 function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
@@ -223,7 +223,7 @@ export default function TeachersZh() {
         description="加入全球 400 多名教師的行列，在乾淨校園獲取免費高級頻道、教學工具，並成為認證數位教育家 (CDE)。"
         canonicalPath="/zh/teachers"
         keywords="乾淨校園教師, 免費教師頻道, CDE認證, 數位教育家, 教學資源, 教育平台, 善良教育"
-        ogImage="/images/teachers-premium-channel.webp"
+        ogImage="/images/teachers-hero.jpg"
         jsonLd={jsonLd}
       />
       {/* ===== HERO ===== */}

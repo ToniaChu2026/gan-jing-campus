@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Sun, Sparkles, ArrowDown } from "lucide-react";
 
 const HERO_IMG =
-  "/images/summer-camp.webp";
+  "/images/summer-camp-hero.jpg";
 
 export default function HeroSection() {
   return (

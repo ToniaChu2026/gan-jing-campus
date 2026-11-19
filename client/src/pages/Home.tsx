@@ -27,11 +27,11 @@ import SEOHead from "@/components/SEOHead";
 const CAMPUS_HERO =
   "/images/campus-hero.webp";
 const SUMMER_CAMP_IMG =
-  "/images/summer-camp.webp";
+  "/images/summer-camp-hero.jpg";
 const TEACHERS_IMG =
-  "/images/teachers-premium-channel.webp";
+  "/images/teachers-hero.jpg";
 const KINDNESS_IMG =
-  "/images/kindness-is-cool.webp";
+  "/images/kindness-hero.jpg";
 
 const VIDEO_EMBED_URL =
   "https://www.ganjingworld.com/embed/1hncnf3p8tl1VUrfGA8a6Ti1s1r61c";

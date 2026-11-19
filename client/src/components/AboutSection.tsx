@@ -30,7 +30,7 @@ const features = [
 ];
 
 const ACTIVITIES_IMG =
-  "/images/outdoor-moments.webp";
+  "/images/activities.jpg";
 
 function AnimatedCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);

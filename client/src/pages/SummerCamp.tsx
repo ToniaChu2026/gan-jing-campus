@@ -63,7 +63,7 @@ export default function SummerCamp() {
         description="Join Gan Jing Summer Camp 2026: a free, 8-week online program for children ages 4-16. Explore kindness, creativity, Chinese culture, STEM, and more in a 100% safe, ad-free environment."
         canonicalPath="/summer-camp"
         keywords="Gan Jing Summer Camp 2026, free summer camp online, kids summer program, kindness camp, creative learning, children ages 4-16, ad-free summer camp, ethical AI education"
-        ogImage="/images/summer-camp.webp"
+        ogImage="/images/summer-camp-hero.jpg"
         jsonLd={jsonLd}
       />
       <HeroSection />

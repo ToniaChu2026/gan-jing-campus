@@ -28,11 +28,11 @@ import KindnessTaiwanCampaign from "@/components/KindnessTaiwanCampaign";
 const CAMPUS_HERO =
   "/images/campus-hero.webp";
 const SUMMER_CAMP_IMG =
-  "/images/summer-camp-zh.webp";
+  "/images/summer-camp-hero.jpg";
 const TEACHERS_IMG =
-  "/images/teachers-premium-channel.webp";
+  "/images/teachers-hero.jpg";
 const KINDNESS_IMG =
-  "/images/kindness-is-cool.webp";
+  "/images/kindness-hero.jpg";
 
 const VIDEO_EMBED_URL =
   "https://www.ganjingworld.com/embed/1i819ipoeer7GPhQ5KSH6E2Ai1ju1c";

@@ -40,13 +40,13 @@ import {
 import SEOHead from "@/components/SEOHead";
 
 const HERO_IMG =
-  "/images/summer-camp-zh.webp";
+  "/images/summer-camp-hero.jpg";
 const ACTIVITIES_IMG =
-  "/images/outdoor-moments.webp";
+  "/images/activities.jpg";
 const KINDNESS_IMG =
-  "/images/kindness-is-cool.webp";
+  "/images/kindness-section.jpg";
 const CTA_BG =
-  "/images/campus-hero.webp";
+  "/images/summer-cta.jpg";
 const VIDEO_EMBED_URL =
   "https://www.ganjingworld.com/embed/1hkfg1b8ls819ca1gaHm04ldx1kf1c";
 const VIDEO_WATCH_URL =

@@ -20,7 +20,7 @@ import {
 import KindnessTaiwanCampaign from "@/components/KindnessTaiwanCampaign";
 
 const KINDNESS_HERO =
-  "/images/kindness-is-cool.webp";
+  "/images/kindness-hero.jpg";
 
 function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
@@ -123,7 +123,7 @@ export default function KindnessZh() {
         description="探索『#善良很酷』運動如何改變從波士頓到台灣的教室。了解乾淨校園如何在全球推廣同情心與品格教育。"
         canonicalPath="/zh/kindness"
         keywords="善良故事, KindnessIsCool, 品格教育, 教室中的善良, 乾淨校園故事, 全球教育, 善良獎, 正面價值觀"
-        ogImage="/images/kindness-is-cool.webp"
+        ogImage="/images/kindness-hero.jpg"
         jsonLd={jsonLd}
       />
       {/* ===== HERO ===== */}

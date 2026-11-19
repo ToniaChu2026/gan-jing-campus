@@ -119,7 +119,7 @@ const TEACHERS_VIDEO_EMBED_URL =
   "https://www.ganjingworld.com/embed/1iel47htmij21Oq3GTTzi6VqO1hv1c";
 
 const TEACHERS_HERO =
-  "/images/teachers-premium-channel.webp";
+  "/images/teachers-hero.jpg";
 
 function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
@@ -220,7 +220,7 @@ export default function Teachers() {
         description="Join 400+ teachers worldwide on Gan Jing Campus. Get a free Premium Channel, access teaching tools, curate resources, and earn your Certified Digital Educator (CDE) certification."
         canonicalPath="/teachers"
         keywords="Gan Jing Campus teachers, free teacher channel, CDE certification, digital educator, teacher resources, education platform, kindness education"
-        ogImage="/images/teachers-premium-channel.webp"
+        ogImage="/images/teachers-hero.jpg"
         jsonLd={jsonLd}
       />
       {/* ===== HERO ===== */}
