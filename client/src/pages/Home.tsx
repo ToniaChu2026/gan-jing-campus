@@ -33,7 +33,11 @@ const TEACHERS_IMG =
 const KINDNESS_IMG =
   "/images/kindness-hero.jpg";
 
+// Client-requested featured video — keep as is.
 const VIDEO_EMBED_URL =
+  "https://www.ganjingworld.com/embed/1gee46s65uhXU4bl7LFxW8qzR16v1c";
+// Additional video from the @GanJingCampus channel.
+const VIDEO_2_EMBED_URL =
   "https://www.ganjingworld.com/embed/1hncnf3p8tl1VUrfGA8a6Ti1s1r61c";
 
 const pillars = [
@@ -337,6 +341,38 @@ export default function Home() {
                 <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
                   <iframe
                     src={VIDEO_EMBED_URL}
+                    title="Gan Jing Campus — Introduction Video"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p className="text-center text-muted-foreground text-sm mt-4">
+                Watch on{" "}
+                <a
+                  href="https://www.ganjingworld.com/video/1gee46s65uhXU4bl7LFxW8qzR16v1c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sky hover:text-sky/80 font-medium"
+                >
+                  Gan Jing World
+                </a>
+              </p>
+            </div>
+          </AnimatedCard>
+
+          {/* Additional video */}
+          <AnimatedCard delay={0.2}>
+            <div className="max-w-4xl mx-auto mt-16">
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground text-center mb-6">
+                Why Parents Love Gan Jing Kids + <span className="text-sunshine-dark">Summer Camp</span>
+              </h3>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-foreground/5">
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    src={VIDEO_2_EMBED_URL}
                     title="Why Parents Love Gan Jing Kids Streaming + Summer Camp"
                     className="absolute inset-0 w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

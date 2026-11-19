@@ -34,7 +34,11 @@ const TEACHERS_IMG =
 const KINDNESS_IMG =
   "/images/kindness-hero.jpg";
 
+// 客戶指定的影片，請保留
 const VIDEO_EMBED_URL =
+  "https://www.ganjingworld.com/embed/1gdir87tbl5mrCAq7hrglVjAd1v21c";
+// 另外加上的 @乾淨校園 頻道影片
+const VIDEO_2_EMBED_URL =
   "https://www.ganjingworld.com/embed/1i819ipoeer7GPhQ5KSH6E2Ai1ju1c";
 
 const pillars = [
@@ -357,7 +361,7 @@ export default function HomeZh() {
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
               <iframe
                 src={VIDEO_EMBED_URL}
-                title="支持乾淨校園老師 為孩子撐起安全網絡天空"
+                title="Gan Jing Campus Introduction"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -384,6 +388,42 @@ export default function HomeZh() {
                   <span className="font-bold text-foreground font-['Noto_Sans_SC']">{cat.label}</span>
                 </div>
               ))}
+            </div>
+          </AnimatedCard>
+        </div>
+      </section>
+
+      {/* ===== 另外加上的影片 ===== */}
+      <section className="pb-20 md:pb-28 bg-background">
+        <div className="container">
+          <AnimatedCard>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-display text-2xl md:text-3xl font-extrabold text-foreground text-center mb-6 font-['Noto_Sans_SC']">
+                支持乾淨校園老師，為孩子撐起安全網絡天空
+              </h2>
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
+                <iframe
+                  src={VIDEO_2_EMBED_URL}
+                  title="支持乾淨校園老師 為孩子撐起安全網絡天空"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+                <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/10 rounded-2xl"></div>
+              </div>
+              <p className="text-center text-muted-foreground text-sm mt-4 font-['Noto_Sans_SC']">
+                在{" "}
+                <a
+                  href="https://www.ganjingworld.com/zh-TW/video/1i819ipoeer7GPhQ5KSH6E2Ai1ju1c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sky hover:text-sky/80 font-medium"
+                >
+                  乾淨世界
+                </a>{" "}
+                觀看
+              </p>
             </div>
           </AnimatedCard>
         </div>
