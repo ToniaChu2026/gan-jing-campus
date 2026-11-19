@@ -20,7 +20,7 @@ import {
 import { Link } from "wouter";
 
 const KINDNESS_HERO =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/kindness-hero-NNsaYWbcqqnPPW3ascmMvs.webp";
+  "/images/kindness-is-cool.webp";
 
 function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
@@ -123,7 +123,7 @@ export default function Kindness() {
         description="Discover inspiring stories of how the #KindnessIsCool movement is transforming classrooms from Boston to Taiwan. See how Gan Jing Campus promotes compassion and character education globally."
         canonicalPath="/kindness"
         keywords="kindness stories, KindnessIsCool, character education, classroom kindness, Gan Jing Campus stories, global education, kindness awards, positive values"
-        ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/kindness-hero-NNsaYWbcqqnPPW3ascmMvs.webp"
+        ogImage="/images/kindness-is-cool.webp"
         jsonLd={jsonLd}
       />
       {/* ===== HERO ===== */}

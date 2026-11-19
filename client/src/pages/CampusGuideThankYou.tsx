@@ -11,8 +11,7 @@ import { Check, ArrowRight, Sparkles, Shield, Users, Heart } from "lucide-react"
 import SEOHead from "@/components/SEOHead";
 
 const LOGO = "/images/gjw-campus-logo.png";
-const THANKYOU_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/thankyou-illustration-DC8TBVR3VWyN3JfLsZnowd.webp";
-const BOTANICAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/hero-botanical-bg-7FCBiShvJCXUsCnMz4uUep.webp";
+const THANKYOU_IMG = "/images/campus-hero.webp";
 
 const bundleBenefits = [
   {
@@ -81,14 +80,6 @@ export default function CampusGuideThankYou() {
 
         {/* ─── Confirmation Hero ─── */}
         <section className="relative pt-12 pb-16 lg:pt-20 lg:pb-24 overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: `url(${BOTANICAL_BG})`,
-              backgroundSize: "700px",
-              backgroundRepeat: "repeat",
-            }}
-          />
 
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
@@ -169,7 +160,7 @@ export default function CampusGuideThankYou() {
               >
                 <img
                   src={THANKYOU_IMG}
-                  alt="Parent and child planting a seedling together"
+                  alt="Illustration of children painting, reading and making music together outdoors"
                   className="w-72 sm:w-80 h-auto mx-auto"
                 />
               </motion.div>

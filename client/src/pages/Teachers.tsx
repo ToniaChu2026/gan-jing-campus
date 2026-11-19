@@ -20,13 +20,106 @@ import {
   Shield,
   Sparkles,
   Play,
+  Heart,
+  Landmark,
+  Languages,
+  Calculator,
+  FlaskConical,
+  Music2,
+  Earth,
 } from "lucide-react";
+import TeacherResources, { type ResourceSubject } from "@/components/TeacherResources";
+
+const GJW = "https://www.ganjingworld.com";
+
+// Mirrors the "Resources" list on https://www.ganjingworld.com/@GanJingCampus
+const resourceSubjects: ResourceSubject[] = [
+  {
+    title: "Kindness Is Cool",
+    icon: Heart,
+    links: [
+      { label: "#KindnessIsCool videos", href: `${GJW}/hashtag/Kindnessiscool?tab=Featured&l=KindnessIsCool` },
+      { label: "KindnessIsCool at Times Square", href: `${GJW}/hashtag/KindnessIsCoolatTimesSquare?tab=Featured&l=KindnessIsCool` },
+    ],
+  },
+  {
+    title: "Chinese Culture & Language",
+    icon: Landmark,
+    links: [
+      { label: "Sara's History of China", href: `${GJW}/channel/1f78717q5684GBlhr4Wlnao4f12u0c` },
+      { label: "Jing Di Academy", href: `${GJW}/channel/1gcgl5ir9kf3C7Ou3UM1cE41a16v0c` },
+      { label: "Five Thousand Years", href: `${GJW}/channel/1eiqjdnq7go7FAcIBydSikOc31e40c` },
+      { label: "Learn Chinese Now", href: `${GJW}/channel/1eiqjdnq7go5IsaQHbXT7jcAb1tp0c` },
+      { label: "Mr. He's Chinese Class", href: `${GJW}/channel/1fl2sdgaidg74HKbZRjlGR4af1oi0c` },
+    ],
+  },
+  {
+    title: "English Language Arts",
+    icon: BookOpen,
+    links: [
+      { label: "Ancient Stories", href: `${GJW}/channel/1eiqjdnq7go26SteQuEmEypNM18n0c` },
+      { label: "Famous Authors", href: `${GJW}/channel/1eiqjdnq7go4kJFrW6P53mTYJ1e70c` },
+      { label: "English with Jennifer", href: `${GJW}/channel/1g2dmdtdgq03YRaYhFdYj6Bwh1ef0c` },
+      { label: "Pre-K – 2nd grade", href: `${GJW}/tag/English%20Language%20Arts/1709135708456?stag=tag_1709235281332` },
+      { label: "3rd – 5th grade", href: `${GJW}/tag/English%20Language%20Arts/1709135708456?stag=tag_1709235286482` },
+    ],
+  },
+  {
+    title: "World Languages",
+    icon: Languages,
+    links: [
+      { label: "Spanish: A&D School of Kindness, Language, and Culture", href: `${GJW}/channel/1fv8v0gu1mm47o7pwsfgze4Cd1750c` },
+      { label: "Conversational Korean", href: `${GJW}/channel/1f940amek6owvp7v60sOBATaK1mq0c` },
+      { label: "Speak Chinese Now", href: `${GJW}/channel/1g1tucvpg6h39Clev9kqEtDQA1l50c` },
+    ],
+  },
+  {
+    title: "Math",
+    icon: Calculator,
+    links: [
+      { label: "Math Solved", href: `${GJW}/channel/1f7l47rr9sgAiXJzVp9P4271T11s0c` },
+      { label: "Keith's Toy Box", href: `${GJW}/channel/1g0lrch7utfvuye3SwTi4cBGs1660c` },
+      { label: "Pre-K – 2nd grade", href: `${GJW}/tag/Math/1700605660372?stag=tag_1709234786648` },
+      { label: "6th – 8th grade", href: `${GJW}/tag/Math/1700605660372?stag=tag_1709234800595` },
+      { label: "9th – 12th grade", href: `${GJW}/tag/Math/1700605660372?stag=tag_1709234806517` },
+    ],
+  },
+  {
+    title: "Science",
+    icon: FlaskConical,
+    links: [
+      { label: "Khan Academy India - English", href: `${GJW}/channel/1f93tbv2q4gL0Rr8bfIWhBpSB17j0c` },
+      { label: "The ScienceVerse", href: `${GJW}/channel/1f95993n0bo1tel8RvdGnvM0t1q10c` },
+      { label: "Kids Fun Science", href: `${GJW}/channel/1f96deduhvg7fAeJo5s71ZiUz1v00c` },
+      { label: "Pre-K – 2nd grade", href: `${GJW}/tag/Science/1709134792579?stag=tag_1709234971229` },
+    ],
+  },
+  {
+    title: "Music",
+    icon: Music2,
+    links: [
+      { label: "Music Theory", href: `${GJW}/tag/Music/1709134814585?stag=tag_1709319655507` },
+      { label: "WOA Wolfoo", href: `${GJW}/channel/1gq6nmvfnup1AkcTNdZs1InV214j0c` },
+      { label: "Healing Music", href: `${GJW}/channel/1fq4eaqeios5phjwPhNGHZI9o1gq0c` },
+    ],
+  },
+  {
+    title: "History & Social Studies",
+    icon: Earth,
+    links: [
+      { label: "World History", href: `${GJW}/tag/Social%20Studies/1709234307907?stag=tag_1709237425930` },
+      { label: "Geography", href: `${GJW}/tag/Social%20Studies/1709234307907?stag=tag_1709243251970` },
+      { label: "OER Project", href: `${GJW}/channel/1f92q2m9ui84YRCEPbaYdJoy91le0c` },
+      { label: "World History Encyclopedia", href: `${GJW}/channel/1f6c59uq7cg43JFrtpwq0TiFc18g0c` },
+    ],
+  },
+];
 
 const TEACHERS_VIDEO_EMBED_URL =
   "https://www.ganjingworld.com/embed/1iel47htmij21Oq3GTTzi6VqO1hv1c";
 
 const TEACHERS_HERO =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/teachers-hero-NfGYecHrTG2AyDfm2uGxh3.webp";
+  "/images/teachers-premium-channel.webp";
 
 function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
@@ -127,7 +220,7 @@ export default function Teachers() {
         description="Join 400+ teachers worldwide on Gan Jing Campus. Get a free Premium Channel, access teaching tools, curate resources, and earn your Certified Digital Educator (CDE) certification."
         canonicalPath="/teachers"
         keywords="Gan Jing Campus teachers, free teacher channel, CDE certification, digital educator, teacher resources, education platform, kindness education"
-        ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/teachers-hero-NfGYecHrTG2AyDfm2uGxh3.webp"
+        ogImage="/images/teachers-premium-channel.webp"
         jsonLd={jsonLd}
       />
       {/* ===== HERO ===== */}
@@ -336,6 +429,27 @@ export default function Teachers() {
           </div>
         </div>
       </section>
+
+      {/* ===== RESOURCES + APPLY / SUPPORT ===== */}
+      <TeacherResources
+        badge="Teaching Resources"
+        heading="Free Resources for Every Subject"
+        intro="Curated, ad-free channels and playlists on Gan Jing World, from Pre-K to 12th grade, ready to share with your class."
+        subjects={resourceSubjects}
+        channelLink={{ label: "See all resources on the Gan Jing Campus channel", href: `${GJW}/@GanJingCampus` }}
+        apply={{
+          title: "Apply for Your Free Premium Channel",
+          desc: "Gan Jing Campus gives teachers Premium Channel features, professional development courses and kindness event toolkits to build a positive, interactive classroom community.",
+          cta: "Apply Now — It's Free",
+          href: `${GJW}/creators/ganjingcampus/form`,
+        }}
+        support={{
+          title: "Support Gan Jing Campus",
+          desc: "Help gift more teachers a FREE Premium Channel, so their students can learn in a clean, safe and positive online environment.",
+          cta: "Support Teachers",
+          href: `${GJW}/support-us`,
+        }}
+      />
 
       {/* ===== STATS ===== */}
       <section className="py-16 bg-gradient-to-r from-sky via-sky to-[oklch(0.65_0.16_230)]">

@@ -8,7 +8,7 @@ import { useRef } from "react";
 import { ShieldCheck, Eye, Ban, Brain, Lock, Smile, type LucideIcon } from "lucide-react";
 
 const KINDNESS_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/kindness-section-3qy49Wh4Qnft6Lwe2fRkwM.webp";
+  "/images/kindness-safe-online.webp";
 
 const safetyFeatures = [
   {

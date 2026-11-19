@@ -6,96 +6,115 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import {
-  Heart,
+  Tent,
+  Rocket,
   Palette,
-  Globe,
-  Brain,
-  Music,
+  Landmark,
+  Heart,
+  BookOpen,
   Leaf,
-  Star,
-  Lightbulb,
+  Scissors,
+  ArrowUpRight,
 } from "lucide-react";
+
+const ARTICLE = "https://www.ganjingworld.com/article/";
 
 const weeks = [
   {
     num: 1,
-    title: "Kindness & Compassion",
+    title: "My Outdoor Moments",
+    icon: Tent,
+    color: "text-meadow",
+    bgColor: "bg-meadow/10",
+    numBg: "bg-meadow",
+    tags: ["Camping", "Picnics", "Nature Trails", "Stargazing"],
+    desc: "20+ films and series about the outdoors, sports and travel, like The Pony Sitter Club and Nature Knows Best. Campers stargaze, go on a nature trail treasure hunt and tell stories under the stars.",
+    image: "/images/week-1.webp",
+    link: `${ARTICLE}1hjrfob7b551wUxqvpqucE78M1st1c`,
+  },
+  {
+    num: 2,
+    title: "Space & Science",
+    icon: Rocket,
+    color: "text-[oklch(0.55_0.2_280)]",
+    bgColor: "bg-[oklch(0.55_0.2_280)]/10",
+    numBg: "bg-[oklch(0.55_0.2_280)]",
+    tags: ["Space", "Ocean Life", "Experiments", "Nature"],
+    desc: "Fun, educational shows about nature, space and the ocean, from emperor penguins to Shark School. Campers build molecule models from clay and try hands-on science activities.",
+    image: "/images/week-2.webp",
+    link: `${ARTICLE}1hjrg7h0mo13cDJsbNU54yoRr1f31c`,
+  },
+  {
+    num: 3,
+    title: "Art & Music Journey",
+    icon: Palette,
+    color: "text-coral",
+    bgColor: "bg-coral/10",
+    numBg: "bg-coral",
+    tags: ["Drawing", "Music", "Performance", "Creativity"],
+    desc: "Sing-alongs, The Mozart Band and the film Hope Dances bring art and music to life. Campers sketch nature, share a musical performance and express themselves creatively.",
+    image: "/images/week-3.webp",
+    link: `${ARTICLE}1hjrg8de72m5rKFvi8hdIn3ak1o01c`,
+  },
+  {
+    num: 4,
+    title: "Legends of History",
+    icon: Landmark,
+    color: "text-sunshine-dark",
+    bgColor: "bg-sunshine/10",
+    numBg: "bg-sunshine-dark",
+    tags: ["Historical Heroes", "Chinese Culture", "Storytelling", "Role-play"],
+    desc: "Dramas and animated series about legendary figures take kids on a time-travel journey. Campers tell the story of a hero like Confucius or Hua Mulan and imagine a day as a young scholar.",
+    image: "/images/week-4.webp",
+    link: `${ARTICLE}1hjrg942odf5IYYYGRpumo9vh17n1c`,
+  },
+  {
+    num: 5,
+    title: "Kindness & Character",
     icon: Heart,
     color: "text-coral",
     bgColor: "bg-coral/10",
     numBg: "bg-coral",
-    tags: ["Empathy", "Sharing", "Helping Others", "Friendship"],
-    desc: "Discover the power of kindness through heartwarming stories and the #KindnessIsCool challenge. Children learn how small acts of compassion can change the world.",
-  },
-  {
-    num: 2,
-    title: "Creativity & Arts",
-    icon: Palette,
-    color: "text-sky",
-    bgColor: "bg-sky/10",
-    numBg: "bg-sky",
-    tags: ["Drawing", "Music", "Dance", "Storytelling"],
-    desc: "Unleash imagination through art, music, and creative expression. Watch inspiring shows and complete hands-on art projects each day.",
-  },
-  {
-    num: 3,
-    title: "World Cultures & Languages",
-    icon: Globe,
-    color: "text-meadow",
-    bgColor: "bg-meadow/10",
-    numBg: "bg-meadow",
-    tags: ["Geography", "Traditions", "Languages", "Food"],
-    desc: "Travel the world from home! Explore diverse cultures, learn basic phrases in new languages, and celebrate what makes each culture unique.",
-  },
-  {
-    num: 4,
-    title: "STEM Explorers",
-    icon: Brain,
-    color: "text-[oklch(0.55_0.2_280)]",
-    bgColor: "bg-[oklch(0.55_0.2_280)]/10",
-    numBg: "bg-[oklch(0.55_0.2_280)]",
-    tags: ["Science", "Math", "Coding", "Experiments"],
-    desc: "Dive into the wonders of science, technology, engineering, and math through fun experiments, puzzles, and problem-solving adventures.",
-  },
-  {
-    num: 5,
-    title: "Music & Movement",
-    icon: Music,
-    color: "text-sunshine-dark",
-    bgColor: "bg-sunshine/10",
-    numBg: "bg-sunshine-dark",
-    tags: ["Songs", "Fitness", "Yoga", "Rhythm"],
-    desc: "Get moving with energizing music, dance routines, yoga sessions, and rhythm games. A week dedicated to healthy bodies and joyful movement.",
+    tags: ["Kindness", "Gratitude", "Empathy", "Role Models"],
+    desc: "A week focused on the heart. Campers become Secret Kindness Agents, fill a Gratitude Jar, make a Hero Wall Poster and draw a kindness comic strip.",
+    image: "/images/week-5.webp",
+    link: `${ARTICLE}1hjrg9ra4pt2DMD8k6c5lVJVa1sb1c`,
   },
   {
     num: 6,
-    title: "Nature & Environment",
+    title: "Reading Adventure",
+    icon: BookOpen,
+    color: "text-sky",
+    bgColor: "bg-sky/10",
+    numBg: "bg-sky",
+    tags: ["Books", "Book Reviews", "Acting", "Reading Aloud"],
+    desc: "Dive into captivating stories and new worlds. Campers review a favorite book, act out a scene, design a new book cover and read aloud to friends or family.",
+    image: "/images/week-6.webp",
+    link: `${ARTICLE}1hjrgbeah3f6qdSd7gnN33avg1ti1c`,
+  },
+  {
+    num: 7,
+    title: "Little Naturalist",
     icon: Leaf,
     color: "text-meadow",
     bgColor: "bg-meadow/10",
     numBg: "bg-meadow",
-    tags: ["Animals", "Plants", "Ecology", "Outdoor Fun"],
-    desc: "Connect with the natural world through nature documentaries, outdoor scavenger hunts, gardening projects, and learning about our planet.",
-  },
-  {
-    num: 7,
-    title: "Character & Values",
-    icon: Star,
-    color: "text-sunshine-dark",
-    bgColor: "bg-sunshine/10",
-    numBg: "bg-sunshine-dark",
-    tags: ["Honesty", "Courage", "Respect", "Responsibility"],
-    desc: "Build strong character through stories of real-life heroes, moral dilemmas, and the Global Kindness Video Awards inspiration.",
+    tags: ["Plants", "Animals", "Nature Diary", "Eco-Friendly"],
+    desc: "Discover plants, animals and the environment. Campers go on a scavenger hunt, keep a nature diary, plant a seed and write an eco-friendly pledge.",
+    image: "/images/week-7.webp",
+    link: `${ARTICLE}1hjrgcdnssk45Y795WV0fG4Dh1uj1c`,
   },
   {
     num: 8,
-    title: "Innovation & Future",
-    icon: Lightbulb,
-    color: "text-sky",
-    bgColor: "bg-sky/10",
-    numBg: "bg-sky",
-    tags: ["Invention", "Teamwork", "Leadership", "Dreams"],
-    desc: "Cap off the summer by dreaming big! Explore inventions, work on a final creative project, and celebrate everything learned together.",
+    title: "Let's DIY Together",
+    icon: Scissors,
+    color: "text-sunshine-dark",
+    bgColor: "bg-sunshine/10",
+    numBg: "bg-sunshine-dark",
+    tags: ["Crafts", "Recycling", "Teamwork", "Hands-on"],
+    desc: "Creative shows like Let's DIY and Nicole's Attic inspire hands-on learning. Campers take the Trash to Treasure challenge and turn everyday materials into new creations.",
+    image: "/images/week-8.webp",
+    link: `${ARTICLE}1hjrgd71vrj45iNYFfEonXRlE18n1c`,
   },
 ];
 
@@ -134,7 +153,7 @@ function WeekCard({
           </h3>
         </div>
         <p className="text-muted-foreground leading-relaxed mb-3">{week.desc}</p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mb-4">
           {week.tags.map((tag) => (
             <span
               key={tag}
@@ -144,6 +163,28 @@ function WeekCard({
             </span>
           ))}
         </div>
+        <a
+          href={week.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block max-w-sm overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow"
+        >
+          <img
+            src={week.image}
+            alt={`Week ${week.num} theme: ${week.title}`}
+            className="w-full aspect-video object-cover group-hover:scale-[1.02] transition-transform"
+            loading="lazy"
+          />
+        </a>
+        <a
+          href={week.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex items-center gap-1 mt-3 text-sm font-semibold ${week.color} hover:underline`}
+        >
+          See this week's watchlist & activities
+          <ArrowUpRight className="w-4 h-4" />
+        </a>
       </div>
     </motion.div>
   );
@@ -156,7 +197,7 @@ export default function WeeklyThemes() {
   const displayed = showAll ? weeks : weeks.slice(0, 4);
 
   return (
-    <section id="weekly-themes" className="py-20 md:py-28 bg-cream">
+    <section id="weekly-themes" className="py-20 md:py-28 bg-cream overflow-hidden">
       <div className="container">
         {/* Section header */}
         <motion.div
@@ -174,8 +215,8 @@ export default function WeeklyThemes() {
             <span className="text-sky">Adventures</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Each week brings a new theme with curated films, creative activities, and kindness challenges
-            designed to inspire and educate.
+            Each week brings a new theme with a curated watchlist of films and shows, plus hands-on
+            activities. Campers share their work on Gan Jing World with #GanJingSummerCamp.
           </p>
         </motion.div>
 

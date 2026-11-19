@@ -40,13 +40,13 @@ import {
 import SEOHead from "@/components/SEOHead";
 
 const HERO_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/hero-banner-iqxoTcBJNU64e8KpLGpYJY.webp";
+  "/images/summer-camp-zh.webp";
 const ACTIVITIES_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/activities-section-nHHGtKZpC6E9bfJK8TpfT4.webp";
+  "/images/outdoor-moments.webp";
 const KINDNESS_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/kindness-section-3qy49Wh4Qnft6Lwe2fRkwM.webp";
+  "/images/kindness-is-cool.webp";
 const CTA_BG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/cta-background-5H7ZhWpykPiuKW8LACeKTC.webp";
+  "/images/campus-hero.webp";
 const VIDEO_EMBED_URL =
   "https://www.ganjingworld.com/embed/1hkfg1b8ls819ca1gaHm04ldx1kf1c";
 const VIDEO_WATCH_URL =

@@ -49,12 +49,19 @@ export default function SEOHead({
     setMeta("name", "robots", "index, follow, max-image-preview:large");
     setMeta("name", "author", "Gan Jing Campus");
 
+    // Social previews need absolute image URLs; allow pages to pass site paths like /images/x.webp
+    const shareImage = !ogImage
+      ? DEFAULT_OG_IMAGE
+      : ogImage.startsWith("/")
+        ? `${BASE_URL}${ogImage}`
+        : ogImage;
+
     // Open Graph
     setMeta("property", "og:title", `${title} | ${SITE_NAME}`);
     setMeta("property", "og:description", description);
     setMeta("property", "og:type", ogType);
     setMeta("property", "og:url", `${BASE_URL}${canonicalPath}`);
-    setMeta("property", "og:image", ogImage || DEFAULT_OG_IMAGE);
+    setMeta("property", "og:image", shareImage);
     setMeta("property", "og:site_name", SITE_NAME);
     setMeta("property", "og:locale", "en_US");
 
@@ -62,7 +69,7 @@ export default function SEOHead({
     setMeta("name", "twitter:card", "summary_large_image");
     setMeta("name", "twitter:title", `${title} | ${SITE_NAME}`);
     setMeta("name", "twitter:description", description);
-    setMeta("name", "twitter:image", ogImage || DEFAULT_OG_IMAGE);
+    setMeta("name", "twitter:image", shareImage);
 
     // Canonical link
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;

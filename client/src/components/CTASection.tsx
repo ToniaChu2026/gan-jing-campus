@@ -8,7 +8,7 @@ import { useRef } from "react";
 import { Sun, CheckCircle, ArrowRight } from "lucide-react";
 
 const CTA_BG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/cta-background-5H7ZhWpykPiuKW8LACeKTC.webp";
+  "/images/campus-hero.webp";
 
 const benefits = [
   "8 weeks of curated educational content",

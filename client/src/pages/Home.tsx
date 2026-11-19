@@ -27,14 +27,14 @@ import SEOHead from "@/components/SEOHead";
 const CAMPUS_HERO =
   "/images/campus-hero.webp";
 const SUMMER_CAMP_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/hero-banner-iqxoTcBJNU64e8KpLGpYJY.webp";
+  "/images/summer-camp.webp";
 const TEACHERS_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/teachers-hero-NfGYecHrTG2AyDfm2uGxh3.webp";
+  "/images/teachers-premium-channel.webp";
 const KINDNESS_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/kindness-hero-NNsaYWbcqqnPPW3ascmMvs.webp";
+  "/images/kindness-is-cool.webp";
 
 const VIDEO_EMBED_URL =
-  "https://www.ganjingworld.com/embed/1gee46s65uhXU4bl7LFxW8qzR16v1c";
+  "https://www.ganjingworld.com/embed/1hncnf3p8tl1VUrfGA8a6Ti1s1r61c";
 
 const pillars = [
   {
@@ -337,7 +337,7 @@ export default function Home() {
                 <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
                   <iframe
                     src={VIDEO_EMBED_URL}
-                    title="Gan Jing Campus — Introduction Video"
+                    title="Why Parents Love Gan Jing Kids Streaming + Summer Camp"
                     className="absolute inset-0 w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -348,7 +348,7 @@ export default function Home() {
               <p className="text-center text-muted-foreground text-sm mt-4">
                 Watch on{" "}
                 <a
-                  href="https://www.ganjingworld.com/video/1gee46s65uhXU4bl7LFxW8qzR16v1c"
+                  href="https://www.ganjingworld.com/video/1hncnf3p8tl1VUrfGA8a6Ti1s1r61c"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sky hover:text-sky/80 font-medium"

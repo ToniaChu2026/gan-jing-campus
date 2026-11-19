@@ -8,7 +8,7 @@ import { useRef } from "react";
 import { Award, Video, BookOpen, Hash, Music2, Users, ArrowRight } from "lucide-react";
 
 const TEACHERS_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/teachers-section-n7GwQ9X6dPhGD6AqwwtqWH.webp";
+  "/images/teachers-handbook.webp";
 
 const features = [
   {

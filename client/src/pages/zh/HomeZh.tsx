@@ -23,18 +23,19 @@ import {
   Play,
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import KindnessTaiwanCampaign from "@/components/KindnessTaiwanCampaign";
 
 const CAMPUS_HERO =
   "/images/campus-hero.webp";
 const SUMMER_CAMP_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/hero-banner-iqxoTcBJNU64e8KpLGpYJY.webp";
+  "/images/summer-camp-zh.webp";
 const TEACHERS_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/teachers-hero-NfGYecHrTG2AyDfm2uGxh3.webp";
+  "/images/teachers-premium-channel.webp";
 const KINDNESS_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/kindness-hero-NNsaYWbcqqnPPW3ascmMvs.webp";
+  "/images/kindness-is-cool.webp";
 
 const VIDEO_EMBED_URL =
-  "https://www.ganjingworld.com/embed/1gdir87tbl5mrCAq7hrglVjAd1v21c";
+  "https://www.ganjingworld.com/embed/1i819ipoeer7GPhQ5KSH6E2Ai1ju1c";
 
 const pillars = [
   {
@@ -356,7 +357,7 @@ export default function HomeZh() {
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
               <iframe
                 src={VIDEO_EMBED_URL}
-                title="Gan Jing Campus Introduction"
+                title="支持乾淨校園老師 為孩子撐起安全網絡天空"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -482,6 +483,9 @@ export default function HomeZh() {
           </AnimatedCard>
         </div>
       </section>
+
+      {/* ===== 第四屆《善念點亮台灣》 ===== */}
+      <KindnessTaiwanCampaign compact />
 
       {/* ===== CTA ===== */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-sunshine via-sunshine to-sunshine-dark relative overflow-hidden">

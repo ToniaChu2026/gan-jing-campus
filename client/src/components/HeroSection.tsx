@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Sun, Sparkles, ArrowDown } from "lucide-react";
 
 const HERO_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/hero-banner-iqxoTcBJNU64e8KpLGpYJY.webp";
+  "/images/summer-camp.webp";
 
 export default function HeroSection() {
   return (

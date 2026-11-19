@@ -20,7 +20,100 @@ import {
   Shield,
   Sparkles,
   Play,
+  Heart,
+  Landmark,
+  Languages,
+  Calculator,
+  FlaskConical,
+  Music2,
+  Palette,
 } from "lucide-react";
+import TeacherResources, { type ResourceSubject } from "@/components/TeacherResources";
+
+const GJW = "https://www.ganjingworld.com";
+const ZH = `${GJW}/zh-TW`;
+
+// 對應 https://www.ganjingworld.com/@乾淨校園 頻道上的「教學資源」清單
+const resourceSubjects: ResourceSubject[] = [
+  {
+    title: "品德與社會情緒學習",
+    icon: Heart,
+    links: [
+      { label: "社會情緒學習（SEL）教案", href: `${ZH}/collection/1hq2o981a993rdNkI7jdNTd1d20p` },
+      { label: "#SEL社會情緒學習", href: `${GJW}/hashtag/SEL%E7%A4%BE%E6%9C%83%E6%83%85%E7%B7%92%E5%AD%B8%E7%BF%92` },
+      { label: "國小品德", href: `${GJW}/s/qKgJ8G1Yrw` },
+      { label: "Kindness is cool", href: `${GJW}/hashtag/KindnessIsCool?tab=Featured&l=KindnessIsCool` },
+      { label: "兒童網路安全", href: `${ZH}/collection/1gvkl23ukvs2TH0hU6SKHxH1h00p` },
+    ],
+  },
+  {
+    title: "國語文",
+    icon: BookOpen,
+    links: [
+      { label: "學齡前童話故事", href: `${ZH}/collection/1geo51m91go3sP2cOWmTRRG1220p` },
+      { label: "國小國語", href: `${GJW}/s/Gkmr08e8wO` },
+      { label: "國小古典詩詞", href: `${ZH}/collection/1geo6uc5b0oam6l06RaWirT1v40p` },
+      { label: "國小成語故事", href: `${ZH}/collection/1geo54dlt276J3pyvGElJgW1bd0p` },
+      { label: "書法", href: `${ZH}/collection/1gf777pubn66CGHkTKc5Sv21pp0p` },
+    ],
+  },
+  {
+    title: "英語文",
+    icon: Languages,
+    links: [
+      { label: "學齡前英語", href: `${ZH}/gjwplus/kids/themes/tag_1757947635109_video` },
+      { label: "國小英語", href: `${ZH}/collection/1gesog4r9b84KzRJAsJC5rf11m0p` },
+      { label: "國中英語", href: `${ZH}/collection/1gdfru7oamn4s2uyFa6lvKK1c30p` },
+      { label: "高中英語", href: `${ZH}/collection/1gdf1c79a1m6YwXPq2IoMit1hh0p` },
+    ],
+  },
+  {
+    title: "數學",
+    icon: Calculator,
+    links: [
+      { label: "國小數學", href: `${ZH}/channel/1gbom2fu3gd4Q8gmQESvYjYGB1050c/collection/1glk0uakn8t2Y6AXn6yfH0t1370p` },
+      { label: "高中數學", href: `${ZH}/collection/1geo9lnljk84xkTNTi49cYG1lo0p` },
+    ],
+  },
+  {
+    title: "自然科學",
+    icon: FlaskConical,
+    links: [
+      { label: "國小自然", href: `${ZH}/collection/1gg2tr7inen608SyxlRI0K81ti0p` },
+      { label: "國中生物", href: `${ZH}/collection/1gipvisfi4g3ySXJRoe1oPE1lf0p` },
+      { label: "太空探索", href: `${ZH}/playlist/1f5oh8pcnh82LHIbOZF8rIf15m0p` },
+    ],
+  },
+  {
+    title: "歷史與傳統文化",
+    icon: Landmark,
+    links: [
+      { label: "國小傳統文化", href: `${ZH}/collection/1geql36cvkb7x4oDlT9614P18p0p` },
+      { label: "24節氣", href: `${ZH}/collection/1gj2hna50b14lZ8YvV2JMhM18i0p` },
+      { label: "國小台灣歷史", href: `${ZH}/collection/1gc9a7ss3eoPaX4HvnABfAf1gm0p` },
+      { label: "國中中國歷史", href: `${ZH}/collection/1gc9au7fm4642Bsd3nASciU1ck0p` },
+      { label: "中華文明史", href: `${ZH}/channel/1eiqjdnq7go5pVcjheW81Z1KD1er0c/playlist/1fnilmqv0mf7x7AuKoxBxpD1o30p` },
+    ],
+  },
+  {
+    title: "藝術",
+    icon: Palette,
+    links: [
+      { label: "國小美勞", href: `${GJW}/s/qKgJxwbZjl` },
+      { label: "國小國畫", href: `${ZH}/collection/1gdf33e8cca2YVlpPY1pcEq1870p` },
+      { label: "高中藝術賞析", href: `${ZH}/collection/1geo6g0k1v73LdNQ211iXs61ct0p` },
+    ],
+  },
+  {
+    title: "音樂",
+    icon: Music2,
+    links: [
+      { label: "學齡前童謠", href: `${ZH}/collection/1gcfcrq95th1hB0JjzXIeEr1h70p` },
+      { label: "國小音樂", href: `${ZH}/collection/1geo80i6l4g4VXYbIkFkKOp1tu0p` },
+      { label: "鋼琴", href: `${ZH}/collection/1ggqvrlg7cv3ToZhiGxH7WU1s50p` },
+    ],
+  },
+];
 
 const TEACHERS_VIDEO_EMBED_URL =
   "https://www.ganjingworld.com/embed/1iafn44i1v312BPq0nEUkwTUU1g51c";
@@ -29,7 +122,7 @@ const TEACHERS_VIDEO_2_EMBED_URL =
   "https://www.ganjingworld.com/embed/1ielb916s392SZoegKoN89LsN1oh1c";
 
 const TEACHERS_HERO =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/teachers-hero-NfGYecHrTG2AyDfm2uGxh3.webp";
+  "/images/teachers-premium-channel.webp";
 
 function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
@@ -130,7 +223,7 @@ export default function TeachersZh() {
         description="加入全球 400 多名教師的行列，在乾淨校園獲取免費高級頻道、教學工具，並成為認證數位教育家 (CDE)。"
         canonicalPath="/zh/teachers"
         keywords="乾淨校園教師, 免費教師頻道, CDE認證, 數位教育家, 教學資源, 教育平台, 善良教育"
-        ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/FejRdH2ZxLJ7ALCougUU5q/teachers-hero-NfGYecHrTG2AyDfm2uGxh3.webp"
+        ogImage="/images/teachers-premium-channel.webp"
         jsonLd={jsonLd}
       />
       {/* ===== HERO ===== */}
@@ -410,6 +503,27 @@ export default function TeachersZh() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* ===== 教學資源 + 申請 / 支持 ===== */}
+      <TeacherResources
+        badge="教學資源"
+        heading="各科免費教學資源"
+        intro="乾淨世界上精選、無廣告的頻道與播放清單，從學齡前到高中，可直接分享給學生使用。"
+        subjects={resourceSubjects}
+        channelLink={{ label: "到乾淨校園頻道查看全部教學資源", href: `${GJW}/@%E4%B9%BE%E6%B7%A8%E6%A0%A1%E5%9C%92` }}
+        apply={{
+          title: "免費申請高級教師頻道",
+          desc: "乾淨校園為教師提供高級頻道功能、專業發展課程與善良活動工具包，幫助您打造正向、互動的班級社群，提升學生士氣。",
+          cta: "立即免費申請",
+          href: `${GJW}/creators/ganjingcampus/form`,
+        }}
+        support={{
+          title: "支持乾淨校園老師",
+          desc: "每天一杯咖啡，就能支持兩位教師一整年。您的支持能讓全球更多老師和學生，在乾淨、安全、正向的網絡環境中學習。",
+          cta: "立即行動支持",
+          href: `${ZH}/support-us`,
+        }}
+      />
 
       {/* ===== STATS ===== */}
       <section className="py-16 bg-gradient-to-r from-sky via-sky to-[oklch(0.65_0.16_230)]">

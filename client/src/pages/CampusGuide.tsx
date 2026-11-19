@@ -16,9 +16,7 @@ import { Check, ArrowRight, Shield, BookOpen, Users, Clock, Sparkles, Heart } fr
 import SEOHead from "@/components/SEOHead";
 
 const LOGO = "/images/gjw-campus-logo.png";
-const HERO_FAMILY = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/hero-family-ibVVtpyZu474fPsuBdUFZz.webp";
-const BOTANICAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/hero-botanical-bg-7FCBiShvJCXUsCnMz4uUep.webp";
-const SHIELD_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663394654478/JpXHvw67Ajo9P9hYJJi7Nr/benefits-shield-hHpaUadnLnh8NdNdCo4H3A.webp";
+const HERO_FAMILY = "/images/campus-hero.webp";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -155,14 +153,6 @@ export default function CampusGuide() {
 
         {/* ─── Hero Section ─── */}
         <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: `url(${BOTANICAL_BG})`,
-              backgroundSize: "800px",
-              backgroundRepeat: "repeat",
-            }}
-          />
 
           <div className="container relative z-10">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -224,7 +214,7 @@ export default function CampusGuide() {
                 >
                   <img
                     src={HERO_FAMILY}
-                    alt="A family reading together in a warm, sunlit living room"
+                    alt="Illustration of children painting, reading and making music together outdoors"
                     className="w-full h-auto object-cover"
                   />
                 </motion.div>
@@ -290,7 +280,7 @@ export default function CampusGuide() {
                   />
                   <img
                     src={HERO_FAMILY}
-                    alt="A family reading together in a warm, sunlit living room"
+                    alt="Illustration of children painting, reading and making music together outdoors"
                     className="relative rounded-2xl shadow-xl w-full h-auto object-cover"
                   />
                 </div>
@@ -325,11 +315,9 @@ export default function CampusGuide() {
                 variants={fadeInUp}
                 custom={0}
               >
-                <img
-                  src={SHIELD_IMG}
-                  alt="Family protection shield with botanical elements"
-                  className="w-64 h-auto opacity-90"
-                />
+                <div className="w-56 h-56 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Shield className="w-28 h-28 text-primary" strokeWidth={1.5} aria-hidden="true" />
+                </div>
               </motion.div>
 
               {/* Right: Benefits list */}
@@ -411,14 +399,6 @@ export default function CampusGuide() {
           id="get-guide"
           className="py-16 lg:py-24 relative overflow-hidden"
         >
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: `url(${BOTANICAL_BG})`,
-              backgroundSize: "600px",
-              backgroundRepeat: "repeat",
-            }}
-          />
 
           <div className="container relative z-10">
             <div className="max-w-2xl mx-auto">
