@@ -155,7 +155,7 @@ const ageGroups = [
 ];
 
 // 每週主題與封面圖片取自「乾淨校園夏令營」頻道的觀影任務文章
-// （第1–2週為該頻道的第一、二週文章，第3–8週為 2025 年觀影任務）
+// （2025 年第1–8週觀影任務）
 const weeks: {
   num: number;
   title: string;
@@ -170,32 +170,32 @@ const weeks: {
 }[] = [
   {
     num: 1,
-    title: "看小乾坤學《弟子規》",
-    icon: Star,
-    color: "text-sunshine-dark",
-    bgColor: "bg-sunshine/10",
-    numBg: "bg-sunshine-dark",
-    tags: ["弟子規", "品格教育", "孝道禮儀", "動畫"],
-    desc: "《天庭小子小乾坤》用創新的戲劇手法，把《弟子規》三字一句化為有趣的現代生活故事，讓孩子在娛樂中學到「品格重於財富學識」。",
+    title: "我的戶外時光",
+    icon: Leaf,
+    color: "text-meadow",
+    bgColor: "bg-meadow/10",
+    numBg: "bg-meadow",
+    tags: ["戶外探險", "露營", "自然觀察", "運動"],
+    desc: "20多部戶外、運動和旅行主題的影視劇與卡通，像《小馬保母俱樂部》、《大自然最了解》和《足球故事》，讓孩子在自然探索與運動挑戰中，培養合作、毅力與勇氣。",
     image: "/images/zh-week-1.webp",
-    link: `${ARTICLE}1gq3n471amcpE2wbwAQLc6ufQ1qd1c`,
+    link: `${ARTICLE}1hinmtnl7jr7aj1oAkgucZzp71ci1c`,
   },
   {
     num: 2,
-    title: "快樂學漢字《悠遊字在》",
+    title: "漢語學堂",
     icon: BookOpen,
     color: "text-sky",
     bgColor: "bg-sky/10",
     numBg: "bg-sky",
-    tags: ["漢字", "字源", "語文", "閱讀"],
-    desc: "五季《悠遊字在》帶孩子了解每個漢字的由來與含義，激發探索漢字的興趣，培養良好的語文和閱讀能力。",
+    tags: ["漢字", "古詩詞", "千字文", "成語"],
+    desc: "透過《聲律啟蒙》、《千字文》、《中華古詩詞》和《悠遊字在》等系列，走進漢字的祕密花園，在詩詞吟唱與趣味動畫中啟發語感，體驗中文之美。",
     image: "/images/zh-week-2.webp",
-    link: `${ARTICLE}1gq3npvj34l4FqdN3egCyjPzS1841c`,
+    link: `${ARTICLE}1hinrfbqp525ZmblgLRiW1LPJ17f1c`,
   },
   {
     num: 3,
     title: "傳統文化之旅",
-    icon: Landmark,
+    icon: Star,
     color: "text-coral",
     bgColor: "bg-coral/10",
     numBg: "bg-coral",
