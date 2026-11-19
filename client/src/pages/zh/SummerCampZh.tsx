@@ -404,7 +404,7 @@ export default function SummerCampZh() {
         price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock",
-        url: "https://ganjingsummercamp-fejrdh2z.manus.space/zh/summer-camp",
+        url: "https://ganjingcampus.org/zh/summer-camp",
       },
       audience: {
         "@type": "EducationalAudience",

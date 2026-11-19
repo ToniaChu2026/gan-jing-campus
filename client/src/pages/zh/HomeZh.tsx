@@ -126,7 +126,7 @@ export default function HomeZh() {
       name: "乾淨校園 — 讓學習與善良相遇",
       description:
         "一個無廣告、對教育工作者友好的平台，為全球兒童推廣善良、創意和安全的數位學習。",
-      url: "https://ganjingsummercamp-fejrdh2z.manus.space/zh/",
+      url: "https://ganjingcampus.org/zh/",
       mainEntity: {
         "@type": "EducationalOrganization",
         name: "乾淨校園",

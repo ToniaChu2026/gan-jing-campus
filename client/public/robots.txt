@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ganjingsummercamp-fejrdh2z.manus.space/sitemap.xml
+Sitemap: https://ganjingcampus.org/sitemap.xml

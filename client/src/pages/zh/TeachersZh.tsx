@@ -111,7 +111,7 @@ export default function TeachersZh() {
       "@type": "WebPage",
       name: "教師專區 — 乾淨校園",
       description: "獲取免費的教師高級頻道，使用工具創建內容、策劃資源並獲得 CDE 認證。",
-      url: "https://ganjingsummercamp-fejrdh2z.manus.space/zh/teachers",
+      url: "https://ganjingcampus.org/zh/teachers",
       mainEntity: {
         "@type": "Course",
         name: "認證數位教育家 (CDE) 計劃",

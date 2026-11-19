@@ -93,7 +93,7 @@ export default function About() {
       "@type": "AboutPage",
       name: "About Gan Jing Campus",
       description: "Learn about Gan Jing Campus's mission, triple-layered safety model, Ethical AI technology, and global recognition.",
-      url: "https://ganjingsummercamp-fejrdh2z.manus.space/about",
+      url: "https://ganjingcampus.org/about",
       mainEntity: {
         "@type": "EducationalOrganization",
         name: "Gan Jing Campus",

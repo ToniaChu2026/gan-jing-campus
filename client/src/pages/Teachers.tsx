@@ -108,7 +108,7 @@ export default function Teachers() {
       "@type": "WebPage",
       name: "For Teachers — Gan Jing Campus",
       description: "Get your free Teacher Premium Channel with tools to create content, curate resources, and earn CDE certification.",
-      url: "https://ganjingsummercamp-fejrdh2z.manus.space/teachers",
+      url: "https://ganjingcampus.org/teachers",
       mainEntity: {
         "@type": "Course",
         name: "Certified Digital Educator (CDE) Program",

@@ -44,7 +44,7 @@ export default function CampusGuideThankYou() {
       "@type": "WebPage",
       name: "Thank You — Your Screen Reset Guide is on the Way",
       description: "Your 30-Minute Family Screen Reset Guide is being sent to your inbox.",
-      url: "https://ganjingcampus.manus.space/free-guide/thank-you",
+      url: "https://ganjingcampus.org/free-guide/thank-you",
       publisher: {
         "@type": "Organization",
         name: "Gan Jing Campus",

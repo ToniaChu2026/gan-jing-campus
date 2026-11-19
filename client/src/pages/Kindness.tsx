@@ -111,7 +111,7 @@ export default function Kindness() {
       "@type": "CollectionPage",
       name: "Kindness Stories — Gan Jing Campus",
       description: "Real stories of how kindness transformed classrooms from Boston to Taiwan and beyond.",
-      url: "https://ganjingsummercamp-fejrdh2z.manus.space/kindness",
+      url: "https://ganjingcampus.org/kindness",
     }),
     []
   );

@@ -74,7 +74,7 @@ export default function CampusGuide() {
       name: "The 30-Minute Family Screen Reset — Free Guide",
       description:
         "A simple, practical setup guide for values-driven parents who want to shape their kids' digital future without banning technology.",
-      url: "https://ganjingcampus.manus.space/free-guide",
+      url: "https://ganjingcampus.org/free-guide",
       publisher: {
         "@type": "Organization",
         name: "Gan Jing Campus",

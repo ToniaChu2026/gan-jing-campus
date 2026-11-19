@@ -95,7 +95,7 @@ export default function AboutZh() {
       "@type": "AboutPage",
       name: "關於乾淨校園",
       description: "了解乾淨校園的使命、三層安全模型、道德AI技術以及全球認可。",
-      url: "https://ganjingsummercamp-fejrdh2z.manus.space/zh/about",
+      url: "https://ganjingcampus.org/zh/about",
       mainEntity: {
         "@type": "EducationalOrganization",
         name: "乾淨校園",

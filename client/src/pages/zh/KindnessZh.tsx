@@ -110,7 +110,7 @@ export default function KindnessZh() {
       "@type": "CollectionPage",
       name: "善良故事 — 乾淨校園",
       description: "來自波士頓、台灣及世界各地的真實故事，展示善良如何改變教室。",
-      url: "https://ganjingsummercamp-fejrdh2z.manus.space/zh/kindness",
+      url: "https://ganjingcampus.org/zh/kindness",
     }),
     []
   );

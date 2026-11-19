@@ -126,7 +126,7 @@ export default function Home() {
       name: "Gan Jing Campus — Where Learning Meets Kindness",
       description:
         "An ad-free, educator-friendly platform promoting kindness, creativity, and safe digital learning for children worldwide.",
-      url: "https://ganjingsummercamp-fejrdh2z.manus.space/",
+      url: "https://ganjingcampus.org/",
       mainEntity: {
         "@type": "EducationalOrganization",
         name: "Gan Jing Campus",
