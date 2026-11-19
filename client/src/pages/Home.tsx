@@ -547,7 +547,7 @@ export default function Home() {
                 For Teachers
               </Link>
               <a
-                href="https://www.ganjingworld.com/ganjingcampus"
+                href="https://www.ganjingworld.com/@GanJingCampus"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 justify-center rounded-full bg-white/20 border-2 border-white/50 px-8 py-4 text-lg font-bold text-white hover:bg-white/30 transition-all no-underline"

@@ -97,7 +97,7 @@ export default function CTASection() {
           {/* CTA buttons */}
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://www.ganjingworld.com/ganjingcampus"
+              href="https://www.ganjingworld.com/@GanJingCampus"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-sunshine px-10 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 hover:shadow-2xl no-underline"
@@ -106,7 +106,7 @@ export default function CTASection() {
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="https://www.ganjingworld.com/ganjingcampus"
+              href="https://www.ganjingworld.com/@GanJingCampus"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-sm border-2 border-white/30 px-10 py-4 text-lg font-bold text-white hover:bg-white/25 transition-all no-underline"

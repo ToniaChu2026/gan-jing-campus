@@ -89,7 +89,7 @@ function SiteNavbar() {
           </Link>
 
           <a
-            href="https://www.ganjingworld.com/ganjingcampus"
+            href="https://www.ganjingworld.com/@GanJingCampus"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 inline-flex items-center justify-center rounded-full bg-sunshine px-5 py-2.5 text-sm font-bold text-white shadow-lg hover:bg-sunshine-dark transition-all hover:scale-105 no-underline"
@@ -144,7 +144,7 @@ function SiteNavbar() {
                 切換到中文
               </Link>
               <a
-                href="https://www.ganjingworld.com/ganjingcampus"
+                href="https://www.ganjingworld.com/@GanJingCampus"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center justify-center rounded-full bg-sunshine px-5 py-3 text-sm font-bold text-white shadow-lg no-underline"
@@ -173,7 +173,7 @@ const footerLinks = [
   {
     title: "Gan Jing World",
     links: [
-      { label: "Gan Jing Campus", href: "https://www.ganjingworld.com/ganjingcampus", external: true },
+      { label: "Gan Jing Campus", href: "https://www.ganjingworld.com/@GanJingCampus", external: true },
       { label: "Gan Jing Kids", href: "https://www.ganjingworld.com/gjwplus/kids/ganjingkids", external: true },
       { label: "Gan Jing World", href: "https://www.ganjingworld.com", external: true },
     ],

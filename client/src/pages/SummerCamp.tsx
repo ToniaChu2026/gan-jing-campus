@@ -31,12 +31,12 @@ export default function SummerCamp() {
       eventStatus: "https://schema.org/EventScheduled",
       location: {
         "@type": "VirtualLocation",
-        url: "https://www.ganjingworld.com/ganjingcampus",
+        url: "https://www.ganjingworld.com/@GanJingCampus",
       },
       organizer: {
         "@type": "Organization",
         name: "Gan Jing Campus",
-        url: "https://www.ganjingworld.com/ganjingcampus",
+        url: "https://www.ganjingworld.com/@GanJingCampus",
       },
       offers: {
         "@type": "Offer",

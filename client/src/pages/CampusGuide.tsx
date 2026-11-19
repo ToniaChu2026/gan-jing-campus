@@ -669,7 +669,7 @@ export default function CampusGuide() {
                 <h4 className="font-bold text-white text-sm mb-4">Gan Jing World</h4>
                 <ul className="space-y-2.5">
                   {[
-                    { label: "Gan Jing Campus", href: "https://www.ganjingworld.com/ganjingcampus" },
+                    { label: "Gan Jing Campus", href: "https://www.ganjingworld.com/@GanJingCampus" },
                     { label: "Gan Jing Kids", href: "https://www.ganjingworld.com/gjwplus/kids/ganjingkids" },
                     { label: "Gan Jing World", href: "https://www.ganjingworld.com" },
                   ].map((link) => (

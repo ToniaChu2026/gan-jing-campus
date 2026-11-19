@@ -120,7 +120,7 @@ export default function TeachersSection() {
             </div>
 
             <a
-              href="https://www.ganjingworld.com/ganjingcampus"
+              href="https://www.ganjingworld.com/@GanJingCampus"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-sky px-6 py-3 text-sm font-bold text-white shadow-lg hover:bg-[oklch(0.6_0.17_230)] transition-all hover:scale-105 no-underline"
