@@ -175,7 +175,7 @@ export default function AboutZh() {
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src={ABOUT_HERO}
-                  alt="來自世界各地的孩子在老師和家長的守護下安全地一起學習"
+                  alt="孩子們在大樹下安全地一起學習，老師引導、家長守護"
                   className="w-full h-auto"
                   loading="eager"
                 />

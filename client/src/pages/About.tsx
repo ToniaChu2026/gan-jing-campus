@@ -175,7 +175,7 @@ export default function About() {
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src={ABOUT_HERO}
-                  alt="Children from around the world learning safely together, guided by teachers and parents"
+                  alt="Children learning safely together under a big tree, guided by teachers and watched over by parents"
                   className="w-full h-auto"
                   loading="eager"
                 />
