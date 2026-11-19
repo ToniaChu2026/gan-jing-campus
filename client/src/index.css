@@ -50,7 +50,10 @@
   --color-coral: oklch(0.72 0.15 15);
   --color-cream: oklch(0.98 0.01 90);
 
-  --font-display: "Baloo 2", cursive;
+  /* Baloo 2 has no Chinese glyphs. Fall back to Noto Sans SC, never the generic
+     "cursive": on pages marked lang="zh-Hant" browsers map that to a Kai (楷體)
+     brush font, which turned every Chinese heading into calligraphy. */
+  --font-display: "Baloo 2", "Noto Sans SC", sans-serif;
   --font-body: "DM Sans", sans-serif;
 }
 
@@ -99,7 +102,7 @@
     font-family: "DM Sans", sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Baloo 2", cursive;
+    font-family: "Baloo 2", "Noto Sans SC", sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
