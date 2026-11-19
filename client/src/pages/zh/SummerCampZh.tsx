@@ -35,6 +35,12 @@ import {
   ChevronRight,
   CheckCircle,
   ArrowRight,
+  Landmark,
+  Puzzle,
+  Library,
+  Clapperboard,
+  ArrowUpRight,
+  Hash,
   type LucideIcon,
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
@@ -52,6 +58,12 @@ const VIDEO_EMBED_URL =
 const VIDEO_WATCH_URL =
   "https://www.ganjingworld.com/zh-TW/video/1hkfg1b8ls819ca1gaHm04ldx1kf1c";
 const CAMPUS_URL = "https://www.ganjingworld.com/zh-TW/ganjingcampus";
+// 「乾淨校園夏令營」頻道與相關內容
+const GJW = "https://www.ganjingworld.com";
+const SUMMER_CAMP_CHANNEL = `${GJW}/zh-TW/channel/1gq2kab5rpd52FQlEiPNT6vPE14b0c`;
+const CAMP_GUIDE_URL = `${GJW}/zh-TW/article/1gqcq7fpetr3M76F2NDPkLLjT1sk1c`;
+const CAMP_HASHTAG_URL = `${GJW}/hashtag/%E4%B9%BE%E6%B7%A8%E6%A0%A1%E5%9C%92%E5%A4%8F%E4%BB%A4%E7%87%9F`;
+const ARTICLE = `${GJW}/zh-TW/article/`;
 
 /* ─── Shared AnimatedCard ─── */
 function AnimatedCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -142,87 +154,153 @@ const ageGroups = [
   },
 ];
 
-const weeks = [
+// 每週主題與封面圖片取自「乾淨校園夏令營」頻道的觀影任務文章
+// （第1–2週為該頻道的第一、二週文章，第3–8週為 2025 年觀影任務）
+const weeks: {
+  num: number;
+  title: string;
+  icon: LucideIcon;
+  color: string;
+  bgColor: string;
+  numBg: string;
+  tags: string[];
+  desc: string;
+  image: string;
+  link: string;
+}[] = [
   {
     num: 1,
-    title: "我的戶外時光",
-    icon: Leaf,
-    color: "text-meadow",
-    bgColor: "bg-meadow/10",
-    numBg: "bg-meadow",
-    tags: ["自然探索", "戶外活動", "動植物", "環保"],
-    desc: "走出家門，擁抱大自然！通過精選的自然紀錄片和戶外活動，讓孩子認識動植物、學習環保知識。",
+    title: "看小乾坤學《弟子規》",
+    icon: Star,
+    color: "text-sunshine-dark",
+    bgColor: "bg-sunshine/10",
+    numBg: "bg-sunshine-dark",
+    tags: ["弟子規", "品格教育", "孝道禮儀", "動畫"],
+    desc: "《天庭小子小乾坤》用創新的戲劇手法，把《弟子規》三字一句化為有趣的現代生活故事，讓孩子在娛樂中學到「品格重於財富學識」。",
+    image: "/images/zh-week-1.webp",
+    link: `${ARTICLE}1gq3n471amcpE2wbwAQLc6ufQ1qd1c`,
   },
   {
     num: 2,
-    title: "漢語學堂",
+    title: "快樂學漢字《悠遊字在》",
     icon: BookOpen,
     color: "text-sky",
     bgColor: "bg-sky/10",
     numBg: "bg-sky",
-    tags: ["漢字", "成語", "詩詞", "書法"],
-    desc: "探索中華語言之美！從漢字故事到成語典故，從古詩詞到書法藝術，感受漢語的博大精深。",
+    tags: ["漢字", "字源", "語文", "閱讀"],
+    desc: "五季《悠遊字在》帶孩子了解每個漢字的由來與含義，激發探索漢字的興趣，培養良好的語文和閱讀能力。",
+    image: "/images/zh-week-2.webp",
+    link: `${ARTICLE}1gq3npvj34l4FqdN3egCyjPzS1841c`,
   },
   {
     num: 3,
+    title: "傳統文化之旅",
+    icon: Landmark,
+    color: "text-coral",
+    bgColor: "bg-coral/10",
+    numBg: "bg-coral",
+    tags: ["神話故事", "古詩詞", "傳統文化", "品德"],
+    desc: "從奇幻又富歷史感的「天庭小子小乾坤」到「中華古詩詞」系列，讓孩子在神話世界裡學會勇敢與正義，在吟唱中感受文字之美。",
+    image: "/images/zh-week-3.webp",
+    link: `${ARTICLE}1hiqlnncgpt5XpcEbPP2SfTQt1bg1c`,
+  },
+  {
+    num: 4,
+    title: "一起來DIY",
+    icon: Palette,
+    color: "text-sky",
+    bgColor: "bg-sky/10",
+    numBg: "bg-sky",
+    tags: ["手工", "創意", "動手實作", "合作"],
+    desc: "「我們一起做」系列與 Logos 劇院團隊的作品，鼓勵孩子親手實踐、合作完成任務，讓學習在動手和動腦中展開。",
+    image: "/images/zh-week-4.webp",
+    link: `${ARTICLE}1hivc9fnoct4aoZSG07TudBLJ17h1c`,
+  },
+  {
+    num: 5,
     title: "宇宙與自然",
     icon: Globe,
     color: "text-[oklch(0.55_0.2_280)]",
     bgColor: "bg-[oklch(0.55_0.2_280)]/10",
     numBg: "bg-[oklch(0.55_0.2_280)]",
-    tags: ["太空", "星球", "科學", "探索"],
-    desc: "仰望星空，探索宇宙奧秘！通過科學影片和趣味實驗，帶領孩子認識太陽系、星座和自然現象。",
+    tags: ["大自然", "海洋", "動物", "科學"],
+    desc: "跟著「阿奇與祖伊的酷知識：帝王企鵝」等寓教於樂的動畫和節目，帶孩子深入極地與海洋，認識大自然的奇妙世界。",
+    image: "/images/zh-week-5.webp",
+    link: `${ARTICLE}1hivkkukbtv7KDCZZJgY2Kpka1ip1c`,
   },
   {
-    num: 4,
+    num: 6,
+    title: "快樂學英語",
+    icon: Brain,
+    color: "text-meadow",
+    bgColor: "bg-meadow/10",
+    numBg: "bg-meadow",
+    tags: ["英語", "聽力", "表達", "電影"],
+    desc: "透過「神奇毛小孩」等充滿創意與幽默的電影和動畫，讓孩子在輕鬆觀賞中提升英文聽力與表達力。",
+    image: "/images/zh-week-6.webp",
+    link: `${ARTICLE}1hivn6g4bcj7gVDKRmqMMMd4n1am1c`,
+  },
+  {
+    num: 7,
     title: "藝術音樂之旅",
     icon: Music,
     color: "text-coral",
     bgColor: "bg-coral/10",
     numBg: "bg-coral",
-    tags: ["音樂", "繪畫", "舞蹈", "手工"],
-    desc: "用藝術點亮生活！欣賞經典音樂、學習繪畫技巧、體驗舞蹈樂趣，激發孩子的藝術天賦。",
-  },
-  {
-    num: 5,
-    title: "傳統文化之旅",
-    icon: Star,
-    color: "text-sunshine-dark",
-    bgColor: "bg-sunshine/10",
-    numBg: "bg-sunshine-dark",
-    tags: ["傳統節日", "歷史故事", "禮儀", "文化"],
-    desc: "穿越時空，探索傳統文化！從節日習俗到歷史故事，從禮儀之道到文化傳承，培養文化自信。",
-  },
-  {
-    num: 6,
-    title: "DIY創意手工",
-    icon: Palette,
-    color: "text-sky",
-    bgColor: "bg-sky/10",
-    numBg: "bg-sky",
-    tags: ["手工", "創意", "動手", "設計"],
-    desc: "動手創造無限可能！跟隨教學影片製作手工藝品、設計小發明，培養孩子的創造力和動手能力。",
-  },
-  {
-    num: 7,
-    title: "快樂學英文",
-    icon: Brain,
-    color: "text-meadow",
-    bgColor: "bg-meadow/10",
-    numBg: "bg-meadow",
-    tags: ["英語", "歌曲", "故事", "對話"],
-    desc: "在歡樂中學習英語！通過英語歌曲、動畫故事和趣味對話，讓孩子自然而然地愛上英語。",
+    tags: ["音樂", "藝術", "美感", "創造力"],
+    desc: "從「寶寶的海蒂」的親子歡唱到「莫札特樂隊」，陪伴孩子展開一段美感與創造力並進的觀影旅程。",
+    image: "/images/zh-week-7.webp",
+    link: `${ARTICLE}1hivsumd4bu6Vt45Hys98SMPS17h1c`,
   },
   {
     num: 8,
-    title: "神祕探索歷險記",
-    icon: Lightbulb,
+    title: "歷史名人傳",
+    icon: Landmark,
     color: "text-sunshine-dark",
     bgColor: "bg-sunshine/10",
     numBg: "bg-sunshine-dark",
-    tags: ["冒險", "解謎", "發現", "想像力"],
-    desc: "開啟神祕探索之旅！跟隨精彩的冒險故事，解開謎題、發現寶藏，為整個夏天畫上完美句號。",
+    tags: ["歷史人物", "中華文化", "勇氣智慧", "角色扮演"],
+    desc: "踏上時光之旅，與歷史名人同行！透過《魏武曹操》、《兵仙韓信》、《漢武帝》和《笑談風雲》等節目，讓孩子在傳奇故事中學習勇氣、智慧與責任。",
+    image: "/images/zh-week-8.webp",
+    link: `${ARTICLE}1hivunm22ed1V4il7kmDmnPVY17o1c`,
   },
+];
+
+// 「乾淨校園夏令營」頻道精選內容
+const campChallenges = [
+  { label: "【字謎遊戲】", href: `${GJW}/post/1hj9ef4he1l3TccJz0JnhIzGN17o1c` },
+  { label: "【善良詩集】", href: `${GJW}/post/1hj2c958nogMhRdlmCzDZCynW1uo1c` },
+  { label: "【夏日迷宮】", href: `${GJW}/post/1gqk8j5k7cm18ZLxJ0qRdmPyD1f21c` },
+  { label: "畫出屬於你的暑假！", href: `${GJW}/post/1gqk8hkk81f4NUde0m2lD6rEN1p31c` },
+  { label: "快樂暑期計劃！", href: `${GJW}/post/1gqk7ufegf4epFArTbvFni2k41ni1c` },
+  { label: "畫出星空下的篝火", href: `${GJW}/post/1gqjs2ijoa63QFBSPSGG9J2GV1gu1c` },
+  { label: "創作樹葉畫作", href: `${GJW}/post/1gqjrs6jkj75gPpiyMicbpreT1an1c` },
+  { label: "【動物世界】", href: `${GJW}/post/1gqjrmlp36g6HqOz6yramz7xD1d51c` },
+  { label: "【星際迷航】", href: `${GJW}/post/1gqjrlgmk5b2vbWPdOphjq6tB1v21c` },
+  { label: "一起來學天文學", href: `${GJW}/post/1gqjriaec8j5LK0JquXqCQGPx1ca1c` },
+];
+
+const campSeries = [
+  { label: "【成語故事】系列", href: `${ARTICLE}1hjc9ebdb9v1MHhhlgKMTZWDg1pg1c` },
+  { label: "【成語掌門人】系列", href: `${ARTICLE}1hjc9b7u25h4Druw5M5rR31kW15d1c` },
+  { label: "【千字文】二十五集系列", href: `${ARTICLE}1hie04pvjul36YSWOyApC47m318a1c` },
+  { label: "【傳統書法課堂】系列", href: `${ARTICLE}1hie0h31kub46Xzilegq4rlU014o1c` },
+  { label: "【二十四節氣】系列", href: `${ARTICLE}1hj1trra4c53x3fkV7iwWuaji12k1c` },
+  { label: "【中華傳統文化】系列", href: `${ARTICLE}1hiqipjjdssxYNwnk39PQEy7D1v11c` },
+  { label: "【水彩畫】系列", href: `${ARTICLE}1hjcde707a221IgMnJEusfAee1rv1c` },
+  { label: "【手工摺紙】系列", href: `${ARTICLE}1hit7cj21um3KSBjuYrAQWREC1or1c` },
+  { label: "【創意點子】系列", href: `${ARTICLE}1hit6b2tqvu6q7canNzrqnxRN1201c` },
+  { label: "【快樂小天使故事王國】系列", href: `${ARTICLE}1hiqcm4dj1m20Qexm09ERmkna1he1c` },
+  { label: "童子軍戶外探險", href: `${ARTICLE}1hjbsigdic36U1Iy6ZpXyetar1tt1c` },
+];
+
+const camperClips = [
+  { label: "放暑假啦，一起去戶外野營", href: `${GJW}/zh-TW/video/1hjbto92qij2MvjLO0IyZlOF219n1c` },
+  { label: "跟爸爸一起釣小蝌蚪", href: `${GJW}/zh-TW/video/1hjbti51mln58q0S6BWEOxRyB1oh1c` },
+  { label: "在大自然徒步騎車", href: `${GJW}/zh-TW/video/1hjbtbi23pj5KHQiLhH2GXLu01sr1c` },
+  { label: "戶外繩索攀爬", href: `${GJW}/zh-TW/video/1hjbt2ehqs05oulcesE64URzF1uv1c` },
+  { label: "溯溪玩水好開心", href: `${GJW}/zh-TW/video/1hjbu4r3cln5CiuuitDndZEX91ir1c` },
+  { label: "夏日游泳", href: `${GJW}/zh-TW/video/1hjbv25s8536Yki15ZQUGNnJb1sd1c` },
 ];
 
 const safetyFeatures = [
@@ -315,7 +393,7 @@ const ctaBenefits = [
   "每週善良挑戰與創意活動",
   "安全、無廣告、非成癮平台",
   "每週線下創意項目",
-  "對所有家庭和教師免費",
+  "免費參加・$1 解鎖全部影視",
 ];
 
 /* ─── Sub-components ─── */
@@ -368,6 +446,28 @@ function WeekCard({ week, index }: { week: (typeof weeks)[0]; index: number }) {
             </span>
           ))}
         </div>
+        <a
+          href={week.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block max-w-sm mt-4 overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow"
+        >
+          <img
+            src={week.image}
+            alt={`第${week.num}週：${week.title}`}
+            className="w-full aspect-video object-cover group-hover:scale-[1.02] transition-transform"
+            loading="lazy"
+          />
+        </a>
+        <a
+          href={week.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex items-center gap-1 mt-3 text-sm font-semibold ${week.color} hover:underline font-['Noto_Sans_SC']`}
+        >
+          查看本週觀影任務
+          <ArrowUpRight className="w-4 h-4" />
+        </a>
       </div>
     </motion.div>
   );
@@ -507,10 +607,12 @@ export default function SummerCampZh() {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="#join"
+                  href={SUMMER_CAMP_CHANNEL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 hover:shadow-2xl no-underline font-['Noto_Sans_SC']"
                 >
-                  立即加入 — 完全免費
+                  加入夏令營
                 </a>
                 <a
                   href="#weekly-themes"
@@ -736,7 +838,7 @@ export default function SummerCampZh() {
       </section>
 
       {/* ===== WEEKLY THEMES ===== */}
-      <section id="weekly-themes" className="py-20 md:py-28 bg-cream">
+      <section id="weekly-themes" className="py-20 md:py-28 bg-cream overflow-hidden">
         <div className="container">
           <motion.div
             ref={weekRef}
@@ -820,6 +922,91 @@ export default function SummerCampZh() {
                 </a>{" "}
                 上觀看
               </p>
+            </div>
+          </AnimatedCard>
+        </div>
+      </section>
+
+      {/* ===== 夏令營頻道精選（乾淨校園夏令營） ===== */}
+      <section id="camp-channel" className="py-20 md:py-28 bg-cream">
+        <div className="container">
+          <AnimatedCard>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="inline-block bg-sunshine/15 text-sunshine-dark font-semibold text-sm px-4 py-1.5 rounded-full mb-4 font-['Noto_Sans_SC']">
+                乾淨校園夏令營頻道
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-5 font-['Noto_Sans_SC']">
+                更多<span className="text-sky">夏令營活動</span>與學習資源
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed font-['Noto_Sans_SC']">
+                除了每週觀影任務，頻道上還有互動挑戰、延伸學習系列和小營員的精彩分享。
+                線上線下一起學習，跟世界各地的小朋友和家長共同成長！
+              </p>
+            </div>
+          </AnimatedCard>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { title: "互動挑戰", icon: Puzzle, color: "text-coral", bg: "bg-coral/10", items: campChallenges },
+              { title: "延伸學習系列", icon: Library, color: "text-sky", bg: "bg-sky/10", items: campSeries },
+              { title: "小營員的夏日時光", icon: Clapperboard, color: "text-meadow", bg: "bg-meadow/10", items: camperClips },
+            ].map((col, i) => (
+              <AnimatedCard key={col.title} delay={i * 0.1}>
+                <div className="h-full bg-white rounded-2xl p-6 border border-border/60 shadow-sm">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`w-10 h-10 rounded-xl ${col.bg} flex items-center justify-center`}>
+                      <col.icon className={`w-5 h-5 ${col.color}`} />
+                    </div>
+                    <h3 className="font-display text-xl font-bold text-foreground font-['Noto_Sans_SC']">{col.title}</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {col.items.map((item) => (
+                      <li key={item.href}>
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-sky hover:underline font-['Noto_Sans_SC']"
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedCard>
+            ))}
+          </div>
+
+          <AnimatedCard delay={0.2}>
+            <div className="max-w-4xl mx-auto mt-10 rounded-2xl bg-white border border-sunshine/40 p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+              <Hash className="w-10 h-10 text-sunshine-dark shrink-0" />
+              <p className="flex-1 text-foreground leading-relaxed font-['Noto_Sans_SC']">
+                完成任務後，用{" "}
+                <a href={CAMP_HASHTAG_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-sky hover:underline">
+                  #乾淨校園夏令營
+                </a>{" "}
+                標籤發布照片、影片、短影片或貼文，跟大家分享你的夏日成果！第一次參加？先看看家長/教師參加指南。
+              </p>
+              <div className="flex flex-wrap gap-3 shrink-0">
+                <a
+                  href={CAMP_GUIDE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 rounded-full border-2 border-sky px-5 py-2.5 font-bold text-sky hover:bg-sky/10 transition-colors no-underline font-['Noto_Sans_SC']"
+                >
+                  參加指南
+                </a>
+                <a
+                  href={SUMMER_CAMP_CHANNEL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 rounded-full bg-sky px-5 py-2.5 font-bold text-white hover:bg-[oklch(0.6_0.17_230)] transition-colors no-underline font-['Noto_Sans_SC']"
+                >
+                  前往夏令營頻道
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </AnimatedCard>
         </div>
@@ -1031,7 +1218,7 @@ export default function SummerCampZh() {
             </h2>
 
             <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10 font-['Noto_Sans_SC']">
-              加入數千個家庭和教育工作者，一起展開為期8週的善良、創意和探索之旅。對所有參與者完全免費。
+              加入數千個家庭和教育工作者，一起展開為期8週的善良、創意和探索之旅。免費參加・$1 解鎖全部影視。
             </p>
 
             <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto mb-10 text-left">
@@ -1051,7 +1238,7 @@ export default function SummerCampZh() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href={CAMPUS_URL}
+                href={SUMMER_CAMP_CHANNEL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-sunshine px-10 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 hover:shadow-2xl no-underline font-['Noto_Sans_SC']"
@@ -1060,7 +1247,7 @@ export default function SummerCampZh() {
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
-                href={CAMPUS_URL}
+                href={CAMP_GUIDE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-sm border-2 border-white/30 px-10 py-4 text-lg font-bold text-white hover:bg-white/25 transition-all no-underline font-['Noto_Sans_SC']"

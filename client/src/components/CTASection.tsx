@@ -97,7 +97,7 @@ export default function CTASection() {
           {/* CTA buttons */}
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://www.ganjingworld.com/@GanJingCampus"
+              href="https://www.ganjingworld.com/channel/1gq2kab5rpd52FQlEiPNT6vPE14b0c"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-sunshine px-10 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 hover:shadow-2xl no-underline"

@@ -60,10 +60,12 @@ export default function HeroSection() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="#join"
+                href="https://www.ganjingworld.com/channel/1gq2kab5rpd52FQlEiPNT6vPE14b0c"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 hover:shadow-2xl no-underline"
               >
-                Join Now — It's Free
+                Join Summer Camp
               </a>
               <a
                 href="#weekly-themes"

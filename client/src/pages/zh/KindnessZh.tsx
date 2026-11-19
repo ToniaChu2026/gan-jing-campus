@@ -323,7 +323,7 @@ export default function KindnessZh() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <a
-                href="https://www.ganjingworld.com/zh-TW/ganjingcampus"
+                href="https://www.ganjingworld.com/zh-TW/channel/1gq2kab5rpd52FQlEiPNT6vPE14b0c"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-white rounded-2xl p-8 md:p-12 shadow-2xl hover:shadow-3xl transition-shadow no-underline"
