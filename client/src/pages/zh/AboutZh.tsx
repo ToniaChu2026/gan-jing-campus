@@ -23,8 +23,8 @@ import {
   GraduationCap,
 } from "lucide-react";
 
-const CAMPUS_HERO =
-  "/images/campus-hero.webp";
+const ABOUT_HERO =
+  "/images/about-hero.jpg";
 
 function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
@@ -114,7 +114,7 @@ export default function AboutZh() {
         description="了解乾淨校園為全球兒童提供安全、無廣告教育的使命。探索我們的三層安全模型、道德AI技術以及在6大洲獲得的認可。"
         canonicalPath="/zh/about"
         keywords="關於乾淨校園, 教育使命, 道德AI安全, 三層安全模型, 兒童數位安全, 全球教育平台, 無廣告教育"
-        ogImage="https://ganjingcampus.org/images/campus-hero.webp"
+        ogImage="/images/about-hero.jpg"
         jsonLd={jsonLd}
       />
       {/* ===== HERO ===== */}
@@ -174,8 +174,8 @@ export default function AboutZh() {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={CAMPUS_HERO}
-                  alt="乾淨校園"
+                  src={ABOUT_HERO}
+                  alt="來自世界各地的孩子在老師和家長的守護下安全地一起學習"
                   className="w-full h-auto"
                   loading="eager"
                 />
