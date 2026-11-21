@@ -6,6 +6,8 @@
 import { useEffect, useRef, useMemo } from "react";
 import SEOHead from "@/components/SEOHead";
 import BeKindBeCoolSection from "@/components/BeKindBeCoolSection";
+import FaqSection from "@/components/FaqSection";
+import { FAQ_TEACHERS } from "@/lib/faq";
 import { pageSeo } from "@/lib/seoRoutes";
 import { motion, useInView } from "framer-motion";
 import {
@@ -512,6 +514,14 @@ export default function Teachers() {
           </div>
         </div>
       </section>
+
+      {/* ===== FAQ ===== */}
+      <FaqSection
+        items={FAQ_TEACHERS}
+        badge="Teacher FAQ"
+        heading="Questions Teachers Ask"
+        intro="The free channel, CDE status, classroom safety and the kindness awards, answered."
+      />
 
       {/* ===== CTA ===== */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-sunshine via-sunshine to-sunshine-dark relative overflow-hidden">

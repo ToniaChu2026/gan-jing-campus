@@ -68,7 +68,7 @@ export default function CTASection() {
           </motion.div>
 
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
-            Relive the
+            Relive the{" "}
             <br />
             <span className="text-sunshine">Summer of Kindness</span>
           </h2>

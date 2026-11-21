@@ -102,7 +102,6 @@ export default function About() {
         name: "Gan Jing Campus",
         foundingDate: "2023",
         areaServed: "Worldwide",
-        numberOfEmployees: { "@type": "QuantitativeValue", value: 400, unitText: "teachers" },
       },
     }),
     []

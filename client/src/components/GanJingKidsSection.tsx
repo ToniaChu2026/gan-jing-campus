@@ -30,6 +30,7 @@ const copy = {
       { img: "/images/gjk-kiki-storybirds.webp", title: "Kiki Storybirds", note: "Songs and classic fairy tales" },
       { img: "/images/gjk-leo-friends.webp", title: "Leo & Friends Sing Along", note: "Learn as you sing" },
     ],
+    note: "Teacher channels and tools on Gan Jing Campus are free. Gan Jing Kids is an optional family membership:",
     price: "7-day free trial, then $6.99/month. Cancel anytime.",
     trial: "Start 7-day free trial",
     browse: "Browse all shows",
@@ -57,6 +58,7 @@ const copy = {
       { img: "/images/gjk-kiki-storybirds.webp", title: "Kiki Storybirds", note: "歌曲與經典童話故事" },
       { img: "/images/gjk-leo-friends.webp", title: "Leo & Friends Sing Along", note: "邊唱邊學" },
     ],
+    note: "乾淨校園的教師頻道與工具免費；乾淨樂學是可自由選擇的家庭會員方案：",
     price: "7 天免費試用，之後每月 US$6.99，可隨時取消。",
     trial: "開始 7 天免費試用",
     browse: "瀏覽全部節目",
@@ -123,7 +125,10 @@ export default function GanJingKidsSection({ lang = "en" }: { lang?: Lang }) {
         </div>
 
         <div className="rounded-3xl bg-white border border-sunshine/40 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className={`text-lg font-semibold text-foreground text-center md:text-left${c.font}`}>{c.price}</p>
+          <div className="text-center md:text-left">
+            <p className={`text-sm text-muted-foreground mb-1${c.font}`}>{c.note}</p>
+            <p className={`text-lg font-semibold text-foreground${c.font}`}>{c.price}</p>
+          </div>
           <div className="flex flex-wrap justify-center gap-3">
             <a
               href={c.home}

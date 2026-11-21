@@ -49,7 +49,7 @@ const pillars = [
   {
     icon: Shield,
     title: "100% 安全",
-    desc: "採用道德AI的三重安全模型過濾有害內容。100%的家長報告從未見過有害內容。",
+    desc: "三重安全模型：道德 AI 過濾有害內容、教育工作者審核，家長和老師也能隨時回報。",
     color: "bg-sky/15 text-sky",
   },
   {

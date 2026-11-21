@@ -112,8 +112,8 @@ export default function WhyGanJing() {
             Why Parents <span className="text-sky">Trust</span> Gan Jing Campus
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Built with a triple-layered safety model and designed for parents' peace of mind.
-            100% of parents reported never or rarely seeing harmful content.
+            Built with a triple-layered safety model and designed for parents' peace of mind:
+            AI screening, educator review and community reporting work together.
           </p>
         </motion.div>
 
@@ -135,10 +135,11 @@ export default function WhyGanJing() {
           <div className="absolute inset-0 bg-gradient-to-r from-sky/90 to-sky/70 flex items-center justify-center">
             <div className="text-center px-6">
               <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4">
-                100% Parents Approve
+                Built for Parents' Peace of Mind
               </h3>
               <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto">
-                Parents reported never or rarely seeing harmful content on the Gan Jing platform.
+                No ads, and content is screened by Ethical AI and reviewed by educators for
+                age-appropriateness before it reaches children.
               </p>
             </div>
           </div>

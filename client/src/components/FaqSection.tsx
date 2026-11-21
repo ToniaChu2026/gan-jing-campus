@@ -1,5 +1,5 @@
 /*
- * FaqSection — visible FAQ for the homepages. The matching FAQPage JSON-LD is
+ * FaqSection — visible FAQ (homepages, Teachers, free guide). The matching FAQPage JSON-LD is
  * baked into the route HTML at build time from the same data (lib/faq.ts).
  */
 import { ArrowRight, HelpCircle } from "lucide-react";

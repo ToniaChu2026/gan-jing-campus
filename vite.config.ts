@@ -1,6 +1,7 @@
 import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { defineConfig, loadEnv, type Plugin, type ViteDevServer } from "vite";
@@ -18,7 +19,7 @@ import {
   langForPath,
   type PageSeo,
 } from "./client/src/lib/seoRoutes";
-import { FAQ_EN, FAQ_ZH, faqPageJsonLd } from "./client/src/lib/faq";
+import { FAQ_EN, FAQ_GUIDE, FAQ_TEACHERS, FAQ_ZH, faqPageJsonLd } from "./client/src/lib/faq";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
@@ -315,12 +316,14 @@ function renderRouteHtml(template: string, seo: PageSeo): string {
   }
 
   // Page-specific structured data, in the raw HTML so crawlers that don't run
-  // JavaScript can read it: "Home → page" breadcrumbs and the homepage FAQs.
+  // JavaScript can read it: "Home → page" breadcrumbs and each page's visible FAQ.
   const jsonLd: object[] = [];
   const breadcrumb = breadcrumbJsonLd(seo);
   if (breadcrumb) jsonLd.push(breadcrumb);
   if (seo.canonicalPath === "/") jsonLd.push(faqPageJsonLd(FAQ_EN));
   if (seo.canonicalPath === "/zh/") jsonLd.push(faqPageJsonLd(FAQ_ZH));
+  if (seo.canonicalPath === "/teachers") jsonLd.push(faqPageJsonLd(FAQ_TEACHERS));
+  if (seo.canonicalPath === "/free-guide") jsonLd.push(faqPageJsonLd(FAQ_GUIDE));
   if (jsonLd.length) {
     const scripts = jsonLd
       .map(
@@ -360,7 +363,22 @@ function renderNotFoundHtml(template: string): string {
   return html;
 }
 
-function renderSitemap(routes: PageSeo[], lastmod: string): string {
+/** Last commit date (YYYY-MM-DD) touching any of these files, or undefined without git history. */
+function gitLastModified(files: string[]): string | undefined {
+  if (!files.length) return undefined;
+  try {
+    const out = execFileSync("git", ["log", "-1", "--format=%cs", "--", ...files], {
+      cwd: PROJECT_ROOT,
+      encoding: "utf-8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    return /^\d{4}-\d{2}-\d{2}$/.test(out) ? out : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+function renderSitemap(routes: PageSeo[], lastmods: Map<string, string | undefined>): string {
   const urls = routes
     .filter((seo) => !seo.noindex)
     .map((seo) => {
@@ -370,7 +388,9 @@ function renderSitemap(routes: PageSeo[], lastmod: string): string {
             `    <xhtml:link rel="alternate" hreflang="${alt.hreflang}" href="${alt.href}" />`
         )
         .join("\n");
-      return `  <url>\n    <loc>${absoluteUrl(seo.canonicalPath)}</loc>\n    <lastmod>${lastmod}</lastmod>\n${alternates}\n  </url>`;
+      const lastmod = lastmods.get(seo.canonicalPath);
+      const lastmodTag = lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : "";
+      return `  <url>\n    <loc>${absoluteUrl(seo.canonicalPath)}</loc>\n${lastmodTag}${alternates}\n  </url>`;
     })
     .join("\n");
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`;
@@ -378,11 +398,31 @@ function renderSitemap(routes: PageSeo[], lastmod: string): string {
 
 function vitePluginRouteHtml(): Plugin {
   let outDir = "";
+  // Page path → the app source files it is built from (its own import graph).
+  const pageFiles = new Map<string, string[]>();
   return {
     name: "route-html",
     apply: "build",
     configResolved(config) {
       outDir = path.resolve(config.root, config.build.outDir);
+    },
+    buildEnd() {
+      const srcRoot = path.join(PROJECT_ROOT, "client", "src") + path.sep;
+      // Head-only metadata shared by every page; a title tweak isn't a content change.
+      const metaOnly = new Set(["lib/seoRoutes.ts", "components/SEOHead.tsx"].map((f) => path.join(srcRoot, f)));
+      for (const seo of Object.values(SEO_ROUTES) as PageSeo[]) {
+        if (!seo.source) continue;
+        const files = new Set<string>();
+        const visit = (id: string) => {
+          if (files.has(id) || !id.startsWith(srcRoot) || metaOnly.has(id)) return;
+          const info = this.getModuleInfo(id);
+          if (!info) return;
+          files.add(id);
+          info.importedIds.forEach(visit);
+        };
+        visit(path.join(srcRoot, seo.source));
+        pageFiles.set(seo.canonicalPath, Array.from(files, (f) => path.relative(PROJECT_ROOT, f)));
+      }
     },
     closeBundle() {
       const templatePath = path.join(outDir, "index.html");
@@ -400,8 +440,11 @@ function vitePluginRouteHtml(): Plugin {
       // real 404 status instead of falling back to index.html with a 200.
       fs.writeFileSync(path.join(outDir, "404.html"), renderNotFoundHtml(template), "utf-8");
 
-      const lastmod = new Date().toISOString().slice(0, 10);
-      fs.writeFileSync(path.join(outDir, "sitemap.xml"), renderSitemap(routes, lastmod), "utf-8");
+      // A page's <lastmod> only moves when its own content changes, not on every deploy.
+      const lastmods = new Map(
+        routes.map((seo) => [seo.canonicalPath, gitLastModified(pageFiles.get(seo.canonicalPath) ?? [])])
+      );
+      fs.writeFileSync(path.join(outDir, "sitemap.xml"), renderSitemap(routes, lastmods), "utf-8");
 
       console.log(
         `[route-html] wrote ${routes.length} route pages, 404.html and sitemap.xml (${BASE_URL})`

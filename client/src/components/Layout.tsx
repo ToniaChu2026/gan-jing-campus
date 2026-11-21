@@ -17,6 +17,7 @@ const navLinks = [
   { label: "For Teachers", href: "/teachers" },
   { label: "Kindness Stories", href: "/kindness" },
   { label: "About", href: "/about" },
+  { label: "Free Parent Guide", href: "/free-guide" },
 ];
 
 function SiteNavbar() {
@@ -183,6 +184,7 @@ const footerLinks = [
     title: "Resources",
     links: [
       { label: "Free Parent Guide", href: "/free-guide", external: false },
+      { label: "Privacy & Safety", href: "/privacy-and-safety", external: false },
       { label: "Teacher Handbook", href: "https://www.ganjingworld.com/news/1i13tdngs6fsEZDUDBoyG2Fto16n1c", external: true },
       { label: "Apply for Premium", href: "https://www.ganjingworld.com/news/1i3csp1t9651d6ebrqpymLf3u1j11c", external: true },
       { label: "Kindness Awards", href: "https://www.ganjingworld.com/news/1htqniht6hp3u3PVR5BpnRHqB1ic1c", external: true },

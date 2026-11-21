@@ -48,7 +48,7 @@ const pillars = [
   {
     icon: Shield,
     title: "100% Safe",
-    desc: "Triple-layered safety model with Ethical AI that filters harmful content. 100% of parents reported never seeing harmful content.",
+    desc: "Triple-layered safety model: Ethical AI filters harmful content, educators review it, and families can flag anything that slips through.",
     color: "bg-sky/15 text-sky",
   },
   {

@@ -12,8 +12,10 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Check, ArrowRight, Shield, BookOpen, Users, Clock, Sparkles, Heart, Mail } from "lucide-react";
+import { Check, ArrowRight, Shield, BookOpen, Users, Clock, Sparkles, Heart, Mail, ListChecks, Settings2, School } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import FaqSection from "@/components/FaqSection";
+import { FAQ_GUIDE } from "@/lib/faq";
 import { pageSeo } from "@/lib/seoRoutes";
 
 const LOGO = "/images/gjw-campus-logo.png";
@@ -29,6 +31,30 @@ const fadeInUp = {
     transition: { duration: 0.6, delay: i * 0.12, ease: "easeOut" as const },
   }),
 };
+
+const whyReset = [
+  {
+    icon: Settings2,
+    title: "Defaults decide more than rules do",
+    text: "Much of kids' screen time isn't chosen. It's whatever autoplay, the recommendation feed or the app already on the tablet serves next. Change those defaults and you change what your child watches, without a nightly argument.",
+  },
+  {
+    icon: Shield,
+    title: "A ban moves the problem; a standard travels",
+    text: "Children still meet screens at school, at friends' houses and on shared devices. A clear family standard gives them a filter they carry with them, instead of a rule that only works at home.",
+  },
+  {
+    icon: ListChecks,
+    title: "Design beats willpower",
+    text: "When the good option is also the easy one, such as a ready \"go-to list\" instead of an endless feed, there is far less to negotiate, for kids and for parents.",
+  },
+];
+
+const forWhom = [
+  "Parents who want fewer screen battles without taking technology away",
+  "Families who care about character as much as screen-time minutes",
+  "Parents who'd like their child's school on the same page",
+];
 
 const benefits = [
   {
@@ -73,9 +99,9 @@ export default function CampusGuide() {
     () => ({
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "The 30-Minute Family Screen Reset — Free Guide",
+      name: "30-Minute Family Screen Reset Free Guide",
       description:
-        "A simple, practical setup guide for values-driven parents who want to shape their kids' digital future without banning technology.",
+        "A free guide for parents: replace risky screen defaults in 10 minutes and shape healthier screen habits without banning technology.",
       url: "https://ganjingcampus.org/free-guide",
       publisher: {
         "@type": "Organization",
@@ -160,6 +186,7 @@ export default function CampusGuide() {
           </div>
         </nav>
 
+        <main>
         {/* ─── Hero Section ─── */}
         <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
           <div
@@ -177,7 +204,7 @@ export default function CampusGuide() {
               {/* Left: Copy */}
               <div className="lg:col-span-7 space-y-6">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
@@ -192,7 +219,7 @@ export default function CampusGuide() {
                 <motion.h1
                   className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight"
                   style={{ color: "#133960", fontFamily: "'Playfair Display', serif" }}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                 >
@@ -204,7 +231,7 @@ export default function CampusGuide() {
                 <motion.h2
                   className="text-xl sm:text-2xl font-medium leading-relaxed"
                   style={{ color: "#1a4a7a", fontFamily: "'Playfair Display', serif" }}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
@@ -215,7 +242,7 @@ export default function CampusGuide() {
                 <motion.p
                   className="text-lg leading-relaxed max-w-xl"
                   style={{ color: "#5a7a9a" }}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
@@ -226,7 +253,7 @@ export default function CampusGuide() {
                 {/* Hero image (mobile only) */}
                 <motion.div
                   className="lg:hidden rounded-2xl overflow-hidden shadow-lg"
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={false}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.7, delay: 0.3 }}
                 >
@@ -239,7 +266,7 @@ export default function CampusGuide() {
 
                 {/* CTA Button */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.35 }}
                   className="pt-2"
@@ -259,7 +286,7 @@ export default function CampusGuide() {
                 {/* Quick benefits preview */}
                 <motion.div
                   className="flex flex-wrap gap-3 pt-2"
-                  initial={{ opacity: 0 }}
+                  initial={false}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
@@ -284,7 +311,7 @@ export default function CampusGuide() {
               {/* Right: Hero image (desktop) */}
               <motion.div
                 className="hidden lg:block lg:col-span-5"
-                initial={{ opacity: 0, x: 40 }}
+                initial={false}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
@@ -411,6 +438,65 @@ export default function CampusGuide() {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── Why a reset, not a ban ─── */}
+        <section className="py-16 lg:py-24" style={{ background: "#f5f8fc" }}>
+          <div className="container max-w-5xl">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <h2
+                className="text-3xl sm:text-4xl font-bold mb-3"
+                style={{ color: "#133960", fontFamily: "'Playfair Display', serif" }}
+              >
+                Why a Reset, Not a Ban
+              </h2>
+              <p className="text-lg" style={{ color: "#5a7a9a" }}>
+                The guide starts from three simple ideas.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 mb-14">
+              {whyReset.map((w) => (
+                <div
+                  key={w.title}
+                  className="bg-white rounded-2xl p-6 border"
+                  style={{ borderColor: "rgba(0,135,253,0.1)" }}
+                >
+                  <div
+                    className="w-11 h-11 rounded-lg flex items-center justify-center mb-4"
+                    style={{ background: "rgba(231,158,36,0.12)" }}
+                  >
+                    <w.icon className="w-5 h-5" style={{ color: "#E79E24" }} />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2" style={{ color: "#133960" }}>
+                    {w.title}
+                  </h3>
+                  <p className="leading-relaxed" style={{ color: "#5a7a9a" }}>
+                    {w.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div
+              className="bg-white rounded-2xl p-6 sm:p-8 border flex flex-col md:flex-row gap-6 md:items-center"
+              style={{ borderColor: "rgba(0,135,253,0.1)" }}
+            >
+              <div className="flex items-center gap-3 md:w-1/3">
+                <School className="w-7 h-7 shrink-0" style={{ color: "#0087FD" }} />
+                <h3 className="text-xl font-bold" style={{ color: "#133960" }}>
+                  Who it's for
+                </h3>
+              </div>
+              <ul className="space-y-2 md:w-2/3">
+                {forWhom.map((f) => (
+                  <li key={f} className="flex gap-2" style={{ color: "#3d5a78" }}>
+                    <Check className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "#0087FD" }} />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
@@ -573,6 +659,10 @@ export default function CampusGuide() {
                     style={{ color: "#5a7a9a" }}
                   >
                     We respect your privacy. Unsubscribe at any time.{" "}
+                    <a href="/privacy-and-safety" className="underline">
+                      How we use your email
+                    </a>
+                    {" · "}
                     <a
                       href="https://www.ganjingworld.com/policy"
                       target="_blank"
@@ -651,6 +741,15 @@ export default function CampusGuide() {
             </div>
           </div>
         </section>
+
+        {/* ─── FAQ ─── */}
+        <FaqSection
+          items={FAQ_GUIDE}
+          badge="Questions"
+          heading="Before You Download"
+          intro="What the guide is, how you get it, and what happens next."
+        />
+        </main>
 
         {/* ─── Footer ─── */}
         <footer className="bg-[#133960] text-white/70">

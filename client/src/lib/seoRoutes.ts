@@ -25,6 +25,11 @@ export interface PageSeo {
   noindex?: boolean;
   /** Short page name for the "Home → page" BreadcrumbList (omit on homepages). */
   breadcrumb?: string;
+  /**
+   * Page component, relative to client/src. The sitemap's <lastmod> is the
+   * date of the last commit that touched this file or anything it imports.
+   */
+  source?: string;
 }
 
 export const SITE_NAMES: Record<SeoLang, string> = {
@@ -42,6 +47,7 @@ const BILINGUAL_PATHS = ["/", "/summer-camp", "/teachers", "/kindness", "/about"
 
 export const SEO_ROUTES = {
   "/": {
+    source: "pages/Home.tsx",
     title: "Safe, Ad-Free Learning for Kids & Teachers",
     description:
       "Ad-free videos and free classroom tools for kids 4–16, curated by educators. Free Premium Channel for teachers, free screen guide for parents.",
@@ -50,6 +56,7 @@ export const SEO_ROUTES = {
       "Gan Jing Campus, safe education, ad-free learning, children education, kindness, summer camp, ethical AI education, digital learning platform",
   },
   "/summer-camp": {
+    source: "pages/SummerCamp.tsx",
     title: "Free Online Summer Camp Recap, Ages 4–16",
     description:
       "Revisit our free 8-week online summer camp for ages 4–16: weekly themes, 100+ curated films, and offline kindness activities. No ads.",
@@ -60,6 +67,7 @@ export const SEO_ROUTES = {
     ogImage: "/images/summer-camp-hero.jpg",
   },
   "/teachers": {
+    source: "pages/Teachers.tsx",
     title: "Free Classroom Video Channel for Teachers",
     description:
       "Get a free Premium Channel to share safe, ad-free videos with your class, run kindness projects, and earn Certified Digital Educator status.",
@@ -70,6 +78,7 @@ export const SEO_ROUTES = {
     ogImage: "/images/teachers-hero.jpg",
   },
   "/kindness": {
+    source: "pages/Kindness.tsx",
     title: "Kindness Stories from Real Classrooms",
     description:
       "Real stories from teachers in Boston, New York and Taiwan who used kindness projects and Gan Jing Campus to transform their classrooms.",
@@ -80,6 +89,7 @@ export const SEO_ROUTES = {
     ogImage: "/images/kindness-hero.jpg",
   },
   "/about": {
+    source: "pages/About.tsx",
     title: "About Us: Mission & Safety Model",
     description:
       "Who runs Gan Jing Campus, how our three-layer safety model works, and how teachers in 6 continents use it. Operated by Gan Jing World.",
@@ -90,14 +100,25 @@ export const SEO_ROUTES = {
     ogImage: "/images/about-hero.jpg",
   },
   "/free-guide": {
-    title: "The 30-Minute Family Screen Reset — Free Guide",
+    source: "pages/CampusGuide.tsx",
+    title: "30-Minute Family Screen Reset Free Guide",
     description:
-      "A simple, practical setup guide for values-driven parents who want to shape their kids' digital future without banning technology. Free from Gan Jing Campus.",
+      "A free guide for parents: replace risky screen defaults in 10 minutes and shape healthier screen habits without banning technology.",
     canonicalPath: "/free-guide",
     breadcrumb: "Free Parent Guide",
     keywords:
       "family screen reset, digital parenting guide, screen time, children digital safety, values-driven parenting, Gan Jing Campus guide",
     ogImage: "/images/guide-family-reading.jpg",
+  },
+  "/privacy-and-safety": {
+    title: "Privacy & Safety for Families and Schools",
+    description:
+      "How Gan Jing Campus keeps content safe for kids 4–16, what this website collects, and where parents and schools can ask privacy questions.",
+    canonicalPath: "/privacy-and-safety",
+    breadcrumb: "Privacy & Safety",
+    source: "pages/PrivacySafety.tsx",
+    keywords:
+      "Gan Jing Campus privacy, child safety, ad-free kids videos, content review, school privacy questions, parent guide privacy",
   },
   "/free-guide/thank-you": {
     title: "Thank You — Your Screen Reset Guide is on the Way",
@@ -108,7 +129,8 @@ export const SEO_ROUTES = {
     noindex: true,
   },
   "/zh/": {
-    title: "讓學習與善良相遇",
+    source: "pages/zh/HomeZh.tsx",
+    title: "兒童安全無廣告學習與免費教師頻道",
     description:
       "乾淨校園是一個無廣告、對教育工作者友好的平台，為4-16歲的兒童推廣善良、創意和安全的數位學習。由道德AI驅動。加入遍布6大洲的400多名教師的行列。",
     canonicalPath: "/zh/",
@@ -116,6 +138,7 @@ export const SEO_ROUTES = {
       "乾淨校園, 安全教育, 無廣告學習, 兒童教育, 善良, 夏令營, 道德AI教育, 數位學習平台",
   },
   "/zh/summer-camp": {
+    source: "pages/zh/SummerCampZh.tsx",
     title: "乾淨校園夏令營回顧 — 為期8週的善良與創意冒險",
     description:
       "回顧乾淨校園夏令營：一個為4-16歲兒童設計的免費、為期8週的線上活動。重溫每週主題，在100%安全、無廣告的環境中探索善良、創意、中華文化、STEM等。",
@@ -126,6 +149,7 @@ export const SEO_ROUTES = {
     ogImage: "/images/summer-camp-hero.jpg",
   },
   "/zh/teachers": {
+    source: "pages/zh/TeachersZh.tsx",
     title: "教師專區 — 免費高級頻道與 CDE 認證",
     description:
       "加入全球 400 多名教師的行列，在乾淨校園獲取免費高級頻道、教學工具，並成為認證數位教育家 (CDE)。",
@@ -136,6 +160,7 @@ export const SEO_ROUTES = {
     ogImage: "/images/teachers-hero.jpg",
   },
   "/zh/kindness": {
+    source: "pages/zh/KindnessZh.tsx",
     title: "善良故事 — 來自全球教室的真實感動",
     description:
       "探索『#善良很酷』運動如何改變從波士頓到台灣的教室。了解乾淨校園如何在全球推廣同情心與品格教育。",
@@ -146,6 +171,7 @@ export const SEO_ROUTES = {
     ogImage: "/images/kindness-hero.jpg",
   },
   "/zh/about": {
+    source: "pages/zh/AboutZh.tsx",
     title: "關於乾淨校園 — 使命、安全與全球影響力",
     description:
       "了解乾淨校園為全球兒童提供安全、無廣告教育的使命。探索我們的三層安全模型、道德AI技術以及在6大洲獲得的認可。",

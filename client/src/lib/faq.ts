@@ -100,6 +100,79 @@ export const FAQ_ZH: FaqItem[] = [
   },
 ];
 
+export const BKBC_SCHOOLS_URL = "https://www.ganjingworld.com/bekindbecool/schools.html";
+
+/** Teachers page FAQ (EN). Answers restate what the Teachers page already says. */
+export const FAQ_TEACHERS: FaqItem[] = [
+  {
+    question: "What does the free Teacher Premium Channel include?",
+    answer:
+      "Tools to create and share videos, articles and other resources; playlists and collections to curate content for your students; custom hashtags; a royalty-free music library; and live teaching tools. The channel is sponsored by Gan Jing Campus, so it costs you nothing.",
+  },
+  {
+    question: "How do I apply?",
+    answer:
+      "Fill in the short application form on Gan Jing World. After approval, follow the free handbook course to set up your channel and start building your content library.",
+    link: { label: "Open the application form", href: TEACHER_APPLY_URL },
+  },
+  {
+    question: "What is Certified Digital Educator (CDE) status?",
+    answer:
+      "It is a recognition from Gan Jing Campus for teachers who complete the free handbook course, set up their channel and build a content library for their students. There is no fee.",
+  },
+  {
+    question: "Is the content safe to show in class?",
+    answer:
+      "Gan Jing Campus is ad-free, and content passes three layers of review: Ethical AI filters harmful, violent and inappropriate material; trained educators and content specialists check age-appropriateness and educational value; and teachers, parents and community members can flag anything that slips through.",
+  },
+  {
+    question: "Which subjects and grade levels are covered?",
+    answer:
+      "Resources cover kindness and character education, English language arts, math, science, history and social studies, music, Chinese culture and language, and world languages, for children ages 4–16. Many subjects have collections sorted by grade band, from Pre-K through 12th grade.",
+  },
+  {
+    question: "Can my class enter the #BeKindBeCool Kindness Awards?",
+    answer:
+      "Yes. The free School Edition is open to students ages 6–18 in four age groups and fits in a single 45-minute lesson with the free Educator Toolkit. Students draw or film an act of kindness; entries close March 31, 2027.",
+    link: { label: "School Edition details", href: BKBC_SCHOOLS_URL },
+  },
+];
+
+/** Free parent guide FAQ (EN). */
+export const FAQ_GUIDE: FaqItem[] = [
+  {
+    question: "Is the guide really free?",
+    answer:
+      "Yes. Enter your first name and email address and we send you the guide. There is nothing to buy.",
+  },
+  {
+    question: "How do I get it?",
+    answer:
+      "Fill in the form on this page and we email you a link to the guide right away. If it hasn't arrived after a few minutes, check your spam or promotions folder.",
+  },
+  {
+    question: "Do I have to ban screens?",
+    answer:
+      "No. The guide is about changing your kids' screen defaults and setting a clear family standard, not about banning technology.",
+  },
+  {
+    question: "How long does it take?",
+    answer:
+      "The first changes take about 10 minutes and the full reset about 30. The guide aims for fewer screen battles within 14 days.",
+  },
+  {
+    question: "Will you email me anything else?",
+    answer:
+      "We may send occasional updates from Gan Jing Campus. You can unsubscribe at any time with the link in every email.",
+  },
+  {
+    question: "Who makes the guide?",
+    answer:
+      "Gan Jing Campus, an ad-free learning platform for children ages 4–16 run by Gan Jing World.",
+    link: { label: "About Gan Jing Campus", href: "/about" },
+  },
+];
+
 /** schema.org FAQPage for a list of FAQ items. */
 export function faqPageJsonLd(items: FaqItem[]) {
   return {

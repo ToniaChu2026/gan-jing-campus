@@ -73,7 +73,7 @@ const values = [
   { icon: BookOpen, title: "教育", desc: "優先考慮學習成果而非互動指標。" },
   { icon: Globe, title: "包容", desc: "為不同文化、語言和年齡段提供內容。" },
   { icon: Star, title: "卓越", desc: "由教育工作者策劃，達到最高品質標準。" },
-  { icon: Lock, title: "隱私", desc: "不收集數據。兒童的隱私神聖不可侵犯。" },
+  { icon: Lock, title: "隱私", desc: "不做數據收割。兒童的隱私神聖不可侵犯。" },
 ];
 
 const timeline: { label: string; date?: string; year?: string; event: string }[] = [
@@ -103,7 +103,6 @@ export default function AboutZh() {
         name: "乾淨校園",
         foundingDate: "2023",
         areaServed: "全球",
-        numberOfEmployees: { "@type": "QuantitativeValue", value: 400, unitText: "教師" },
       },
     }),
     []
@@ -275,7 +274,7 @@ export default function AboutZh() {
             <div className="mt-10 text-center">
               <div className="inline-flex items-center gap-2 bg-meadow/10 text-meadow font-semibold text-sm px-5 py-2.5 rounded-full font-['Noto_Sans_SC']">
                 <CheckCircle className="w-4 h-4" />
-                100% 的家長表示從未見過有害內容
+                三層把關：AI 過濾・教育者審核・社群回報
               </div>
             </div>
           </AnimatedSection>
@@ -328,7 +327,7 @@ export default function AboutZh() {
                   <ul className="space-y-3">
                     {[
                       "教育優先的內容策劃",
-                      "100%無廣告，不收集數據",
+                      "100%無廣告，不做數據收割",
                       "道德AI過濾有害內容",
                       "免費教師高級頻道",
                       "為全人發展而設計",

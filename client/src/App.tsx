@@ -22,12 +22,13 @@ const SummerCampZh = lazy(() => import("./pages/zh/SummerCampZh"));
 const TeachersZh = lazy(() => import("./pages/zh/TeachersZh"));
 const KindnessZh = lazy(() => import("./pages/zh/KindnessZh"));
 const AboutZh = lazy(() => import("./pages/zh/AboutZh"));
+const PrivacySafety = lazy(() => import("./pages/PrivacySafety"));
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      {/* Campus Guide pages — standalone layout, NOT in main nav */}
+      {/* Campus Guide pages — standalone layout with its own minimal nav */}
       <Route path={"/free-guide"}>
         <Suspense fallback={null}>
           <CampusGuide />
@@ -65,6 +66,7 @@ function Router() {
             <Route path={"/teachers"} component={Teachers} />
             <Route path={"/kindness"} component={Kindness} />
             <Route path={"/about"} component={About} />
+            <Route path={"/privacy-and-safety"} component={PrivacySafety} />
             <Route path={"/404"} component={NotFound} />
             <Route component={NotFound} />
           </Switch>
