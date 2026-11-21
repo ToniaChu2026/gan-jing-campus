@@ -5,7 +5,7 @@
  * `vite build --ssr` builds client/src/entry-server.tsx into dist/ssr.
  * This script renders each route with that entry and puts the markup inside
  * <div id="root"> so search and AI crawlers that don't run JavaScript see
- * the real page text. The browser still renders the app with createRoot.
+ * the real page text. The browser then hydrates that markup (hydrateRoot).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -56,6 +56,11 @@ for (const rel of htmlFiles(publicDir)) {
   const body = await render(url);
   if (!body || body.length < 200) {
     throw new Error(`[prerender] ${url} rendered almost nothing (${body?.length ?? 0} chars)`);
+  }
+  // Content must be in place, not streamed in later: a hidden segment swapped
+  // in by script after first paint pushes the footer down (layout shift).
+  if (/<template id="B:|<div hidden id="S:|<!--\$\?-->/.test(body)) {
+    throw new Error(`[prerender] ${url} has a deferred Suspense segment; content must be inline`);
   }
   fs.writeFileSync(file, html.replace(EMPTY_ROOT, () => `<div id="root">${body}</div>`), "utf-8");
   count++;
