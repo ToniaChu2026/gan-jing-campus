@@ -181,7 +181,7 @@ export default function KindnessZh() {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={KINDNESS_HERO}
+                  src={KINDNESS_HERO} width={1400} height={787}
                   alt="孩子們實踐善良"
                   className="w-full h-auto"
                   loading="eager"

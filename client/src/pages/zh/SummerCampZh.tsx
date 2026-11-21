@@ -632,7 +632,7 @@ export default function SummerCampZh() {
               className="relative"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img src={HERO_IMG} alt="孩子們享受夏令營活動" className="w-full h-auto" loading="eager" />
+                <img src={HERO_IMG} width={1400} height={787} alt="孩子們享受夏令營活動" className="w-full h-auto" loading="eager" />
                 <div className="absolute inset-0 bg-gradient-to-t from-sky/30 to-transparent" />
               </div>
               <motion.div

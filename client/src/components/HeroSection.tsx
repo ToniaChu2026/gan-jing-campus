@@ -38,20 +38,20 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left: Text */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={false}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6">
               <Sun className="w-4 h-4 text-sunshine" />
-              <span className="text-white/90 text-sm font-medium">Summer Camp Recap &middot; 8 Themed Weeks</span>
+              <h1 className="text-white/90 text-sm font-medium">Free Online Summer Camp Recap for Ages 4–16</h1>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+            <p className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
               Gan Jing
               <br />
               <span className="text-sunshine">Summer Camp</span>
-            </h1>
+            </p>
 
             <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-xl mb-8 font-body">
               Look back at an 8-week adventure of kindness, creativity, and discovery for children ages 4-16.
@@ -101,7 +101,7 @@ export default function HeroSection() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src={HERO_IMG}
+                src={HERO_IMG} width={1400} height={787}
                 alt="Children enjoying summer camp activities"
                 className="w-full h-auto"
                 loading="eager"

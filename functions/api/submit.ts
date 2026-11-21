@@ -167,6 +167,18 @@ export async function onRequest(
     // Add contact to Brevo list
     const contactAdded = await addContactToBrevo(email, firstName, apiKey, listId);
 
+    // If the contact wasn't saved, the lead would be lost — report a failure so
+    // the form can ask the visitor to try again instead of showing "thank you".
+    if (!contactAdded) {
+      return new Response(
+        JSON.stringify({ error: "We couldn't save your signup. Please try again." }),
+        {
+          status: 502,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
+
     // Send guide email
     const emailSent = await sendGuideEmail(email, firstName, guideUrl, apiKey);
 

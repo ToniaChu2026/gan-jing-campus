@@ -9,7 +9,7 @@
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Heart, Globe } from "lucide-react";
+import { Menu, X, Heart, Globe, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LOGO_URL =
@@ -222,6 +222,13 @@ function SiteFooterZh() {
               無廣告、教師友善的教育平台，由道德AI驅動。
               為全球兒童推廣善良、創意和安全的數位學習。
             </p>
+            <a
+              href="mailto:creators@ganjingworld.com"
+              className="inline-flex items-center gap-2 text-sm text-white/70 font-['Noto_Sans_SC'] hover:text-white mb-3 no-underline"
+            >
+              <Mail className="w-4 h-4" />
+              creators@ganjingworld.com
+            </a>
             <p className="text-xs text-white/40">由乾淨世界提供技術支持</p>
           </div>
 
@@ -290,7 +297,23 @@ function SiteFooterZh() {
   );
 }
 
+const NOTO_SANS_SC_URL =
+  "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap";
+
 export default function LayoutZh({ children }: { children: React.ReactNode }) {
+  // English pages ship without the Chinese web font (it's large). If a visitor
+  // reaches /zh through in-app navigation, load it here.
+  useEffect(() => {
+    const loaded = Array.from(
+      document.querySelectorAll<HTMLLinkElement>('link[href*="fonts.googleapis.com"]')
+    ).some((link) => link.href.includes("Noto+Sans+SC"));
+    if (loaded) return;
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = NOTO_SANS_SC_URL;
+    document.head.appendChild(link);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col font-['Noto_Sans_SC']">
       <SiteNavbarZh />

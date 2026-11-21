@@ -5,7 +5,7 @@
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Heart, Globe } from "lucide-react";
+import { Menu, X, Heart, Globe, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LOGO_URL =
@@ -210,6 +210,13 @@ function SiteFooter() {
               Promoting kindness, creativity, and safe digital learning for
               children worldwide.
             </p>
+            <a
+              href="mailto:creators@ganjingworld.com"
+              className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white mb-3 no-underline"
+            >
+              <Mail className="w-4 h-4" />
+              creators@ganjingworld.com
+            </a>
             <p className="text-xs text-white/40">Powered by Gan Jing World</p>
           </div>
 

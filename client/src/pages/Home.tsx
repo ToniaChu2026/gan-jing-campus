@@ -23,6 +23,8 @@ import {
   Play,
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import FaqSection from "@/components/FaqSection";
+import { FAQ_EN } from "@/lib/faq";
 import { pageSeo } from "@/lib/seoRoutes";
 
 const CAMPUS_HERO =
@@ -175,22 +177,22 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left text */}
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
+              initial={false}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6">
                 <Shield className="w-4 h-4 text-white" />
-                <span className="text-white/90 text-sm font-medium">
-                  Ad-Free &middot; Safe &middot; Ethical AI Powered
-                </span>
+                <h1 className="text-white/90 text-sm font-medium">
+                  The Safe, Ad-Free Learning Platform for Kids and Teachers
+                </h1>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+              <p className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
                 Where Learning
                 <br />
                 Meets <span className="text-sunshine">Kindness</span>
-              </h1>
+              </p>
 
               <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-xl mb-8">
                 Gan Jing Campus is an ad-free, educator-friendly platform
@@ -199,18 +201,20 @@ export default function Home() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/summer-camp"
+                <a
+                  href="https://www.ganjingworld.com/creators/ganjingcampus/form?utm_source=ganjingcampus.org&utm_medium=referral&utm_campaign=teacher_apply&utm_content=home_hero"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 hover:shadow-2xl no-underline"
                 >
-                  Explore Summer Camp
+                  For Teachers — Get Your Free Channel
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </a>
                 <Link
-                  href="/about"
+                  href="/free-guide"
                   className="inline-flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/40 px-8 py-4 text-lg font-bold text-white hover:bg-white/30 transition-all no-underline"
                 >
-                  Learn More
+                  For Parents — Free Screen Reset Guide
                 </Link>
               </div>
             </motion.div>
@@ -224,7 +228,7 @@ export default function Home() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={CAMPUS_HERO}
+                  src={CAMPUS_HERO} width={1920} height={1072}
                   alt="Children learning and playing at Gan Jing Campus"
                   className="w-full h-auto"
                   loading="eager"
@@ -545,6 +549,14 @@ export default function Home() {
           </AnimatedCard>
         </div>
       </section>
+
+      {/* ===== FAQ ===== */}
+      <FaqSection
+        items={FAQ_EN}
+        badge="FAQ"
+        heading="Frequently Asked Questions"
+        intro="Quick answers for teachers and parents about Gan Jing Campus."
+      />
 
       {/* ===== CTA ===== */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-sunshine via-sunshine to-sunshine-dark relative overflow-hidden">

@@ -252,7 +252,7 @@ export default function TeachersZh() {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="https://www.ganjingworld.com/zh-TW/article/1i314rcntbn2YrFKWDHav9ujW1in1c"
+                  href="https://www.ganjingworld.com/creators/ganjingcampus/form?utm_source=ganjingcampus.org&utm_medium=referral&utm_campaign=teacher_apply&utm_content=zh_teachers_hero"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 no-underline font-['Noto_Sans_SC']"
@@ -278,7 +278,7 @@ export default function TeachersZh() {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={TEACHERS_HERO}
+                  src={TEACHERS_HERO} width={1400} height={787}
                   alt="使用乾淨校園的教師"
                   className="w-full h-auto"
                   loading="eager"
@@ -599,7 +599,7 @@ export default function TeachersZh() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://www.ganjingworld.com/zh-TW/article/1i314rcntbn2YrFKWDHav9ujW1in1c"
+                href="https://www.ganjingworld.com/creators/ganjingcampus/form?utm_source=ganjingcampus.org&utm_medium=referral&utm_campaign=teacher_apply&utm_content=zh_teachers_cta"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 justify-center rounded-full bg-white px-8 py-4 text-lg font-bold text-sunshine-dark shadow-xl hover:shadow-2xl transition-all hover:scale-105 no-underline font-['Noto_Sans_SC']"

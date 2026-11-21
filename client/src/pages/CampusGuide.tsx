@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Check, ArrowRight, Shield, BookOpen, Users, Clock, Sparkles, Heart } from "lucide-react";
+import { Check, ArrowRight, Shield, BookOpen, Users, Clock, Sparkles, Heart, Mail } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { pageSeo } from "@/lib/seoRoutes";
 
@@ -63,6 +63,7 @@ export default function CampusGuide() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -88,6 +89,7 @@ export default function CampusGuide() {
     e.preventDefault();
     if (!email) return;
     setIsSubmitting(true);
+    setSubmitError("");
 
     try {
       const response = await fetch("/api/submit", {
@@ -101,18 +103,29 @@ export default function CampusGuide() {
         }),
       });
 
-      if (!response.ok) {
-        const error = await response.json();
-        console.error("[Lead] Submission error:", error);
+      const result = await response.json().catch(() => null);
+      if (!response.ok || !result?.success) {
+        // Keep the visitor on the form so the lead isn't silently lost.
+        console.error("[Lead] Submission error:", result);
+        setSubmitError(
+          result?.error && response.status === 400
+            ? result.error
+            : "Sorry, we couldn't send your guide just now. Please try again in a moment."
+        );
+        return;
       }
 
-      // Navigate to thank-you page regardless of success/failure
-      // The guide URL is displayed on the thank-you page
+      // Conversion event for Google Tag Manager (only on a confirmed submission).
+      const w = window as typeof window & { dataLayer?: Record<string, unknown>[] };
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({ event: "generate_lead", form_name: "free_guide" });
+
       navigate("/free-guide/thank-you");
     } catch (error) {
       console.error("[Lead] Network error:", error);
-      // Still navigate to thank-you on error
-      navigate("/free-guide/thank-you");
+      setSubmitError(
+        "We couldn't reach our server. Please check your connection and try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -500,6 +513,16 @@ export default function CampusGuide() {
                     />
                   </div>
 
+                  {submitError && (
+                    <p
+                      role="alert"
+                      className="rounded-xl border px-4 py-3 text-sm"
+                      style={{ background: "#fff4f2", borderColor: "#f5c2b8", color: "#9a2b16" }}
+                    >
+                      {submitError}
+                    </p>
+                  )}
+
                   <Button
                     type="submit"
                     disabled={isSubmitting}
@@ -647,6 +670,13 @@ export default function CampusGuide() {
                   Promoting kindness, creativity, and safe digital learning for
                   children worldwide.
                 </p>
+                <a
+                  href="mailto:creators@ganjingworld.com"
+                  className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white mb-3 no-underline"
+                >
+                  <Mail className="w-4 h-4" />
+                  creators@ganjingworld.com
+                </a>
                 <p className="text-xs text-white/40">Powered by Gan Jing World</p>
               </div>
 

@@ -79,7 +79,8 @@ const stories = [
     impact: ["Student-created kindness content", "Digital literacy + character education", "Model for other schools"],
     color: "border-l-sunshine-dark",
     iconColor: "bg-sunshine/15 text-sunshine-dark",
-    href: "https://www.ganjingworld.com/news/1htqniht6hp3u3PVR5BpnRHqB1ic1c",
+    href: "https://www.ganjingworld.com/hashtag/Kindnessiscool?tab=Featured&l=KindnessIsCool",
+    linkLabel: "Watch #KindnessIsCool Videos",
   },
 ];
 
@@ -142,22 +143,22 @@ export default function Kindness() {
         <div className="container relative z-10 pt-24 pb-16 md:pt-28 md:pb-20">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
+              initial={false}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
             >
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6">
                 <Heart className="w-4 h-4 text-white" fill="currentColor" />
-                <span className="text-white/90 text-sm font-medium">
-                  Real Stories, Real Impact
-                </span>
+                <h1 className="text-white/90 text-sm font-medium">
+                  Kindness Stories from Real Classrooms
+                </h1>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+              <p className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
                 Kindness
                 <br />
                 <span className="text-sunshine">Changes Everything</span>
-              </h1>
+              </p>
 
               <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-xl mb-8">
                 Discover how teachers and students around the world are using Gan
@@ -183,7 +184,7 @@ export default function Kindness() {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={KINDNESS_HERO}
+                  src={KINDNESS_HERO} width={1400} height={787}
                   alt="Children practicing kindness"
                   className="w-full h-auto"
                   loading="eager"
@@ -270,7 +271,7 @@ export default function Kindness() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sky font-semibold text-sm hover:text-sky/80 transition-colors no-underline"
                     >
-                      Read Full Story
+                      {"linkLabel" in story ? story.linkLabel : "Read Full Story"}
                       <ArrowRight className="w-4 h-4" />
                     </a>
                   </div>

@@ -7,7 +7,7 @@
 import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Check, ArrowRight, Sparkles, Shield, Users, Heart } from "lucide-react";
+import { Check, ArrowRight, Sparkles, Shield, Users, Heart, Mail } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { pageSeo } from "@/lib/seoRoutes";
 
@@ -314,14 +314,14 @@ export default function CampusGuideThankYou() {
                         className="text-base font-medium"
                         style={{ color: "#133960" }}
                       >
-                        Start with{" "}
+                        Start with a{" "}
                         <span
                           className="font-bold"
                           style={{ color: "#E79E24" }}
                         >
-                          $6.99/month
-                        </span>{" "}
-                        for a 2-month Trial
+                          7-day free trial
+                        </span>
+                        , then $6.99/month. Cancel anytime.
                       </p>
                     </div>
                   </div>
@@ -349,6 +349,13 @@ export default function CampusGuideThankYou() {
                   Promoting kindness, creativity, and safe digital learning for
                   children worldwide.
                 </p>
+                <a
+                  href="mailto:creators@ganjingworld.com"
+                  className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white mb-3 no-underline"
+                >
+                  <Mail className="w-4 h-4" />
+                  creators@ganjingworld.com
+                </a>
                 <p className="text-xs text-white/40">Powered by Gan Jing World</p>
               </div>
 

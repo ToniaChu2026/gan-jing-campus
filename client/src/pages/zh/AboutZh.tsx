@@ -22,6 +22,7 @@ import {
   Sparkles,
   BookOpen,
   GraduationCap,
+  Award,
 } from "lucide-react";
 
 const ABOUT_HERO =
@@ -75,14 +76,14 @@ const values = [
   { icon: Lock, title: "隱私", desc: "不收集數據。兒童的隱私神聖不可侵犯。" },
 ];
 
-const timeline = [
-  { year: "啟動", event: "乾淨校園作為一個無廣告的教育平台上線" },
-  { year: "成長", event: "來自6大洲的400多名教師加入平台" },
-  { year: "認可", event: "印尼巴淡市宣布設立「乾淨世界日」" },
-  { year: "影響", event: "阿根廷認可乾淨世界的教育意義" },
-  { year: "善良很酷", event: "全球50個國家參與影片大賞，獲獎作品登上紐約時代廣場" },
-  { year: "2025", event: "台灣教師陳靜容因使用乾淨校園獲得教育界最高榮譽「師鐸獎」" },
-  { year: "2026目標", event: "觸及1000名教師並將夏令營擴展至全球" },
+const timeline: { label: string; date?: string; year?: string; event: string }[] = [
+  { label: "啟動", date: "2023年12月", year: "2023", event: "乾淨校園作為一個無廣告的教育平台上線" },
+  { label: "成長", date: "2025年", year: "2025", event: "來自6大洲的400多名教師加入平台" },
+  { label: "認可", date: "2025年3月", year: "2025", event: "印尼巴淡市宣布設立「乾淨世界日」" },
+  { label: "影響", event: "阿根廷認可乾淨世界的教育意義" },
+  { label: "善良很酷", event: "全球50個國家參與影片大賞，獲獎作品登上紐約時代廣場" },
+  { label: "師鐸獎", date: "2025年", year: "2025", event: "台灣教師陳靜容因使用乾淨校園獲得教育界最高榮譽「師鐸獎」" },
+  { label: "2026目標", year: "2026", event: "觸及1000名教師並將夏令營擴展至全球" },
 ];
 
 export default function AboutZh() {
@@ -168,7 +169,7 @@ export default function AboutZh() {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={ABOUT_HERO}
+                  src={ABOUT_HERO} width={1400} height={787}
                   alt="孩子們在大樹下安全地一起學習，老師引導、家長守護"
                   className="w-full h-auto"
                   loading="eager"
@@ -345,6 +346,45 @@ export default function AboutZh() {
         </div>
       </section>
 
+      {/* ===== 關於我們 ===== */}
+      <section id="who-we-are" className="py-20 md:py-28 bg-white">
+        <div className="container max-w-5xl">
+          <AnimatedSection>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="inline-block bg-sky/10 text-sky font-semibold text-sm px-4 py-1.5 rounded-full mb-4 font-['Noto_Sans_SC']">
+                關於我們
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-5 font-['Noto_Sans_SC']">
+                乾淨校園的<span className="text-sky">營運團隊</span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed font-['Noto_Sans_SC']">
+                乾淨校園是乾淨世界（Gan Jing World）推出的專項計劃，於 2023 年 12 月上線，為老師提供無廣告的教學、策展與分享空間，也為 4–16 歲的孩子提供安全的觀看與學習內容。
+              </p>
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="bg-white rounded-2xl p-5 border border-border/60">
+                  <div className="text-xs font-bold uppercase tracking-wide text-muted-foreground mb-1 font-['Noto_Sans_SC']">營運單位</div>
+                  <a href="https://www.ganjingworld.com" target="_blank" rel="noopener noreferrer" className="font-display font-bold text-sky hover:underline font-['Noto_Sans_SC']">乾淨世界 Gan Jing World</a>
+                </div>
+                <div className="bg-white rounded-2xl p-5 border border-border/60">
+                  <div className="text-xs font-bold uppercase tracking-wide text-muted-foreground mb-1 font-['Noto_Sans_SC']">上線時間</div>
+                  <div className="font-display font-bold text-foreground font-['Noto_Sans_SC']">2023 年 12 月</div>
+                </div>
+                <div className="bg-white rounded-2xl p-5 border border-border/60">
+                  <div className="text-xs font-bold uppercase tracking-wide text-muted-foreground mb-1 font-['Noto_Sans_SC']">服務對象</div>
+                  <div className="font-display font-bold text-foreground font-['Noto_Sans_SC']">4–16 歲孩子、老師與家長</div>
+                </div>
+                <div className="bg-white rounded-2xl p-5 border border-border/60">
+                  <div className="text-xs font-bold uppercase tracking-wide text-muted-foreground mb-1 font-['Noto_Sans_SC']">聯絡我們</div>
+                  <a href="mailto:creators@ganjingworld.com" className="font-display font-bold text-sky hover:underline font-['Noto_Sans_SC']">creators@<wbr />ganjingworld.com</a>
+                </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ===== JOURNEY TIMELINE ===== */}
       <section className="py-20 md:py-28 bg-cream">
         <div className="container">
@@ -361,20 +401,26 @@ export default function AboutZh() {
 
           <div className="max-w-2xl mx-auto">
             {timeline.map((t, i) => (
-              <AnimatedSection key={t.year} delay={i * 0.1}>
+              <AnimatedSection key={t.label} delay={i * 0.1}>
                 <div className="flex gap-5 mb-8 last:mb-0">
                   <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-full bg-sky/15 flex items-center justify-center shrink-0">
-                      <span className="font-display text-xs md:text-sm font-bold text-sky font-['Noto_Sans_SC']">
-                        {t.year}
-                      </span>
+                    <div className="w-14 h-14 rounded-full bg-sky/15 flex items-center justify-center shrink-0">
+                      {t.year ? (
+                        <span className="font-display text-sm font-bold text-sky">{t.year}</span>
+                      ) : (
+                        <Award className="w-6 h-6 text-sky" aria-hidden="true" />
+                      )}
                     </div>
                     {i < timeline.length - 1 && (
                       <div className="w-0.5 flex-1 bg-sky/20 mt-2" />
                     )}
                   </div>
-                  <div className="pt-2.5 pb-4">
-                    <p className="text-foreground text-base md:text-lg font-medium leading-relaxed font-['Noto_Sans_SC']">
+                  <div className="pt-2 pb-4">
+                    <p className="text-sm font-bold uppercase tracking-wide text-sky font-['Noto_Sans_SC']">
+                      {t.label}
+                      {t.date && <span className="ml-2 font-semibold normal-case tracking-normal text-muted-foreground">{t.date}</span>}
+                    </p>
+                    <p className="text-foreground font-medium leading-relaxed font-['Noto_Sans_SC']">
                       {t.event}
                     </p>
                   </div>

@@ -71,10 +71,20 @@ describe("POST /api/submit (Cloudflare Pages Function)", () => {
     expect(JSON.parse(emailInit.body).to).toEqual([{ email: "parent@example.com", name: "Ann" }]);
   });
 
-  it("still returns success when Brevo calls fail", async () => {
+  it("returns an error (and sends no email) when the contact can't be saved", async () => {
     fetchMock.mockResolvedValue(new Response("boom", { status: 500 }));
     const res = await onRequest({ request: post({ email: "parent@example.com" }), env });
+    expect(res.status).toBe(502);
+    expect(await res.json()).toHaveProperty("error");
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("still succeeds when the contact is saved but the email fails", async () => {
+    fetchMock
+      .mockResolvedValueOnce(new Response(JSON.stringify({ id: 1 }), { status: 201 }))
+      .mockResolvedValueOnce(new Response("boom", { status: 500 }));
+    const res = await onRequest({ request: post({ email: "parent@example.com" }), env });
     expect(res.status).toBe(200);
-    expect(await res.json()).toMatchObject({ success: true, contactAdded: false, emailSent: false });
+    expect(await res.json()).toMatchObject({ success: true, contactAdded: true, emailSent: false });
   });
 });

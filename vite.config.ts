@@ -13,10 +13,12 @@ import {
   SITE_NAMES,
   absoluteUrl,
   alternatesFor,
+  breadcrumbJsonLd,
   fullTitle,
   langForPath,
   type PageSeo,
 } from "./client/src/lib/seoRoutes";
+import { FAQ_EN, FAQ_ZH, faqPageJsonLd } from "./client/src/lib/faq";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
@@ -295,6 +297,39 @@ function renderRouteHtml(template: string, seo: PageSeo): string {
     return `    ${alternates}\n`;
   });
   if (firstAlternate) throw new Error("[route-html] could not find hreflang links in index.html");
+
+  // English pages don't need the (large) Chinese web font; LayoutZh adds it at
+  // runtime if a visitor switches to Chinese without a full page load.
+  if (lang === "en") {
+    html = html.replace(/&family=Noto\+Sans\+SC:[^&"]*/g, "");
+  }
+
+  // Preload this page's own hero image (its share image) instead of the homepage's.
+  if (seo.canonicalPath !== "/" && seo.canonicalPath !== "/zh/") {
+    html = seo.ogImage
+      ? html.replace(
+          /<link rel="preload" as="image" href="[^"]*" \/>/,
+          `<link rel="preload" as="image" href="${seo.ogImage}" />`
+        )
+      : html.replace(/[ \t]*<link rel="preload" as="image" href="[^"]*" \/>\n?/, "");
+  }
+
+  // Page-specific structured data, in the raw HTML so crawlers that don't run
+  // JavaScript can read it: "Home → page" breadcrumbs and the homepage FAQs.
+  const jsonLd: object[] = [];
+  const breadcrumb = breadcrumbJsonLd(seo);
+  if (breadcrumb) jsonLd.push(breadcrumb);
+  if (seo.canonicalPath === "/") jsonLd.push(faqPageJsonLd(FAQ_EN));
+  if (seo.canonicalPath === "/zh/") jsonLd.push(faqPageJsonLd(FAQ_ZH));
+  if (jsonLd.length) {
+    const scripts = jsonLd
+      .map(
+        (data) =>
+          `    <script type="application/ld+json">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>`
+      )
+      .join("\n");
+    html = replaceOnce(html, /<\/head>/, `${scripts}\n  </head>`, "</head>");
+  }
 
   return html;
 }

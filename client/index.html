@@ -86,7 +86,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "Kindness Education",
         "Ethical AI in Education",
         "Children's Media Literacy"
-      ]
+      ],
+      "foundingDate": "2023-12",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Gan Jing World",
+        "url": "https://www.ganjingworld.com"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "creators@ganjingworld.com",
+        "availableLanguage": ["English", "Chinese"]
+      }
     }
     </script>
     
@@ -106,50 +118,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     </script>
 
-    <!-- Structured Data: BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://ganjingcampus.org/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Summer Camp",
-          "item": "https://ganjingcampus.org/summer-camp"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "For Teachers",
-          "item": "https://ganjingcampus.org/teachers"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Kindness Stories",
-          "item": "https://ganjingcampus.org/kindness"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "About",
-          "item": "https://ganjingcampus.org/about"
-        }
-      ]
-    }
-    </script>
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+    <!-- Load fonts without blocking first paint (display=swap shows text immediately) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" /></noscript>
     
     <!-- Preload hero image for LCP -->
     <link rel="preload" as="image" href="/images/campus-hero.webp" />

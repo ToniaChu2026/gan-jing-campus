@@ -226,22 +226,22 @@ export default function Teachers() {
         <div className="container relative z-10 pt-24 pb-16 md:pt-28 md:pb-20">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
+              initial={false}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
             >
               <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6">
                 <GraduationCap className="w-4 h-4 text-sunshine" />
-                <span className="text-white/90 text-sm font-medium">
-                  Free for All Educators
-                </span>
+                <h1 className="text-white/90 text-sm font-medium">
+                  Free Classroom Channel for Teachers
+                </h1>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+              <p className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
                 Teach, Connect,
                 <br />
                 <span className="text-sunshine">Inspire</span>
-              </h1>
+              </p>
 
               <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-xl mb-8">
                 Get your free Teacher Premium Channel with tools to create content,
@@ -251,7 +251,7 @@ export default function Teachers() {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="https://www.ganjingworld.com/news/1i3csp1t9651d6ebrqpymLf3u1j11c"
+                  href="https://www.ganjingworld.com/creators/ganjingcampus/form?utm_source=ganjingcampus.org&utm_medium=referral&utm_campaign=teacher_apply&utm_content=teachers_hero"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 no-underline"
@@ -277,7 +277,7 @@ export default function Teachers() {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={TEACHERS_HERO}
+                  src={TEACHERS_HERO} width={1400} height={787}
                   alt="Teachers using Gan Jing Campus"
                   className="w-full h-auto"
                   loading="eager"
@@ -526,7 +526,7 @@ export default function Teachers() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://www.ganjingworld.com/news/1i3csp1t9651d6ebrqpymLf3u1j11c"
+                href="https://www.ganjingworld.com/creators/ganjingcampus/form?utm_source=ganjingcampus.org&utm_medium=referral&utm_campaign=teacher_apply&utm_content=teachers_cta"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 justify-center rounded-full bg-white px-8 py-4 text-lg font-bold text-sunshine-dark shadow-xl hover:shadow-2xl transition-all hover:scale-105 no-underline"

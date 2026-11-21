@@ -23,6 +23,8 @@ import {
   Play,
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import FaqSection from "@/components/FaqSection";
+import { FAQ_ZH } from "@/lib/faq";
 import { pageSeo } from "@/lib/seoRoutes";
 import KindnessTaiwanCampaign from "@/components/KindnessTaiwanCampaign";
 
@@ -176,7 +178,7 @@ export default function HomeZh() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left text */}
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
+              initial={false}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
@@ -198,13 +200,15 @@ export default function HomeZh() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/summer-camp"
+                <a
+                  href="https://www.ganjingworld.com/creators/ganjingcampus/form?utm_source=ganjingcampus.org&utm_medium=referral&utm_campaign=teacher_apply&utm_content=zh_home_hero"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 justify-center rounded-full bg-sunshine px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-sunshine-dark transition-all hover:scale-105 hover:shadow-2xl no-underline font-['Noto_Sans_SC']"
                 >
-                  探索夏令營
+                  教師：免費申請頻道
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </a>
                 <Link
                   href="/about"
                   className="inline-flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/40 px-8 py-4 text-lg font-bold text-white hover:bg-white/30 transition-all no-underline font-['Noto_Sans_SC']"
@@ -223,7 +227,7 @@ export default function HomeZh() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={CAMPUS_HERO}
+                  src={CAMPUS_HERO} width={1920} height={1072}
                   alt="孩子們在乾淨校園學習和玩耍"
                   className="w-full h-auto"
                   loading="eager"
@@ -399,6 +403,7 @@ export default function HomeZh() {
                       src={program.img}
                       alt={program.title}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
                     />
                     <div
                       className={`absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-bold ${program.badgeColor}`}
@@ -518,6 +523,15 @@ export default function HomeZh() {
           </AnimatedCard>
         </div>
       </section>
+
+      {/* ===== 常見問題 ===== */}
+      <FaqSection
+        items={FAQ_ZH}
+        badge="常見問題"
+        heading="常見問題"
+        intro="老師和家長最常問的問題，一次看懂乾淨校園。"
+        zh
+      />
 
       {/* ===== 第四屆《善念點亮台灣》 ===== */}
       <KindnessTaiwanCampaign compact />

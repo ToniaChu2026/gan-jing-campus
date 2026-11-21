@@ -23,6 +23,8 @@ export interface PageSeo {
   ogImage?: string;
   /** Keep the page out of search results and the sitemap (e.g. thank-you pages). */
   noindex?: boolean;
+  /** Short page name for the "Home → page" BreadcrumbList (omit on homepages). */
+  breadcrumb?: string;
 }
 
 export const SITE_NAMES: Record<SeoLang, string> = {
@@ -40,45 +42,49 @@ const BILINGUAL_PATHS = ["/", "/summer-camp", "/teachers", "/kindness", "/about"
 
 export const SEO_ROUTES = {
   "/": {
-    title: "Where Learning Meets Kindness",
+    title: "Safe, Ad-Free Learning for Kids & Teachers",
     description:
-      "Gan Jing Campus is an ad-free, educator-friendly platform promoting kindness, creativity, and safe digital learning for children ages 4-16. Powered by Ethical AI. Join 400+ teachers across 6 continents.",
+      "Ad-free videos and free classroom tools for kids 4–16, curated by educators. Free Premium Channel for teachers, free screen guide for parents.",
     canonicalPath: "/",
     keywords:
       "Gan Jing Campus, safe education, ad-free learning, children education, kindness, summer camp, ethical AI education, digital learning platform",
   },
   "/summer-camp": {
-    title: "Summer Camp Recap — 8 Weeks of Kindness & Creativity",
+    title: "Free Online Summer Camp Recap, Ages 4–16",
     description:
-      "Look back at Gan Jing Summer Camp: a free, 8-week online program for children ages 4-16. Revisit every weekly theme — kindness, creativity, Chinese culture, STEM, and more — in a 100% safe, ad-free environment.",
+      "Revisit our free 8-week online summer camp for ages 4–16: weekly themes, 100+ curated films, and offline kindness activities. No ads.",
     canonicalPath: "/summer-camp",
+    breadcrumb: "Summer Camp",
     keywords:
       "Gan Jing Summer Camp, summer camp recap, free summer camp online, kids summer program, kindness camp, creative learning, children ages 4-16, ad-free summer camp, ethical AI education",
     ogImage: "/images/summer-camp-hero.jpg",
   },
   "/teachers": {
-    title: "For Teachers — Free Premium Channel & CDE Certification",
+    title: "Free Classroom Video Channel for Teachers",
     description:
-      "Join 400+ teachers worldwide on Gan Jing Campus. Get a free Premium Channel, access teaching tools, curate resources, and earn your Certified Digital Educator (CDE) certification.",
+      "Get a free Premium Channel to share safe, ad-free videos with your class, run kindness projects, and earn Certified Digital Educator status.",
     canonicalPath: "/teachers",
+    breadcrumb: "For Teachers",
     keywords:
       "Gan Jing Campus teachers, free teacher channel, CDE certification, digital educator, teacher resources, education platform, kindness education",
     ogImage: "/images/teachers-hero.jpg",
   },
   "/kindness": {
-    title: "Kindness Stories — Real Stories from Classrooms Worldwide",
+    title: "Kindness Stories from Real Classrooms",
     description:
-      "Discover inspiring stories of how the #KindnessIsCool movement is transforming classrooms from Boston to Taiwan. See how Gan Jing Campus promotes compassion and character education globally.",
+      "Real stories from teachers in Boston, New York and Taiwan who used kindness projects and Gan Jing Campus to transform their classrooms.",
     canonicalPath: "/kindness",
+    breadcrumb: "Kindness Stories",
     keywords:
       "kindness stories, KindnessIsCool, character education, classroom kindness, Gan Jing Campus stories, global education, kindness awards, positive values",
     ogImage: "/images/kindness-hero.jpg",
   },
   "/about": {
-    title: "About Gan Jing Campus — Mission, Safety & Global Impact",
+    title: "About Us: Mission & Safety Model",
     description:
-      "Learn about Gan Jing Campus's mission to provide safe, ad-free education for children worldwide. Discover our triple-layered safety model, Ethical AI technology, and recognition across 6 continents.",
+      "Who runs Gan Jing Campus, how our three-layer safety model works, and how teachers in 6 continents use it. Operated by Gan Jing World.",
     canonicalPath: "/about",
+    breadcrumb: "About",
     keywords:
       "about Gan Jing Campus, education mission, ethical AI safety, triple-layered safety model, children digital safety, global education platform, ad-free education",
     ogImage: "/images/about-hero.jpg",
@@ -88,6 +94,7 @@ export const SEO_ROUTES = {
     description:
       "A simple, practical setup guide for values-driven parents who want to shape their kids' digital future without banning technology. Free from Gan Jing Campus.",
     canonicalPath: "/free-guide",
+    breadcrumb: "Free Parent Guide",
     keywords:
       "family screen reset, digital parenting guide, screen time, children digital safety, values-driven parenting, Gan Jing Campus guide",
     ogImage: "/images/guide-family-reading.jpg",
@@ -113,6 +120,7 @@ export const SEO_ROUTES = {
     description:
       "回顧乾淨校園夏令營：一個為4-16歲兒童設計的免費、為期8週的線上活動。重溫每週主題，在100%安全、無廣告的環境中探索善良、創意、中華文化、STEM等。",
     canonicalPath: "/zh/summer-camp",
+    breadcrumb: "夏令營",
     keywords:
       "乾淨校園夏令營, 夏令營回顧, 免費線上夏令營, 兒童暑期活動, 善良品格營, 創意學習, 4-16歲兒童, 無廣告夏令營, 道德AI教育",
     ogImage: "/images/summer-camp-hero.jpg",
@@ -122,6 +130,7 @@ export const SEO_ROUTES = {
     description:
       "加入全球 400 多名教師的行列，在乾淨校園獲取免費高級頻道、教學工具，並成為認證數位教育家 (CDE)。",
     canonicalPath: "/zh/teachers",
+    breadcrumb: "教師專區",
     keywords:
       "乾淨校園教師, 免費教師頻道, CDE認證, 數位教育家, 教學資源, 教育平台, 善良教育",
     ogImage: "/images/teachers-hero.jpg",
@@ -131,6 +140,7 @@ export const SEO_ROUTES = {
     description:
       "探索『#善良很酷』運動如何改變從波士頓到台灣的教室。了解乾淨校園如何在全球推廣同情心與品格教育。",
     canonicalPath: "/zh/kindness",
+    breadcrumb: "善良故事",
     keywords:
       "善良故事, KindnessIsCool, 品格教育, 教室中的善良, 乾淨校園故事, 全球教育, 善良獎, 正面價值觀",
     ogImage: "/images/kindness-hero.jpg",
@@ -140,6 +150,7 @@ export const SEO_ROUTES = {
     description:
       "了解乾淨校園為全球兒童提供安全、無廣告教育的使命。探索我們的三層安全模型、道德AI技術以及在6大洲獲得的認可。",
     canonicalPath: "/zh/about",
+    breadcrumb: "關於我們",
     keywords:
       "關於乾淨校園, 教育使命, 道德AI安全, 三層安全模型, 兒童數位安全, 全球教育平台, 無廣告教育",
     ogImage: "/images/about-hero.jpg",
@@ -160,6 +171,21 @@ export function langForPath(canonicalPath: string): SeoLang {
 
 export function fullTitle(seo: Pick<PageSeo, "title" | "canonicalPath">): string {
   return `${seo.title} | ${SITE_NAMES[langForPath(seo.canonicalPath)]}`;
+}
+
+/** "Home → page" BreadcrumbList, or null for homepages and pages without a breadcrumb name. */
+export function breadcrumbJsonLd(seo: PageSeo) {
+  if (!seo.breadcrumb) return null;
+  const lang = langForPath(seo.canonicalPath);
+  const home = lang === "en" ? { name: "Home", path: "/" } : { name: "首頁", path: "/zh/" };
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: home.name, item: absoluteUrl(home.path) },
+      { "@type": "ListItem", position: 2, name: seo.breadcrumb, item: absoluteUrl(seo.canonicalPath) },
+    ],
+  };
 }
 
 export function absoluteUrl(pathOrUrl: string): string {
