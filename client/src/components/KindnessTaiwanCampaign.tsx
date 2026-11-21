@@ -201,6 +201,18 @@ export default function KindnessTaiwanCampaign({ compact = false }: { compact?: 
             {CONTACT_EMAIL}
           </a>
         </p>
+        <p className="text-center text-sm text-muted-foreground mt-3">
+          國際版活動：
+          <a
+            href="https://www.ganjingworld.com/bekindbecool/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-coral font-semibold hover:underline"
+          >
+            #BeKindBeCool Kindness Awards 2026–27
+          </a>
+          （美國新澤西、麻州、田納西、佛蒙特、科羅拉多州州長認可）
+        </p>
       </div>
     </section>
   );

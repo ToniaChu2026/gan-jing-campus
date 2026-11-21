@@ -5,6 +5,7 @@
  */
 import { useEffect, useRef, useMemo } from "react";
 import SEOHead from "@/components/SEOHead";
+import BeKindBeCoolSection from "@/components/BeKindBeCoolSection";
 import { pageSeo } from "@/lib/seoRoutes";
 import { motion, useInView } from "framer-motion";
 import {
@@ -200,6 +201,9 @@ export default function Kindness() {
           </svg>
         </div>
       </section>
+
+      {/* ===== #BeKindBeCool KINDNESS AWARDS 2026–27 ===== */}
+      <BeKindBeCoolSection />
 
       {/* ===== FEATURED STORIES ===== */}
       <section className="py-20 md:py-28 bg-white">

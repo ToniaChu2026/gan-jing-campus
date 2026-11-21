@@ -175,7 +175,7 @@ const footerLinks = [
     title: "Gan Jing World",
     links: [
       { label: "Gan Jing Campus", href: "https://www.ganjingworld.com/@GanJingCampus", external: true },
-      { label: "Gan Jing Kids", href: "https://www.ganjingworld.com/gjwplus/kids/ganjingkids", external: true },
+      { label: "Gan Jing Kids", href: "https://www.ganjingworld.com/gjkids", external: true },
       { label: "Gan Jing World", href: "https://www.ganjingworld.com", external: true },
     ],
   },

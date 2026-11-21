@@ -5,6 +5,7 @@
  */
 import { useEffect, useRef, useMemo } from "react";
 import SEOHead from "@/components/SEOHead";
+import BeKindBeCoolSection from "@/components/BeKindBeCoolSection";
 import { pageSeo } from "@/lib/seoRoutes";
 import { motion, useInView } from "framer-motion";
 import {
@@ -422,6 +423,9 @@ export default function Teachers() {
           </div>
         </div>
       </section>
+
+      {/* ===== #BeKindBeCool SCHOOL EDITION ===== */}
+      <BeKindBeCoolSection compact />
 
       {/* ===== RESOURCES + APPLY / SUPPORT ===== */}
       <TeacherResources

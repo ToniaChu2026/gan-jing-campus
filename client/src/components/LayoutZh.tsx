@@ -189,7 +189,7 @@ const footerLinks = [
     title: "乾淨世界",
     links: [
       { label: "乾淨校園", href: "https://www.ganjingworld.com/zh-TW/@乾淨校園", external: true },
-      { label: "乾淨樂學", href: "https://www.ganjingworld.com/zh-TW/gjwplus/kids/ganjingkids", external: true },
+      { label: "乾淨樂學", href: "https://www.ganjingworld.com/zh-TW/gjkids", external: true },
       { label: "乾淨世界", href: "https://www.ganjingworld.com/zh-TW", external: true },
     ],
   },

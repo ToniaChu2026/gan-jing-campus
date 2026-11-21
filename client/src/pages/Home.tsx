@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import FaqSection from "@/components/FaqSection";
+import GanJingKidsSection from "@/components/GanJingKidsSection";
 import { FAQ_EN } from "@/lib/faq";
 import { pageSeo } from "@/lib/seoRoutes";
 
@@ -488,6 +489,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ===== GAN JING KIDS (families) ===== */}
+      <GanJingKidsSection />
 
       {/* ===== STATS BAR ===== */}
       <section className="py-16 bg-gradient-to-r from-sky via-sky to-[oklch(0.65_0.16_230)]">

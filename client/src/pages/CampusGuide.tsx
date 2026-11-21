@@ -709,7 +709,7 @@ export default function CampusGuide() {
                 <ul className="space-y-2.5">
                   {[
                     { label: "Gan Jing Campus", href: "https://www.ganjingworld.com/@GanJingCampus" },
-                    { label: "Gan Jing Kids", href: "https://www.ganjingworld.com/gjwplus/kids/ganjingkids" },
+                    { label: "Gan Jing Kids", href: "https://www.ganjingworld.com/gjkids" },
                     { label: "Gan Jing World", href: "https://www.ganjingworld.com" },
                   ].map((link) => (
                     <li key={link.label}>

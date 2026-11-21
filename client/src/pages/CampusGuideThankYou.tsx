@@ -314,13 +314,16 @@ export default function CampusGuideThankYou() {
                         className="text-base font-medium"
                         style={{ color: "#133960" }}
                       >
-                        Start with a{" "}
-                        <span
-                          className="font-bold"
+                        For home, try{" "}
+                        <a
+                          href="https://www.ganjingworld.com/gjkids"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-bold underline underline-offset-2"
                           style={{ color: "#E79E24" }}
                         >
-                          7-day free trial
-                        </span>
+                          Gan Jing Kids free for 7 days
+                        </a>
                         , then $6.99/month. Cancel anytime.
                       </p>
                     </div>
@@ -388,7 +391,7 @@ export default function CampusGuideThankYou() {
                 <ul className="space-y-2.5">
                   {[
                     { label: "Gan Jing Campus", href: "https://www.ganjingworld.com/@GanJingCampus" },
-                    { label: "Gan Jing Kids", href: "https://www.ganjingworld.com/gjwplus/kids/ganjingkids" },
+                    { label: "Gan Jing Kids", href: "https://www.ganjingworld.com/gjkids" },
                     { label: "Gan Jing World", href: "https://www.ganjingworld.com" },
                   ].map((link) => (
                     <li key={link.label}>

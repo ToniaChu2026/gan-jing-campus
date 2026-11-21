@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import FaqSection from "@/components/FaqSection";
+import GanJingKidsSection from "@/components/GanJingKidsSection";
 import { FAQ_ZH } from "@/lib/faq";
 import { pageSeo } from "@/lib/seoRoutes";
 import KindnessTaiwanCampaign from "@/components/KindnessTaiwanCampaign";
@@ -428,6 +429,9 @@ export default function HomeZh() {
           </div>
         </div>
       </section>
+
+      {/* ===== 乾淨樂學（給家庭） ===== */}
+      <GanJingKidsSection lang="zh" />
 
       {/* ===== STATS & TESTIMONIALS ===== */}
       <section
