@@ -19,6 +19,7 @@ import {
   MapPin,
 } from "lucide-react";
 import KindnessTaiwanCampaign from "@/components/KindnessTaiwanCampaign";
+import BeKindBeCoolSectionZh from "@/components/BeKindBeCoolSectionZh";
 
 const KINDNESS_HERO =
   "/images/kindness-hero.jpg";
@@ -304,6 +305,9 @@ export default function KindnessZh() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* ===== #BeKindBeCool 善良很酷全球大獎 2026–27 ===== */}
+      <BeKindBeCoolSectionZh />
 
       {/* ===== 第四屆《善念點亮台灣》 ===== */}
       <KindnessTaiwanCampaign />
