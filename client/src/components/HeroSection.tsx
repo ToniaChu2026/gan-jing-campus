@@ -42,7 +42,9 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6">
+            {/* px-3 / gap-5 below sm: on a 375px phone these rows fit with <1px to
+                spare, so a fallback font 1% wider wrapped them while web fonts loaded. */}
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 mb-6">
               <Sun className="w-4 h-4 text-sunshine" />
               <h1 className="text-white/90 text-sm font-medium">Free Online Summer Camp Recap for Ages 4–16</h1>
             </div>
@@ -76,7 +78,7 @@ export default function HeroSection() {
             </div>
 
             {/* Quick stats */}
-            <div className="flex flex-wrap gap-6 mt-10">
+            <div className="flex flex-wrap gap-5 sm:gap-6 mt-10">
               {[
                 { num: "100+", label: "Films & Shows" },
                 { num: "8", label: "Themed Weeks" },

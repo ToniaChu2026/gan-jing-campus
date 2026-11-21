@@ -3,6 +3,88 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Size-matched fallbacks for the web fonts. Baloo 2 and DM Sans load
+ * asynchronously from Google Fonts, so text first paints in a system font and
+ * re-flows when they arrive, shifting the layout (up to CLS 0.05). These faces
+ * scale Arial (or Liberation Sans/Arimo, which share its metrics; Roboto on
+ * Android) to the web fonts' width and line metrics so the swap doesn't move
+ * anything. size-adjust = measured width ratio on the site's own English text;
+ * the overrides are the web font's hhea ascent/descent divided by size-adjust.
+ */
+@font-face {
+  font-family: "Baloo 2 Fallback";
+  src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("Arimo");
+  font-weight: 100 599;
+  size-adjust: 95.13%;
+  ascent-override: 113.32%;
+  descent-override: 55.08%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Baloo 2 Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("Arimo Bold");
+  font-weight: 600 1000;
+  size-adjust: 92.64%;
+  ascent-override: 116.37%;
+  descent-override: 56.57%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Baloo 2 Fallback Android";
+  src: local("Roboto"), local("Roboto-Regular");
+  font-weight: 100 599;
+  size-adjust: 96.48%;
+  ascent-override: 111.73%;
+  descent-override: 54.31%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Baloo 2 Fallback Android";
+  src: local("Roboto Bold"), local("Roboto-Bold");
+  font-weight: 600 1000;
+  size-adjust: 98.70%;
+  ascent-override: 109.21%;
+  descent-override: 53.09%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "DM Sans Fallback";
+  src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("Arimo");
+  font-weight: 100 599;
+  size-adjust: 103.83%;
+  ascent-override: 95.54%;
+  descent-override: 29.86%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "DM Sans Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("Arimo Bold");
+  font-weight: 600 1000;
+  size-adjust: 101.33%;
+  ascent-override: 97.89%;
+  descent-override: 30.59%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "DM Sans Fallback Android";
+  src: local("Roboto"), local("Roboto-Regular");
+  font-weight: 100 599;
+  size-adjust: 104.31%;
+  ascent-override: 95.10%;
+  descent-override: 29.72%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "DM Sans Fallback Android";
+  src: local("Roboto Bold"), local("Roboto-Bold");
+  font-weight: 600 1000;
+  size-adjust: 107.83%;
+  ascent-override: 92%;
+  descent-override: 28.75%;
+  line-gap-override: 0%;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -53,8 +135,8 @@
   /* Baloo 2 has no Chinese glyphs. Fall back to Noto Sans SC, never the generic
      "cursive": on pages marked lang="zh-Hant" browsers map that to a Kai (楷體)
      brush font, which turned every Chinese heading into calligraphy. */
-  --font-display: "Baloo 2", "Noto Sans SC", sans-serif;
-  --font-body: "DM Sans", sans-serif;
+  --font-display: "Baloo 2", "Baloo 2 Fallback", "Baloo 2 Fallback Android", "Noto Sans SC", sans-serif;
+  --font-body: "DM Sans", "DM Sans Fallback", "DM Sans Fallback Android", sans-serif;
 }
 
 :root {
@@ -99,10 +181,10 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "DM Sans", sans-serif;
+    font-family: "DM Sans", "DM Sans Fallback", "DM Sans Fallback Android", sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Baloo 2", "Noto Sans SC", sans-serif;
+    font-family: "Baloo 2", "Baloo 2 Fallback", "Baloo 2 Fallback Android", "Noto Sans SC", sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
